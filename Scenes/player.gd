@@ -86,3 +86,4 @@ func _on_danger_area_body_entered(body):
 		
 func addKey():
 	number_of_keys = number_of_keys + 1
+	print(number_of_keys)
