@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4gjfhs4yyp35"]
+[gd_scene load_steps=8 format=3 uid="uid://c4gjfhs4yyp35"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_ll0fm"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_iyr35"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="4_bi5ag"]
+[ext_resource type="Script" path="res://Scenes/Spawn.gd" id="4_ipw7y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -119,3 +120,7 @@ layer_0/tile_data = PackedInt32Array(-262149, 65537, 0, -196613, 65537, 0, -1310
 
 [node name="Player" parent="." instance=ExtResource("4_bi5ag")]
 position = Vector2(104, 226)
+
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2(72, 76)
+script = ExtResource("4_ipw7y")
