@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://o07jtps7l7x0"]
+[gd_scene load_steps=3 format=3 uid="uid://o07jtps7l7x0"]
 
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="1_fs731"]
+[ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="2_q7k2p"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-1, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_fs731")]
 position = Vector2(530, 311)
+
+[node name="DashGem" parent="." instance=ExtResource("2_q7k2p")]
+position = Vector2(363, 280)
