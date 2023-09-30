@@ -44,23 +44,21 @@ func get_input():
 
 	if Input.is_action_pressed("left"):
 		input_vector.x -= 1
-		#anim.stop()
 		sprite.play("run-lateral")
 		sprite.set_flip_h(false)
 		
 	elif Input.is_action_pressed("right"):
 		input_vector.x += 1
-		#anim.stop()
 		sprite.play("run-lateral")
 		sprite.set_flip_h(true)
 		
 	elif Input.is_action_pressed("up"):
 		input_vector.y -= 1
-		#anim.stop()
 		sprite.play("run-up")
 		
 	elif Input.is_action_pressed("down"):
 		input_vector.y += 1
+		sprite.play("run-lateral")
 
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()  # Normalize the vector for consistent speed

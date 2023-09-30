@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://lvyl7yhcgpku"]
 
 [ext_resource type="Script" path="res://Scenes/key.gd" id="1_rvkkv"]
-[ext_resource type="Texture2D" uid="uid://dsau70ve72tbr" path="res://Assets/key-1.png" id="2_ko7n7"]
+[ext_resource type="Texture2D" uid="uid://dlmv55by6uvj5" path="res://Assets/key-1.png" id="2_ko7n7"]
 [ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="3_7fbnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(15, 15)
 
 [node name="Key" type="Area2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_rvkkv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
