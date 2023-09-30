@@ -4,7 +4,7 @@ class_name Player
 
 @export var speed = 300
 @export var can_dash = false
-@export var dash_speed = 2000
+@export var dash_speed = 1500
 
 var dashing = false
 var movement_direction = Vector2.ZERO
@@ -21,19 +21,13 @@ func _ready():
 
 func _physics_process(delta):
 	get_input()
-	velocity = movement_direction * speed
+	if dashing:
+		velocity = movement_direction * dash_speed
+	else:
+		velocity = movement_direction * speed
+	
 	move_and_slide()
 	
-func dash():
-	can_dash = false
-	var dash_direction = movement_direction.normalized()
-	
-	velocity = dash_direction * dash_speed
-	
-	movement_direction = Vector2.ZERO
-	dashing = true
-	
-	timer.start()
 	
 
 func get_input():
@@ -63,6 +57,10 @@ func get_input():
 
 		
 
+func dash():
+	can_dash = false
+	dashing = true
+	timer.start()
 
 
 func _on_timer_timeout():

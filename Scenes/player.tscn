@@ -19,6 +19,6 @@ shape = SubResource("CircleShape2D_g24h3")
 debug_color = Color(1, 1, 1, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 0.05
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

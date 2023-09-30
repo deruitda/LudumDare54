@@ -11,3 +11,18 @@ position = Vector2(530, 311)
 
 [node name="DashGem" parent="." instance=ExtResource("2_q7k2p")]
 position = Vector2(363, 280)
+
+[node name="DashGem2" parent="." instance=ExtResource("2_q7k2p")]
+position = Vector2(363, 280)
+
+[node name="DashGem3" parent="." instance=ExtResource("2_q7k2p")]
+position = Vector2(242, 401)
+
+[node name="DashGem4" parent="." instance=ExtResource("2_q7k2p")]
+position = Vector2(773, 339)
+
+[node name="DashGem5" parent="." instance=ExtResource("2_q7k2p")]
+position = Vector2(699, 506)
+
+[node name="DashGem6" parent="." instance=ExtResource("2_q7k2p")]
+position = Vector2(524, 221)
