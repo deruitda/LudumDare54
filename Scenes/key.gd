@@ -11,4 +11,3 @@ func _on_body_entered(body):
 		GameState.add_key(self)
 		queue_free()
 
-	

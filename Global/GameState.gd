@@ -24,7 +24,9 @@ func load_next_level():
 		end_game()
 
 func refresh_scene():
-	get_tree().change_scene(currentLevel)
+	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
+	number_of_keys_this_room = 0
+	get_tree().change_scene_to_file(currentLevel)
 
 func end_game():
 	print("Congrats!")
@@ -32,8 +34,6 @@ func end_game():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	currentLevelTimeRemaining -= delta
-	print(currentLevelTimeRemaining)
-
 
 func add_key(key: Key):
 	total_number_of_keys = total_number_of_keys + key.value
