@@ -21,6 +21,8 @@ func _physics_process(delta):
 	
 	
 func get_input():
+	movement_direction = Vector2.ZERO  # Initialize movement_direction to zero vector
+
 	if Input.is_action_pressed("left"):
 		movement_direction = Vector2.LEFT
 		rotation_degrees = 0
