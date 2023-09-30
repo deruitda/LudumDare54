@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="4_gdox8"]
 [ext_resource type="AudioStream" uid="uid://bw5b5n3v1fxvc" path="res://Assets/Sounds/dash_woosh.wav" id="5_u0qoc"]
 [ext_resource type="Texture2D" uid="uid://c5sm04ln6c384" path="res://Assets/player-sprite-sheet.png" id="6_efsjk"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/dash_gem_hum_1.wav" id="6_ugea4"]
+[ext_resource type="AudioStream" uid="uid://b2u0iw7g0b7l0" path="res://Assets/Sounds/dash_gem_hum_1.wav" id="6_ugea4"]
 [ext_resource type="Texture2D" uid="uid://dcs2re0ebe81y" path="res://Assets/glow.png" id="7_ugepc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]

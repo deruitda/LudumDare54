@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/door.gd" id="1_7rccf"]
 [ext_resource type="Texture2D" uid="uid://bfb0ln2sanlgk" path="res://Assets/door.png" id="1_bgvao"]
+[ext_resource type="AudioStream" uid="uid://b5olcnvn1q5na" path="res://Assets/Sounds/door_open.wav" id="3_d1dly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybd1i"]
 size = Vector2(64, 39)
@@ -18,7 +19,6 @@ shape = SubResource("RectangleShape2D_ybd1i")
 texture = ExtResource("1_bgvao")
 
 [node name="DoorOpeningAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_gunki")
-volume_db = -3.0
+stream = ExtResource("3_d1dly")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

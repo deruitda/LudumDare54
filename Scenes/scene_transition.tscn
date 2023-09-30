@@ -65,5 +65,8 @@ libraries = {
 stream = ExtResource("2_ha03x")
 
 [node name="OpenDoorAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ha03x")
 
 [node name="DoorClosedTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DoorClosedTimer" to="." method="_on_door_closed_timer_timeout"]
