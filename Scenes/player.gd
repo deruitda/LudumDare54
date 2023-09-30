@@ -5,6 +5,8 @@ class_name Player
 @export var speed = 400
 @export var can_dash = false
 @export var dash_speed = 800
+@export var minimum_keys_needed = 3
+@export var maximum_number_of_keys = 5
 
 var number_of_keys = 0
 var dashing = false
@@ -86,3 +88,4 @@ func _on_danger_area_body_entered(body):
 		
 func addKey():
 	number_of_keys = number_of_keys + 1
+	print(number_of_keys)

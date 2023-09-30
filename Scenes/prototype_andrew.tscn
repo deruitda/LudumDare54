@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="4_bi5ag"]
 [ext_resource type="Script" path="res://Scenes/Spawn.gd" id="4_ipw7y"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_u7avs"]
+[ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="6_nmp6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -140,3 +141,12 @@ position = Vector2(466, 97)
 
 [node name="DashGem5" parent="." instance=ExtResource("5_u7avs")]
 position = Vector2(381, 304)
+
+[node name="Key" parent="." instance=ExtResource("6_nmp6v")]
+position = Vector2(138, 175)
+
+[node name="Key2" parent="." instance=ExtResource("6_nmp6v")]
+position = Vector2(197, 103)
+
+[node name="Key3" parent="." instance=ExtResource("6_nmp6v")]
+position = Vector2(203, 176)
