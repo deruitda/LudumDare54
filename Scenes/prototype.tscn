@@ -8,9 +8,6 @@ position = Vector2(-1, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_fs731")]
 position = Vector2(530, 311)
-speed = null
-can_dash = null
-dash_speed = null
 
 [node name="DashGem" parent="." instance=ExtResource("2_q7k2p")]
 position = Vector2(363, 280)
