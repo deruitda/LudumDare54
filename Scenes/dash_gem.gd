@@ -6,5 +6,6 @@ class_name DashGem
 
 func _on_body_entered(body):
 	if body is Player:
-		player.pickupDashGem()
+		player.pickup_dash_gem(self)
 		queue_free()
+

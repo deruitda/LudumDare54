@@ -74,6 +74,10 @@ func _on_danger_area_body_entered(body):
 		# is a danger area
 		GameState.refresh_scene()
 		
-func pickupDashGem():
+func pickup_dash_gem(dash_gem: DashGem):
 	can_dash = true
-	$DashGemAcquiredAudio.play()
+	$DashGemAcquired.play()
+	
+func pickup_key(key: Key):
+	GameState.add_key(key)
+	$KeyAcquired.play()
