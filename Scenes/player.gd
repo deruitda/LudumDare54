@@ -8,7 +8,6 @@ class_name Player
 @export var minimum_keys_needed = 3
 @export var maximum_number_of_keys = 5
 
-var number_of_keys = 0
 var dashing = false
 var movement_direction = Vector2.ZERO
 var shape_query = PhysicsShapeQueryParameters2D.new()
@@ -85,7 +84,3 @@ func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap:
 		# is a danger area
 		die_and_respawn()
-		
-func addKey():
-	number_of_keys = number_of_keys + 1
-	print(number_of_keys)
