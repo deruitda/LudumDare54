@@ -62,6 +62,7 @@ func get_input():
 func dash():
 	can_dash = false
 	dashing = true
+	$DashWoosh.play()
 	timer.start()
 
 
