@@ -74,11 +74,11 @@ func die_and_respawn():
 
 func respawn():
 	# Perform respawn logic, such as resetting player position, showing respawn animation, etc.
-	position = Vector2(100, 100)  # Example: Respawn the player at position (100, 100)
+	position = Vector2(108, 301)  # Example: Respawn the player at position (100, 100)
 	show()  # Show the player again
 
 
 func _on_danger_area_body_entered(body):
-	if body is TileMap:
+	if not dashing and body is TileMap:
 		# is a danger area
 		die_and_respawn()
