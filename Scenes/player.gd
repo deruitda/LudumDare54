@@ -63,6 +63,7 @@ func dash():
 	can_dash = false
 	dashing = true
 	$DashWoosh.play()
+	$DashGemHoldingHum.stop()
 	timer.start()
 
 
@@ -78,6 +79,7 @@ func _on_danger_area_body_entered(body):
 func pickup_dash_gem(dash_gem: DashGem):
 	can_dash = true
 	$DashGemAcquired.play()
+	$DashGemHoldingHum.play()
 	
 func pickup_key(key: Key):
 	GameState.add_key(key)
