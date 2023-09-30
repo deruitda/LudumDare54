@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ph53i2f6uxdj"]
+[gd_scene load_steps=9 format=3 uid="uid://ph53i2f6uxdj"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_ll0fm"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_iyr35"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="4_bi5ag"]
 [ext_resource type="Script" path="res://Scenes/Spawn.gd" id="4_ipw7y"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_u7avs"]
-[ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="6_grjfr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
