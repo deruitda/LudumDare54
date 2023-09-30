@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwxd2o7oh7x31"]
+[gd_scene load_steps=6 format=3 uid="uid://be1ck3wefbj6"]
 
 [ext_resource type="Script" path="res://Scenes/scene_transition.gd" id="1_02fr1"]
+[ext_resource type="AudioStream" uid="uid://dj88g2ublry2k" path="res://Assets/Sounds/1_second_theme_transition_open.wav" id="2_ha03x"]
 
 [sub_resource type="Animation" id="Animation_po8jg"]
 resource_name = "CLOSE"
@@ -59,3 +60,10 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_ilms3")
 }
+
+[node name="CloseDoorAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ha03x")
+
+[node name="OpenDoorAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="DoorClosedTimer" type="Timer" parent="."]
