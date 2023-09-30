@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgefottiis13l"]
+[gd_scene load_steps=7 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
 [ext_resource type="Texture2D" uid="uid://c4eo7i4rddsng" path="res://Assets/player-front.png" id="2_5fswc"]
-[ext_resource type="AudioStream" uid="uid://bxnanm0sgtvwh" path="res://Assets/Sounds/item_pickup_2.wav" id="3_0nhrg"]
+[ext_resource type="AudioStream" uid="uid://bxnanm0sgtvwh" path="res://Assets/Sounds/item_pickup_2.wav" id="3_kpvjt"]
+[ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="4_gdox8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(26, 26)
@@ -37,8 +38,11 @@ collision_mask = 2
 [node name="DangerAreaCollisionShape" type="CollisionShape2D" parent="DangerArea"]
 shape = SubResource("RectangleShape2D_xa5vj")
 
-[node name="DashGemAcquiredAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_0nhrg")
+[node name="DashGemAcquired" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kpvjt")
+
+[node name="KeyAcquired" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gdox8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
