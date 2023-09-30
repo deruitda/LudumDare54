@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgefottiis13l"]
+[gd_scene load_steps=6 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
 [ext_resource type="Texture2D" uid="uid://c4eo7i4rddsng" path="res://Assets/player-front.png" id="2_5fswc"]
+[ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="3_ftbf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(26, 26)
@@ -35,6 +36,12 @@ collision_mask = 2
 
 [node name="DangerAreaCollisionShape" type="CollisionShape2D" parent="DangerArea"]
 shape = SubResource("RectangleShape2D_xa5vj")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-0.769234, 0.769222)
+scale = Vector2(0.704327, 0.644231)
+color = Color(0.831373, 0.572549, 0.396078, 1)
+texture = ExtResource("3_ftbf8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
