@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b608brp8jtekk"]
+[gd_scene load_steps=10 format=3 uid="uid://b608brp8jtekk"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_kx6kt"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_m2lnx"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="3_3rdp1"]
 [ext_resource type="Script" path="res://Scenes/Spawn.gd" id="4_ndd0r"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_tygou"]
+[ext_resource type="PackedScene" uid="uid://dblcnvprv7pcy" path="res://Scenes/closing_walls.tscn" id="6_mntyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -139,3 +140,6 @@ position = Vector2(466, 97)
 
 [node name="DashGem5" parent="." instance=ExtResource("5_tygou")]
 position = Vector2(452, 327)
+
+[node name="ClosingWalls" parent="." instance=ExtResource("6_mntyj")]
+position = Vector2(9, 606)

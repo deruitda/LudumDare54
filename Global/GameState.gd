@@ -2,12 +2,15 @@ extends Node
 
 var total_number_of_keys = 0
 var number_of_keys_this_room = 0
-var currentLevel = "";
 
 var levels = [
 	"res://Scenes/Levels/1-1.tscn",
 	"res://Scenes/Levels/1-2.tscn"
 ]
+var currentLevel;
+var totalTime = 15.0
+var currentLevelTimeRemaining = totalTime
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_next_level()
@@ -20,13 +23,16 @@ func load_next_level():
 	else:
 		end_game()
 
+func refresh_scene():
+	get_tree().change_scene(currentLevel)
 
 func end_game():
 	print("Congrats!")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	currentLevelTimeRemaining -= delta
+	print(currentLevelTimeRemaining)
 
 
 func add_key(key: Key):
