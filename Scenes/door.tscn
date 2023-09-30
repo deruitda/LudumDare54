@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjdwtvp7410wm"]
 
 [ext_resource type="Script" path="res://Scenes/door.gd" id="1_7rccf"]
-[ext_resource type="Texture2D" uid="uid://63fgds5ayml6" path="res://Assets/door.png" id="1_bgvao"]
+[ext_resource type="Texture2D" uid="uid://bfb0ln2sanlgk" path="res://Assets/door.png" id="1_bgvao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybd1i"]
 size = Vector2(64, 39)
 
 [node name="Door" type="Area2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_7rccf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
