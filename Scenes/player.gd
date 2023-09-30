@@ -85,4 +85,4 @@ func _on_danger_area_body_entered(body):
 		die_and_respawn()
 		
 func addKey():
-	number_of_keys++
+	number_of_keys = number_of_keys + 1
