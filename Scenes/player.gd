@@ -66,3 +66,19 @@ func dash():
 func _on_timer_timeout():
 	dashing = false
 	velocity = movement_direction * speed
+	
+func die_and_respawn():
+	# Perform death logic, such as hiding the player, showing death animation, etc.
+	hide()  # Example: Hide the player
+	respawn()  # Call the respawn function after some delay
+
+func respawn():
+	# Perform respawn logic, such as resetting player position, showing respawn animation, etc.
+	position = Vector2(100, 100)  # Example: Respawn the player at position (100, 100)
+	show()  # Show the player again
+
+
+func _on_danger_area_body_entered(body):
+	if body is TileMap:
+		# is a danger area
+		die_and_respawn()
