@@ -73,3 +73,7 @@ func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap:
 		# is a danger area
 		GameState.refresh_scene()
+		
+func pickupDashGem():
+	can_dash = true
+	$DashGemAcquiredAudio.play()
