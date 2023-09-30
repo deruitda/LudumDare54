@@ -1,5 +1,8 @@
 extends Node
 
+@export var sandbox = true
+@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
+
 var total_number_of_keys = 0
 var number_of_keys_this_room = 0
 
@@ -7,6 +10,7 @@ var levels = [
 	"res://Scenes/Levels/1-1.tscn",
 	"res://Scenes/Levels/1-2.tscn"
 ]
+
 var currentLevel;
 var totalTime = 15.0
 var currentLevelTimeRemaining = totalTime
@@ -15,13 +19,18 @@ var currentLevelTimeRemaining = totalTime
 func _ready():
 	load_next_level()
 
+
 func load_next_level():
-	if levels.size() > 0:
-		currentLevel = levels.pop_front()
-		get_tree().change_scene_to_file(currentLevel)
-		number_of_keys_this_room = 0
+	if sandbox:
+		currentLevel = sandbox_scene
+		get_tree().change_scene_to_file(sandbox_scene)
 	else:
-		end_game()
+		if levels.size() > 0:
+			currentLevel = levels.pop_front()
+			get_tree().change_scene_to_file(currentLevel)
+			number_of_keys_this_room = 0
+		else:
+			end_game()
 
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
