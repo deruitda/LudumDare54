@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjdwtvp7410wm"]
+[gd_scene load_steps=4 format=3 uid="uid://cjdwtvp7410wm"]
+
+[ext_resource type="Script" path="res://Scenes/door.gd" id="1_7rccf"]
+[ext_resource type="Texture2D" uid="uid://63fgds5ayml6" path="res://Assets/door.png" id="1_bgvao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybd1i"]
-size = Vector2(38, 20)
+size = Vector2(64, 39)
 
-[node name="Node2D" type="Area2D"]
+[node name="Door" type="Area2D"]
+script = ExtResource("1_7rccf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ybd1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bgvao")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
