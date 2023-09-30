@@ -13,7 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is Player && door_unlocked:
-		GameState.goto_next_level()
+		GameState.load_next_level()
 
 func open_door():
 	door_unlocked = true

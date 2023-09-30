@@ -3,7 +3,6 @@ extends Area2D
 class_name Key
 
 @onready var player = $"../Player"
-@onready var door = $"../Door"
 
 @export var value = 1
 
