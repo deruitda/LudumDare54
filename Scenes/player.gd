@@ -75,6 +75,7 @@ func get_input():
 func dash():
 	can_dash = false
 	dashing = true
+	$DashGlow.emitting = false
 	$DashWoosh.play()
 	#$DashGemHoldingFadeOut.play()
 	$DashGemHoldingHum.stop()
@@ -99,6 +100,7 @@ func _on_danger_area_body_entered(body):
 		
 func pickup_dash_gem(dash_gem: DashGem):
 	can_dash = true
+	$DashGlow.emitting = true
 	$DashGemAcquired.play()
 	$DashGemHoldingHum.play()
 	

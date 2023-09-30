@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://w3pxm30hrxu3"]
+
+[ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="1_1r1yp"]
+
+[node name="DashGlow" type="CPUParticles2D"]
+amount = 5
+texture = ExtResource("1_1r1yp")
+gravity = Vector2(0, 500)
+orbit_velocity_min = 6.33
+orbit_velocity_max = 120.25
+linear_accel_min = -1.27
+linear_accel_max = 39.87
+radial_accel_min = -20.19
+radial_accel_max = 100.0
+scale_amount_min = 3.0
+scale_amount_max = 3.72
+color = Color(0.164706, 1, 1, 0.0901961)
