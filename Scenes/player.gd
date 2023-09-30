@@ -8,7 +8,6 @@ class_name Player
 @export var minimum_keys_needed = 3
 @export var maximum_number_of_keys = 5
 
-var number_of_keys = 0
 var dashing = false
 var movement_direction = Vector2.ZERO
 var shape_query = PhysicsShapeQueryParameters2D.new()
@@ -69,23 +68,8 @@ func dash():
 func _on_timer_timeout():
 	dashing = false
 	velocity = movement_direction * speed
-	
-func die_and_respawn():
-	# Perform death logic, such as hiding the player, showing death animation, etc.
-	hide()  # Example: Hide the player
-	respawn()  # Call the respawn function after some delay
-
-func respawn():
-	# Perform respawn logic, such as resetting player position, showing respawn animation, etc.
-	position = Vector2(108, 301)  # Example: Respawn the player at position (100, 100)
-	show()  # Show the player again
-
 
 func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap:
 		# is a danger area
-		die_and_respawn()
-		
-func addKey():
-	number_of_keys = number_of_keys + 1
-	print(number_of_keys)
+		GameState.refresh_scene()
