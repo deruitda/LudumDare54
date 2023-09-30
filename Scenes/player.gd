@@ -3,12 +3,17 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 300
+@export var can_dash = false
+@export var dash_speed = 2000
 
+var dashing = false
 var movement_direction = Vector2.ZERO
 var shape_query = PhysicsShapeQueryParameters2D.new()
+var last_pressed_direction = Vector2.ZERO  # Initialize to zero vector
 
 #onready variables
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var timer = $Timer
 
 func _ready():
 	shape_query.shape = collision_shape_2d.shape
@@ -19,20 +24,47 @@ func _physics_process(delta):
 	velocity = movement_direction * speed
 	move_and_slide()
 	
+func dash():
+	can_dash = false
+	var dash_direction = movement_direction.normalized()
 	
+	velocity = dash_direction * dash_speed
+	
+	movement_direction = Vector2.ZERO
+	dashing = true
+	
+	timer.start()
+	
+
 func get_input():
-	movement_direction = Vector2.ZERO  # Initialize movement_direction to zero vector
+	var input_vector = Vector2.ZERO  # Initialize input_vector to zero vector
 
 	if Input.is_action_pressed("left"):
-		movement_direction = Vector2.LEFT
-		rotation_degrees = 0
-	elif Input.is_action_pressed("right"):
-		movement_direction = Vector2.RIGHT
-		rotation_degrees = 180
-	elif Input.is_action_pressed("up"):
-		movement_direction = Vector2.UP
-		rotation_degrees = 90
-	elif Input.is_action_pressed("down"):
-		movement_direction = Vector2.DOWN
-		rotation_degrees = 270
+		input_vector.x -= 1
+	if Input.is_action_pressed("right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("up"):
+		input_vector.y -= 1
+	if Input.is_action_pressed("down"):
+		input_vector.y += 1
 
+	if input_vector != Vector2.ZERO:
+		input_vector = input_vector.normalized()  # Normalize the vector for consistent speed
+
+		# Calculate rotation degrees based on input_vector
+		rotation_degrees = rad_to_deg(atan2(input_vector.y, input_vector.x))
+
+		movement_direction = input_vector
+	else:
+		movement_direction = Vector2.ZERO  # No movement if no directional keys are pressed
+
+	if Input.is_action_just_pressed("dash") and can_dash:
+		dash()
+
+		
+
+
+
+func _on_timer_timeout():
+	dashing = false
+	velocity = movement_direction * speed
