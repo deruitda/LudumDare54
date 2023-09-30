@@ -78,6 +78,7 @@ func dash():
 	can_dash = false
 	dashing = true
 	$DashWoosh.play()
+	#$DashGemHoldingFadeOut.play()
 	$DashGemHoldingHum.stop()
 	timer.start()
 
