@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck43xtmugnhu4"]
+[gd_scene load_steps=6 format=3 uid="uid://ck43xtmugnhu4"]
 
 [ext_resource type="Script" path="res://Scenes/dash_gem.gd" id="1_1vewm"]
 [ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="2_ypjwp"]
 [ext_resource type="AudioStream" uid="uid://bxnanm0sgtvwh" path="res://Assets/Sounds/item_pickup_2.wav" id="3_sojy5"]
+[ext_resource type="PackedScene" uid="uid://w3pxm30hrxu3" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(18, 12)
@@ -23,5 +24,9 @@ texture = ExtResource("2_ypjwp")
 
 [node name="AcquiredAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_sojy5")
+
+[node name="DashGlow" parent="." instance=ExtResource("4_17u0y")]
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
