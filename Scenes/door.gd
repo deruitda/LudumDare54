@@ -16,6 +16,7 @@ func _on_body_entered(body):
 		GameState.load_next_level()
 
 func open_door():
+	$DoorOpeningAudio.play()
 	door_unlocked = true
 	sprite_2d.texture = preload("res://Assets/door-open.png")
 	

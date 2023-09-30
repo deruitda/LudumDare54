@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SceneTransition="*res://Scenes/scene_transition.tscn"
 GameState="*res://Global/GameState.gd"
 Utils="*res://Global/Utils.gd"
 

@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwxd2o7oh7x31"]
+
+[ext_resource type="Script" path="res://Scenes/scene_transition.gd" id="1_02fr1"]
+
+[sub_resource type="Animation" id="Animation_r03d6"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../closing_left_door_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1154, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(610, -1), Vector2(1157, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uhwm8"]
+resource_name = "CLOSING"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../closing_left_door_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1153, -1), Vector2(-529, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1154, 2), Vector2(625, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bffis"]
+_data = {
+"CLOSE": SubResource("Animation_uhwm8"),
+"RESET": SubResource("Animation_r03d6")
+}
+
+[node name="scene_transition" type="CanvasLayer"]
+script = ExtResource("1_02fr1")
+
+[node name="closing_right_door_rect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1157.0
+offset_right = 1157.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="closing_left_door_rect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1154.0
+offset_top = 8.0
+offset_right = -1154.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../closing_right_door_rect")
+libraries = {
+"": SubResource("AnimationLibrary_bffis")
+}
