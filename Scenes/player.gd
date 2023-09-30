@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var speed = 300
+@export var speed = 400
 @export var can_dash = false
-@export var dash_speed = 1500
+@export var dash_speed = 800
 
+var number_of_keys = 0
 var dashing = false
 var movement_direction = Vector2.ZERO
 var shape_query = PhysicsShapeQueryParameters2D.new()
@@ -82,3 +83,6 @@ func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap:
 		# is a danger area
 		die_and_respawn()
+		
+func addKey():
+	number_of_keys = number_of_keys + 1
