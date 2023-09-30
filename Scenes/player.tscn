@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgefottiis13l"]
+[gd_scene load_steps=10 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
 [ext_resource type="Texture2D" uid="uid://c4eo7i4rddsng" path="res://Assets/player-front.png" id="2_5fswc"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="4_gdox8"]
 [ext_resource type="AudioStream" uid="uid://bw5b5n3v1fxvc" path="res://Assets/Sounds/dash_woosh.wav" id="5_u0qoc"]
 [ext_resource type="AudioStream" uid="uid://b2u0iw7g0b7l0" path="res://Assets/Sounds/dash_gem_hum_1.wav" id="6_ugea4"]
+[ext_resource type="AudioStream" uid="uid://wakm7slfb25t" path="res://Assets/Sounds/dash_gem_hum_1_fade_out.wav" id="7_e1me4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(26, 26)
@@ -48,10 +49,15 @@ stream = ExtResource("4_gdox8")
 
 [node name="DashWoosh" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_u0qoc")
+volume_db = -10.0
 
 [node name="DashGemHoldingHum" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ugea4")
-volume_db = -9.215
+volume_db = -15.0
+
+[node name="DashGemHoldingFadeOut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_e1me4")
+volume_db = -15.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
