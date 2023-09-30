@@ -5,7 +5,6 @@ class_name Door
 @onready var sprite_2d = $Sprite2D
 @onready var player = $"../Player"
 @onready var number_of_keys_needed = 3
-
 var door_unlocked = false
 
 func _process(delta):
@@ -18,4 +17,5 @@ func _on_body_entered(body):
 
 func open_door():
 	door_unlocked = true
+	sprite_2d.texture = preload("res://Assets/door-open.png")
 	
