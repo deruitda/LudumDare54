@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bokp1xywhbwyk"
-path="res://.godot/imported/torch.png-e30a24d5adc087779f9374f45df4cda8.ctex"
+uid="uid://bns5ga0287lg4"
+path="res://.godot/imported/lava-anim-1.png-e4f6987de5d63a7e4d72c8a6b0ca5c1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/image/torch.png"
-dest_files=["res://.godot/imported/torch.png-e30a24d5adc087779f9374f45df4cda8.ctex"]
+source_file="res://Assets/image/lava-glow-anim-raw/lava-anim-1.png"
+dest_files=["res://.godot/imported/lava-anim-1.png-e4f6987de5d63a7e4d72c8a6b0ca5c1d.ctex"]
 
 [params]
 
