@@ -7,8 +7,8 @@ extends CanvasLayer
 @onready var key_legend_sprite = $KeyLegendSprite
 
 var key_animation_textures = {
-	0: preload("res://Assets/image/ui/keys/key-ui-1.png"),	
-	1: preload("res://Assets/image/ui/keys/key-ui-2.png"),
+	0: preload("res://Assets/image/ui/keys/key-ui-1.png"),
+	1: preload("res://Assets/image/ui/keys/key-ui-0.png"),
 	2: preload("res://Assets/image/ui/keys/key-ui-2.png"),
 	3: preload("res://Assets/image/ui/keys/key-ui-3.png"),
 	4: preload("res://Assets/image/ui/keys/key-ui-4.png"),
@@ -21,8 +21,7 @@ func _process(delta):
 	set_total_number_of_deaths()
 	set_total_time_label()
 	set_total_time_this_room_label()
-	
-	
+
 func set_total_number_of_keys():
 	total_number_of_keys_label.text = str(GameState.total_number_of_keys) + "/" + str(GameState.total_number_of_potential_keys)
 	
@@ -36,8 +35,6 @@ func set_number_of_keys_this_room():
 	if key_animation_textures.has(key_number):
 		# Set the texture using the preloaded texture from the dictionary
 		key_legend_sprite.texture = key_animation_textures[key_number]
-	else:
-		print("Invalid key number:", key_number)
 
 func set_total_number_of_deaths():
 	total_number_of_deaths_label.text = str(GameState.get_total_number_of_deaths())

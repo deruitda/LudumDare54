@@ -35,7 +35,6 @@ func set_time(delta):
 		time_elapsed_this_room_in_milliseconds = time_elapsed_this_room_in_milliseconds + delta_in_milliseconds
 
 func set_total_number_of_potential_keys():
-	print(levels.size())
 	total_number_of_potential_keys = levels.size() * number_of_keys_this_room
 
 # Called when the node enters the scene tree for the first time.
