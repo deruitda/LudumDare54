@@ -25,7 +25,3 @@ func _process(delta):
 	
 	if moving:
 		self.translate(Vector2(0, -10) * delta * close_speed)
-
-
-func _on_timer_timeout():
-	moving = false
