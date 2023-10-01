@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_u7avs"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="6_nmp6v"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="7_5457b"]
-[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="8_pscrt"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="8_pscrt"]
 [ext_resource type="PackedScene" uid="uid://1yifr5kcskmo" path="res://Scenes/lava_light.tscn" id="9_i5sfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]

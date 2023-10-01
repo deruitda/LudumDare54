@@ -171,8 +171,6 @@ func pickup_key(key: Key):
 	GameState.add_key(key)
 	$KeyAcquired.play()
 
-
-
 func _on_time_in_sand_timer_timeout():
 	experience_sand_death()	
 

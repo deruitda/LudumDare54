@@ -26,6 +26,7 @@ func _on_body_entered(body):
 
 func open_door():
 	$DoorOpeningAudio.play()
+	$DoorOpeningAchievementSound.play()
 	door_unlocked = true
 	$AnimatedSprite2D.play("open")
 	

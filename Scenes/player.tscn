@@ -1,8 +1,8 @@
 [gd_scene load_steps=51 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
+[ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/potential_dash_gem_sound.wav" id="2_cw4ud"]
 [ext_resource type="AudioStream" uid="uid://dde6e2n5uoc8m" path="res://Assets/Sounds/dash_gem_acquire.wav" id="2_w81mo"]
-[ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="4_gdox8"]
 [ext_resource type="AudioStream" uid="uid://bw5b5n3v1fxvc" path="res://Assets/Sounds/dash_woosh.wav" id="5_u0qoc"]
 [ext_resource type="Texture2D" uid="uid://c5sm04ln6c384" path="res://Assets/player-sprite-sheet.png" id="6_efsjk"]
 [ext_resource type="AudioStream" uid="uid://b2u0iw7g0b7l0" path="res://Assets/Sounds/dash_gem_hum_1.wav" id="6_ugea4"]
@@ -297,10 +297,10 @@ position = Vector2(5.38462, 16.3462)
 shape = SubResource("RectangleShape2D_xa5vj")
 
 [node name="DashGemAcquired" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_w81mo")
+stream = ExtResource("2_cw4ud")
 
 [node name="KeyAcquired" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_gdox8")
+stream = ExtResource("2_w81mo")
 
 [node name="DashWoosh" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_u0qoc")
