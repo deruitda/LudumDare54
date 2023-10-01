@@ -149,7 +149,7 @@ func experience_lava_death():
 	
 func experience_sand_death():
 	$DyingInSandAudio.play()
-	die("death-lava")
+	die("death-sand")
 
 func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap and !dead:
