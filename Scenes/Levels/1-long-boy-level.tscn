@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjfvebjraf141"]
+[gd_scene load_steps=12 format=3 uid="uid://cjfvebjraf141"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_roi7c"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_81x4t"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_iahf8"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_ynl3i"]
-[ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="6_jyvtf"]
+[ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_jyvtf"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="7_7fmwq"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_cthv1"]
+[ext_resource type="PackedScene" uid="uid://cgwhchpkkqgok" path="res://Global/hud.tscn" id="8_wg52y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -259,3 +260,5 @@ direction = 6
 position = Vector2(1701, -135)
 delay_in_seconds = 4
 direction = 6
+
+[node name="HUD" parent="." instance=ExtResource("8_wg52y")]

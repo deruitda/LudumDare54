@@ -2,14 +2,15 @@ extends Node
 
 @export var sandbox = false
 #@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
-@export var sandbox_scene = "res://Scenes/Levels/1-2.tscn"
+@export var sandbox_scene = "res://Scenes/Levels/1-long-boy-level.tscn"
 
 var total_number_of_keys = 0
-var number_of_keys_this_room = 0
+var number_of_keys_this_room = 5
 var total_number_of_potential_keys;
 var number_of_potential_keys_per_room = 5
 
-var total_number_of_deaths = 0
+var total_number_of_sand_deaths = 0
+var total_number_of_lava_deaths = 0
 
 var levels = [
 	"res://Scenes/Levels/1-1.tscn",
@@ -23,6 +24,7 @@ var currentLevelTimeRemaining = totalTime
 var level_started = false
 
 func set_total_number_of_potential_keys():
+	print(levels.size())
 	total_number_of_potential_keys = levels.size() * number_of_keys_this_room
 
 # Called when the node enters the scene tree for the first time.
@@ -47,9 +49,17 @@ func load_next_level():
 		else:
 			end_game()
 
+func record_sand_death():
+	total_number_of_sand_deaths = total_number_of_sand_deaths + 1
+	
+func record_lava_death():
+	total_number_of_lava_deaths = total_number_of_lava_deaths + 1
+	
 func die():
-	total_number_of_deaths = total_number_of_deaths + 1
 	await refresh_scene()
+	
+func get_total_number_of_deaths():
+	return total_number_of_sand_deaths + total_number_of_lava_deaths
 
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
