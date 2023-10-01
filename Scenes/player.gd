@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 class_name Player
 
-var dead = false
 @export var speed = 400
 @export var can_dash = false
 @export var dash_speed = 800
@@ -12,24 +11,35 @@ var dead = false
 @onready var sprite = get_node("AnimatedSprite2D")
 
 var dashing = false
+var running = false
 var movement_direction = Vector2.ZERO
+
 var shape_query = PhysicsShapeQueryParameters2D.new()
 var last_pressed_direction = Vector2.ZERO  # Initialize to zero vector
 
+var dead = false
+
 #onready variables
 @onready var collision_shape_2d = $CollisionShape2D
-@onready var timer = $Timer
+@onready var dash_timer = $DashTimer
 
 func _ready():
 	shape_query.shape = collision_shape_2d.shape
 	shape_query.collision_mask = 2
 
 func _physics_process(delta):
+	var former_direction = movement_direction
 	get_input()
 	if dashing:
 		velocity = movement_direction * dash_speed
 	else:
 		velocity = movement_direction * speed
+	
+	
+	if former_direction != Vector2.ZERO and movement_direction == Vector2.ZERO:
+		stop_running()
+	elif former_direction == Vector2.ZERO and movement_direction != Vector2.ZERO:
+		start_running()
 	
 	move_and_slide()
 	
@@ -47,16 +57,16 @@ func get_input():
 		sprite.play("run-lateral")
 		sprite.set_flip_h(false)
 		
-	elif Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right"):
 		input_vector.x += 1
 		sprite.play("run-lateral")
 		sprite.set_flip_h(true)
 		
-	elif Input.is_action_pressed("up"):
+	if Input.is_action_pressed("up"):
 		input_vector.y -= 1
 		sprite.play("run-up")
 		
-	elif Input.is_action_pressed("down"):
+	if Input.is_action_pressed("down"):
 		input_vector.y += 1
 		sprite.play("run-lateral")
 
@@ -70,34 +80,52 @@ func get_input():
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash()
 
-		
+func start_running():
+	running = true
+	footsteps_start()
+	
+func stop_running():
+	running = false
+	footsteps_stop()
+
+func footsteps_start():
+	$FootstepsAudio.play()
+
+func footsteps_stop():
+	$FootstepsAudio.stop()
 
 func dash():
 	can_dash = false
 	dashing = true
 	$DashGlow.emitting = false
+	footsteps_stop()
 	$DashWoosh.play()
-	#$DashGemHoldingFadeOut.play()
 	$DashGemHoldingHum.stop()
-	timer.start()
+	dash_timer.start()
 
 
-func _on_timer_timeout():
+
+func _on_dash_timer_timeout():
 	dashing = false
 	velocity = movement_direction * speed
+	if movement_direction != Vector2.ZERO:
+		footsteps_start()
+	
+func die():
+	dead = true
+	movement_direction = Vector2.ZERO
+	stop_running()
+	sprite.stop()
+	sprite.play("death-lava")
+	await sprite.animation_finished
+	GameState.refresh_scene()
+	dead = false
 
 func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap:
 		# is a danger area
-		dead = true
-		movement_direction = Vector2.ZERO
-		sprite.stop()
-		sprite.play("death-lava")
-		await sprite.animation_finished
-		GameState.refresh_scene()
-		print("dead")
-		dead = false
-		
+		die()
+
 func pickup_dash_gem(dash_gem: DashGem):
 	can_dash = true
 	$DashGlow.emitting = true
@@ -107,3 +135,4 @@ func pickup_dash_gem(dash_gem: DashGem):
 func pickup_key(key: Key):
 	GameState.add_key(key)
 	$KeyAcquired.play()
+

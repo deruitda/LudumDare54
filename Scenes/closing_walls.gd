@@ -1,18 +1,27 @@
 extends Node2D
 
 var close_speed = 4
-var stopped = false
+var moving = false
+@onready var sound_fall_audio = $SoundFallAudio
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	start_movement()
 
+func start_movement():
+	moving = true
+	sound_fall_audio.play()
+	
+	
+func stop_movement():
+	moving = false
+	sound_fall_audio.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if !stopped:
+	if moving:
 		self.translate(Vector2(0, -10) * delta * close_speed)
 
 
 func _on_timer_timeout():
-	stopped = true
+	moving = false
