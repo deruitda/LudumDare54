@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjfvebjraf141"]
+[gd_scene load_steps=14 format=3 uid="uid://cjfvebjraf141"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_roi7c"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_81x4t"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="7_7fmwq"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_cthv1"]
 [ext_resource type="PackedScene" uid="uid://cgwhchpkkqgok" path="res://Global/hud.tscn" id="8_wg52y"]
+[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="9_as83g"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="10_y3dxh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -171,94 +173,125 @@ position = Vector2(3.0769, 3.84613)
 scale = Vector2(0.769231, 0.769231)
 zoom = Vector2(0.5, 0.5)
 
-[node name="SandWallUp1" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(76, 6525)
-
-[node name="SandWallUp2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(582, 6522)
-
-[node name="SandWallFirstLevelLeft" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1024, 5585)
-delay_in_seconds = 1
-number_of_seconds_until_closed = 12
-direction = 2
-
-[node name="SandWallFirstLevelLeft2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1027, 4692)
-delay_in_seconds = 1
-number_of_seconds_until_closed = 12
-direction = 2
-
-[node name="SandWallFirstLevelRight" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1691, 4684)
-delay_in_seconds = 1
-number_of_seconds_until_closed = 12
-direction = 6
-
-[node name="SandWallFirstLevelRight2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1697, 5598)
-delay_in_seconds = 1
-number_of_seconds_until_closed = 12
-direction = 6
-
-[node name="SandWallSecondLevelLeft" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1012, 3768)
-delay_in_seconds = 3
-direction = 2
-
-[node name="SandWallSecondLevelLeft2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1025, 2876)
-delay_in_seconds = 3
-direction = 2
-
-[node name="SandWallSecondLevelRight" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1700, 3758)
-delay_in_seconds = 3
-direction = 6
-
-[node name="SandWallSecondLevelRight2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1694, 2840)
-delay_in_seconds = 3
-direction = 6
-
-[node name="SandWallThirdLevelLeft" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1032, 1964)
-delay_in_seconds = 3
-direction = 2
-
-[node name="SandWallThirdLevelLeft2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1026, 1056)
-delay_in_seconds = 3
-direction = 2
-
-[node name="SandWallThirdLevelRight" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1698, 1915)
-delay_in_seconds = 3
-direction = 6
-
-[node name="SandWallThirdLevelRight2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1692, 1004)
-delay_in_seconds = 3
-direction = 6
-
-[node name="SandWallForthLevelLeft" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1032, 129)
-delay_in_seconds = 4
-direction = 2
-
-[node name="SandWallForthLevelLeft2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(-1022, -1)
-delay_in_seconds = 4
-direction = 2
-
-[node name="SandWallForthLevelRight" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1707, 84)
-delay_in_seconds = 4
-direction = 6
-
-[node name="SandWallForthLevelRight2" parent="." instance=ExtResource("7_7fmwq")]
-position = Vector2(1701, -135)
-delay_in_seconds = 4
-direction = 6
-
 [node name="HUD" parent="." instance=ExtResource("8_wg52y")]
+
+[node name="Lava" parent="." instance=ExtResource("9_as83g")]
+scale = Vector2(1.5, 1)
+
+[node name="Lava2" parent="." instance=ExtResource("9_as83g")]
+position = Vector2(18, 927)
+scale = Vector2(1.5, 1)
+
+[node name="Lava3" parent="." instance=ExtResource("9_as83g")]
+position = Vector2(43, 1850)
+scale = Vector2(1.5, 1)
+
+[node name="Lava4" parent="." instance=ExtResource("9_as83g")]
+position = Vector2(79, 2773)
+scale = Vector2(1.5, 1)
+
+[node name="Lava5" parent="." instance=ExtResource("9_as83g")]
+position = Vector2(119, 3689)
+scale = Vector2(1.5, 1)
+
+[node name="Lava6" parent="." instance=ExtResource("9_as83g")]
+position = Vector2(79, 4475)
+scale = Vector2(1.5, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-55, 529)
+color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[node name="SandWall" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(-109, 6516)
+scale = Vector2(2, 2)
+number_of_seconds_until_closed = 8
+
+[node name="SandWall2" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(1734, 3280)
+scale = Vector2(2, 5)
+delay_in_seconds = 3
+number_of_seconds_until_closed = 8
+direction = 6
+
+[node name="SandWall5" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(1720, 688)
+scale = Vector2(2, 4)
+delay_in_seconds = 6
+number_of_seconds_until_closed = 8
+direction = 6
+
+[node name="SandWall6" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(1747, -1895)
+scale = Vector2(2, 4)
+delay_in_seconds = 7
+number_of_seconds_until_closed = 8
+direction = 6
+
+[node name="SandWall3" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(-2155, 3260)
+scale = Vector2(2, 5)
+number_of_seconds_until_closed = 8
+direction = 2
+
+[node name="SandWall7" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(-2222, -2081)
+scale = Vector2(2, 5)
+delay_in_seconds = 7
+number_of_seconds_until_closed = 8
+direction = 2
+
+[node name="SandWall4" parent="." instance=ExtResource("7_7fmwq")]
+position = Vector2(-2189, 684)
+scale = Vector2(2, 4)
+delay_in_seconds = 6
+number_of_seconds_until_closed = 8
+direction = 2
+
+[node name="Torch" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(497, 6408)
+
+[node name="Torch2" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1222, 6408)
+
+[node name="Torch3" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(165, 5358)
+
+[node name="Torch4" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1554, 5358)
+
+[node name="Torch5" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(120, 4322)
+
+[node name="Torch6" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1566, 4301)
+
+[node name="Torch7" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(154, 3534)
+
+[node name="Torch8" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1546, 3474)
+
+[node name="Torch9" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(187, 2721)
+
+[node name="Torch10" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1586, 2687)
+
+[node name="Torch11" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(127, 2149)
+
+[node name="Torch12" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1627, 2122)
+
+[node name="Torch13" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(112, 1411)
+
+[node name="Torch14" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1605, 1366)
+
+[node name="Torch15" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(785, 167)
+
+[node name="Torch16" parent="." instance=ExtResource("10_y3dxh")]
+position = Vector2(1068, 144)

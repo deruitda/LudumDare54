@@ -21,8 +21,7 @@ func _process(delta):
 	set_total_number_of_deaths()
 	set_total_time_label()
 	set_total_time_this_room_label()
-	
-	
+
 func set_total_number_of_keys():
 	total_number_of_keys_label.text = str(GameState.total_number_of_keys) + "/" + str(GameState.total_number_of_potential_keys)
 	
