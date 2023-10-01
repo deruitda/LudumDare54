@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/Spawn.gd" id="4_ipw7y"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_u7avs"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="6_nmp6v"]
-[ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="7_5457b"]
+[ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="7_5457b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"

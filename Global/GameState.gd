@@ -1,6 +1,6 @@
 extends Node
 
-@export var sandbox = false
+@export var sandbox = true
 @export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
 
 var total_number_of_keys = 0
