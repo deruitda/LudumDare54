@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_73b2h"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_carby"]
-[ext_resource type="PackedScene" uid="uid://dblcnvprv7pcy" path="res://Scenes/closing_walls.tscn" id="3_d2cxb"]
+[ext_resource type="PackedScene" uid="uid://dblcnvprv7pcy" path="res://Scenes/ClosingWalls/sand_wall_full_size.tscn" id="3_d2cxb"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_jbdlw"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_kcfa7"]
 [ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="6_sddwc"]
