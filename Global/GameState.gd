@@ -26,6 +26,7 @@ func load_scene(scene: String):
 	SceneTransition.change_scene(scene)
 
 func load_next_level():
+	level_started = false
 	if sandbox:
 		currentLevel = sandbox_scene
 		refresh_scene()

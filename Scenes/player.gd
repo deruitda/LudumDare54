@@ -5,7 +5,7 @@ class_name Player
 @export var default_speed = 800
 @export var sand_speed = 400
 
-@export var can_dash = false
+@export var has_dash_gem = false
 @export var dash_speed = 1600
 @export var minimum_keys_needed = 3
 @export var maximum_number_of_keys = 5
@@ -93,7 +93,7 @@ func get_input():
 	else:
 		movement_direction = Vector2.ZERO  # No movement if no directional keys are pressed
 
-	if Input.is_action_just_pressed("dash") and can_dash:
+	if Input.is_action_just_pressed("dash") and has_dash_gem:
 		dash()
 
 func start_running():
@@ -111,7 +111,7 @@ func footsteps_stop():
 	$FootstepsAudio.stop()
 
 func dash():
-	can_dash = false
+	has_dash_gem = false
 	dashing = true
 	$DashGlow.emitting = false
 	footsteps_stop()
@@ -162,7 +162,7 @@ func _on_danger_area_body_exited(body):
 	dashing_while_in_lava = false
 	
 func pickup_dash_gem(dash_gem: DashGem):
-	can_dash = true
+	has_dash_gem = true
 	$DashGlow.emitting = true
 	$DashGemAcquired.play()
 	$DashGemHoldingHum.play()
