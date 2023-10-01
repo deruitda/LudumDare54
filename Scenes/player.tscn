@@ -6,9 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://bw5b5n3v1fxvc" path="res://Assets/Sounds/dash_woosh.wav" id="5_u0qoc"]
 [ext_resource type="Texture2D" uid="uid://c5sm04ln6c384" path="res://Assets/player-sprite-sheet.png" id="6_efsjk"]
 [ext_resource type="AudioStream" uid="uid://b2u0iw7g0b7l0" path="res://Assets/Sounds/dash_gem_hum_1.wav" id="6_ugea4"]
-[ext_resource type="PackedScene" uid="uid://w3pxm30hrxu3" path="res://Scenes/dash_glow.tscn" id="7_4sxys"]
+[ext_resource type="PackedScene" uid="uid://tnkxrqcqhla1" path="res://Scenes/dash_glow.tscn" id="7_4sxys"]
 [ext_resource type="AudioStream" uid="uid://nmc1xgsixfr" path="res://Assets/Sounds/footsteps_1.wav" id="8_mf5ny"]
-[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="9_vvt03"]
+[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="9_vvt03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(66.5398, 69.9808)
@@ -328,8 +328,8 @@ shape = SubResource("RectangleShape2D_b5v46")
 debug_color = Color(0.815686, 0, 0.972549, 0.419608)
 
 [node name="FlickeringLight" parent="." instance=ExtResource("9_vvt03")]
-color = Color(0.960784, 0.380392, 0, 1)
-energy = 2.0
+color = Color(1, 0.921569, 0.886275, 1)
+energy = 1.15
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
