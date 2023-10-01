@@ -7,8 +7,8 @@ extends CanvasLayer
 @onready var key_legend_sprite = $KeyLegendSprite
 
 var key_animation_textures = {
-	0: preload("res://Assets/image/ui/keys/key-ui-1.png"),	
-	1: preload("res://Assets/image/ui/keys/key-ui-2.png"),
+	0: preload("res://Assets/image/ui/keys/key-ui-1.png"),
+	1: preload("res://Assets/image/ui/keys/key-ui-0.png"),
 	2: preload("res://Assets/image/ui/keys/key-ui-2.png"),
 	3: preload("res://Assets/image/ui/keys/key-ui-3.png"),
 	4: preload("res://Assets/image/ui/keys/key-ui-4.png"),
