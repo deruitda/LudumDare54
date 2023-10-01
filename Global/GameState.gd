@@ -14,6 +14,7 @@ var levels = [
 var currentLevel;
 var totalTime = 15.0
 var currentLevelTimeRemaining = totalTime
+var level_started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,3 +50,9 @@ func _process(delta):
 func add_key(key: Key):
 	total_number_of_keys = total_number_of_keys + key.value
 	number_of_keys_this_room = number_of_keys_this_room + key.value
+
+func start_level():
+	level_started = true
+	
+func stop_level():
+	level_started = false
