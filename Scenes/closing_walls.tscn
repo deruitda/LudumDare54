@@ -74,3 +74,7 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="SoundFallAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_6pagl")
+
+[node name="DelayStartTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DelayStartTimer" to="." method="_on_delay_start_timer_timeout"]

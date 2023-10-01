@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var default_speed = 400
-@export var sand_speed = 200
+@export var default_speed = 800
+@export var sand_speed = 400
 
 @export var can_dash = false
-@export var dash_speed = 800
+@export var dash_speed = 1600
 @export var minimum_keys_needed = 3
 @export var maximum_number_of_keys = 5
 #@onready var anim = get_node("AnimationPlayer")
