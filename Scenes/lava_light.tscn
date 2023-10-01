@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://1yifr5kcskmo"]
 
 [ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="1_7chul"]
-[ext_resource type="Texture2D" uid="uid://cl6ageahn0ldv" path="res://Assets/image/lava-light-texture.png" id="2_4vv2k"]
+[ext_resource type="Texture2D" uid="uid://bsmmv5sns84qi" path="res://Assets/image/lava-light-texture.png" id="2_4vv2k"]
 
 [sub_resource type="Gradient" id="Gradient_2mtng"]
 offsets = PackedFloat32Array(0, 0.00192308, 0.644231)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.025, 0.025, 0.025, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jgh8u"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qobpn"]
 gradient = SubResource("Gradient_2mtng")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hols6"]
@@ -26,11 +26,12 @@ angle_min = -172.2
 angle_max = 564.0
 scale_max = 4.32
 color = Color(1, 0, 0.133333, 1)
-color_ramp = SubResource("GradientTexture1D_jgh8u")
+color_ramp = SubResource("GradientTexture1D_qobpn")
 turbulence_noise_strength = 0.2
 turbulence_noise_scale = 0.13
 
 [node name="Lava Light" type="Node2D"]
+position = Vector2(76, 82)
 
 [node name="FlickeringLight" parent="." instance=ExtResource("1_7chul")]
 position = Vector2(0.709996, -10.73)
