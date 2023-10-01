@@ -1,15 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgwhchpkkqgok"]
+[gd_scene load_steps=6 format=3 uid="uid://cgwhchpkkqgok"]
 
 [ext_resource type="Script" path="res://Global/HUD.gd" id="1_v42dm"]
 [ext_resource type="LabelSettings" uid="uid://c774imy064hb0" path="res://Global/normal_large_font.tres" id="2_0w272"]
+[ext_resource type="Texture2D" uid="uid://dh601fgg6xc53" path="res://Assets/image/ui/keys/key-ui-1.png" id="2_beugy"]
 [ext_resource type="LabelSettings" uid="uid://umm037wyu5n6" path="res://Global/normal font.tres" id="3_m4002"]
+[ext_resource type="Texture2D" uid="uid://25ua4k5pkqjy" path="res://Assets/image/ui/keys/dead-face.png" id="5_sbm70"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_v42dm")
 
+[node name="KeyLegendSprite" type="Sprite2D" parent="."]
+position = Vector2(113, 26)
+texture = ExtResource("2_beugy")
+
 [node name="NumberOfKeysThisRoom" type="Node" parent="."]
 
 [node name="NumberOfKeysThisRoomLabel" type="Label" parent="NumberOfKeysThisRoom"]
+visible = false
 offset_left = 4.0
 offset_top = -5.0
 offset_right = 44.0
@@ -18,6 +25,7 @@ text = "0"
 label_settings = ExtResource("2_0w272")
 
 [node name="LargeSlash1" type="Label" parent="NumberOfKeysThisRoom"]
+visible = false
 offset_left = 25.0
 offset_top = -5.0
 offset_right = 65.0
@@ -26,6 +34,7 @@ text = "/"
 label_settings = ExtResource("2_0w272")
 
 [node name="NumberOfPotentialKeysThisRoomLabel" type="Label" parent="NumberOfKeysThisRoom"]
+visible = false
 offset_left = 43.0
 offset_top = -5.0
 offset_right = 83.0
@@ -36,6 +45,7 @@ label_settings = ExtResource("2_0w272")
 [node name="TotalNumberOfKeys" type="Node" parent="."]
 
 [node name="TotalNumberOfKeysLabel" type="Label" parent="TotalNumberOfKeys"]
+visible = false
 offset_left = 7.0
 offset_top = 35.0
 offset_right = 47.0
@@ -44,6 +54,7 @@ text = "5"
 label_settings = ExtResource("3_m4002")
 
 [node name="Slash2" type="Label" parent="TotalNumberOfKeys"]
+visible = false
 offset_left = 20.0
 offset_top = 35.0
 offset_right = 60.0
@@ -52,6 +63,7 @@ text = "/"
 label_settings = ExtResource("3_m4002")
 
 [node name="TotalNumberOfPotentialKeysLabel" type="Label" parent="TotalNumberOfKeys"]
+visible = false
 offset_left = 30.0
 offset_top = 35.0
 offset_right = 70.0
@@ -60,23 +72,28 @@ text = "15"
 label_settings = ExtResource("3_m4002")
 
 [node name="TotalTimeLabel" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 81.0
-offset_right = 47.0
-offset_bottom = 107.0
-text = "1:52"
+offset_left = 140.0
+offset_top = 60.0
+offset_right = 204.0
+offset_bottom = 86.0
+text = "00:00:00"
 
 [node name="TotalTimeThisRoomLabel" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 58.0
-offset_right = 48.0
-offset_bottom = 84.0
-text = "0:20"
+offset_left = 221.0
+offset_top = 13.0
+offset_right = 285.0
+offset_bottom = 39.0
+text = "00:00:00"
+
+[node name="DeadFaceSprite" type="Sprite2D" parent="."]
+position = Vector2(34, 73)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_sbm70")
 
 [node name="TotalNumberOfDeathsLabel" type="Label" parent="."]
-offset_left = 9.0
-offset_top = 102.0
-offset_right = 49.0
-offset_bottom = 128.0
+offset_left = 52.0
+offset_top = 61.0
+offset_right = 92.0
+offset_bottom = 87.0
 text = "0
 "

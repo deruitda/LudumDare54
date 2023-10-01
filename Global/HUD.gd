@@ -7,6 +7,16 @@ extends CanvasLayer
 @onready var total_time_label = $TotalTimeLabel
 @onready var number_of_potential_keys_this_room_label = $NumberOfKeysThisRoom/NumberOfPotentialKeysThisRoomLabel
 @onready var total_number_of_deaths_label = $TotalNumberOfDeathsLabel
+@onready var key_legend_sprite = $KeyLegendSprite
+
+var key_animation_textures = {
+	0: preload("res://Assets/image/ui/keys/key-ui-1.png"),	
+	1: preload("res://Assets/image/ui/keys/key-ui-2.png"),
+	2: preload("res://Assets/image/ui/keys/key-ui-2.png"),
+	3: preload("res://Assets/image/ui/keys/key-ui-3.png"),
+	4: preload("res://Assets/image/ui/keys/key-ui-4.png"),
+	5: preload("res://Assets/image/ui/keys/key-ui-5.png")
+}
 
 func _process(delta):
 	set_total_number_of_keys()
@@ -25,6 +35,17 @@ func set_total_number_of_potential_keys():
 	total_number_of_potential_keys_label.text = str(GameState.total_number_of_potential_keys)
 	
 func set_number_of_keys_this_room():
+	
+	# Get the path dynamically (assuming 'key_animation_sprites' is an array of file paths)
+	# Assuming GameState.number_of_keys_this_room contains the appropriate key number
+	var key_number = GameState.number_of_keys_this_room
+	
+	# Check if the key number is valid
+	if key_animation_textures.has(key_number):
+		# Set the texture using the preloaded texture from the dictionary
+		key_legend_sprite.texture = key_animation_textures[key_number]
+	else:
+		print("Invalid key number:", key_number)
 	number_of_keys_this_room_label.text = str(GameState.number_of_keys_this_room)
 
 func set_number_of_potential_keys_this_room_label():
