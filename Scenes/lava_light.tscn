@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://djtx8hkmox51q"]
+[gd_scene load_steps=6 format=3 uid="uid://1yifr5kcskmo"]
 
-[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="1_7chul"]
+[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="1_7chul"]
 [ext_resource type="Texture2D" uid="uid://cl6ageahn0ldv" path="res://Assets/image/lava-light-texture.png" id="2_4vv2k"]
 
 [sub_resource type="Gradient" id="Gradient_2mtng"]

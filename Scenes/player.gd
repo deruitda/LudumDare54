@@ -177,16 +177,14 @@ func _on_time_in_sand_timer_timeout():
 		experience_sand_death()	
 
 
-func _on_sand_area_body_entered(body):
-	if !in_sand and !dead:
-		in_sand = true
-		$GruntsInSandAudio.play()
-		time_in_sand_timer.start()
+func _on_sand_area_area_entered(area):
+		if !in_sand and !dead:
+			in_sand = true
+			$GruntsInSandAudio.play()
+			time_in_sand_timer.start()
 
 
-func _on_sand_area_body_exited(body):
+func _on_sand_area_area_exited(area):
 	in_sand = false
 	$GruntsInSandAudio.stop()
 	time_in_sand_timer.stop()
-
-
