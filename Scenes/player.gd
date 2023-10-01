@@ -174,15 +174,14 @@ func pickup_key(key: Key):
 
 
 func _on_time_in_sand_timer_timeout():
-		experience_sand_death()	
-
+	experience_sand_death()	
 
 func _on_sand_area_area_entered(area):
-		if !in_sand and !dead:
-			in_sand = true
-			$GruntsInSandAudio.play()
-			time_in_sand_timer.start()
-
+	print('sand')
+	if !in_sand and !dead:
+		in_sand = true
+		$GruntsInSandAudio.play()
+		time_in_sand_timer.start()
 
 func _on_sand_area_area_exited(area):
 	in_sand = false
