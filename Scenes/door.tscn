@@ -1,11 +1,116 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjdwtvp7410wm"]
+[gd_scene load_steps=19 format=3 uid="uid://dyeh476d0sl7k"]
 
 [ext_resource type="Script" path="res://Scenes/door.gd" id="1_7rccf"]
-[ext_resource type="Texture2D" uid="uid://bfb0ln2sanlgk" path="res://Assets/door.png" id="1_bgvao"]
-[ext_resource type="AudioStream" uid="uid://b5olcnvn1q5na" path="res://Assets/Sounds/door_open.wav" id="3_d1dly"]
+[ext_resource type="AudioStream" path="res://Assets/Sounds/door_open.wav" id="3_d1dly"]
+[ext_resource type="Texture2D" path="res://Assets/image/door/door.png" id="3_ojat2"]
+[ext_resource type="Texture2D" path="res://Assets/image/door/door-1.png" id="4_cyumf"]
+[ext_resource type="Texture2D" path="res://Assets/image/door/door-tile-set.png" id="5_lbllt"]
+[ext_resource type="Texture2D" path="res://Assets/image/door/door-2.png" id="5_wg0o1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybd1i"]
 size = Vector2(64, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3n6b"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ku1a"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl35w"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7tih"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvmkv"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjb8b"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cod44"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i6dw"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(192, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5yty"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(0, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6oqx"]
+atlas = ExtResource("5_lbllt")
+region = Rect2(64, 64, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bpl6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ojat2")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cyumf")
+}],
+"loop": true,
+"name": &"one",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3n6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ku1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl35w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7tih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvmkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjb8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cod44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i6dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5yty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6oqx")
+}],
+"loop": false,
+"name": &"open",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wg0o1")
+}],
+"loop": true,
+"name": &"two",
+"speed": 1.0
+}]
 
 [node name="Door" type="Area2D"]
 scale = Vector2(2, 2)
@@ -15,10 +120,14 @@ script = ExtResource("1_7rccf")
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ybd1i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bgvao")
-
 [node name="DoorOpeningAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_d1dly")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bpl6i")
+animation = &"open"
+autoplay = "closed"
+frame = 7
+frame_progress = 0.611123
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
