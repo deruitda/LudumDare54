@@ -35,8 +35,6 @@ func set_number_of_keys_this_room():
 	if key_animation_textures.has(key_number):
 		# Set the texture using the preloaded texture from the dictionary
 		key_legend_sprite.texture = key_animation_textures[key_number]
-	else:
-		print("Invalid key number:", key_number)
 
 func set_total_number_of_deaths():
 	total_number_of_deaths_label.text = str(GameState.get_total_number_of_deaths())

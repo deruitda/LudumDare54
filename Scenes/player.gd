@@ -133,8 +133,6 @@ func _on_dash_timer_timeout():
 func die(animation_name: String):
 	if dead or GameState.level_started == false:
 		return
-	print('dead true')
-		
 	dead = true
 	GameState.die()
 	movement_direction = Vector2.ZERO
@@ -143,7 +141,6 @@ func die(animation_name: String):
 	sprite.play(animation_name)
 	await sprite.animation_finished
 	await GameState.refresh_scene()
-	print('dead false')
 	dead = false
 
 func experience_lava_death():
