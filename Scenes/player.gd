@@ -15,6 +15,7 @@ class_name Player
 var dashing = false
 var running = false
 var in_sand = false
+var dashing_while_in_lava = false
 var movement_direction = Vector2.ZERO
 
 var shape_query = PhysicsShapeQueryParameters2D.new()
@@ -122,6 +123,8 @@ func dash():
 
 func _on_dash_timer_timeout():
 	dashing = false
+	if dashing_while_in_lava:
+		die('death-lava')
 	set_speed()
 	if movement_direction != Vector2.ZERO:
 		footsteps_start()
@@ -142,7 +145,12 @@ func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap:
 		# is a danger area
 		die("death-lava")
+	elif dashing and body is TileMap:
+		dashing_while_in_lava = true
 
+func _on_danger_area_body_exited(body):
+	dashing_while_in_lava = false
+	
 func pickup_dash_gem(dash_gem: DashGem):
 	can_dash = true
 	$DashGlow.emitting = true
@@ -168,3 +176,5 @@ func _on_sand_area_body_entered(body):
 func _on_sand_area_body_exited(body):
 	in_sand = false
 	time_in_sand_timer.stop()
+
+

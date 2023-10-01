@@ -13,7 +13,7 @@
 size = Vector2(66.5398, 69.9808)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5vj"]
-size = Vector2(38.4615, 59.3269)
+size = Vector2(33.8461, 31.1538)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4hws"]
 atlas = ExtResource("6_efsjk")
@@ -265,7 +265,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5v46"]
-size = Vector2(38.4615, 30.7692)
+size = Vector2(33.8461, 30.7692)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 0)
@@ -287,7 +287,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="DangerAreaCollisionShape" type="CollisionShape2D" parent="DangerArea"]
-position = Vector2(7.69231, 2.64423)
+position = Vector2(5.38462, 16.3462)
 shape = SubResource("RectangleShape2D_xa5vj")
 
 [node name="DashGemAcquired" type="AudioStreamPlayer2D" parent="."]
@@ -322,12 +322,13 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SandArea"]
-position = Vector2(6.92308, 16.1538)
+position = Vector2(4.6154, 16.1538)
 shape = SubResource("RectangleShape2D_b5v46")
 debug_color = Color(0.815686, 0, 0.972549, 0.419608)
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
+[connection signal="body_exited" from="DangerArea" to="." method="_on_danger_area_body_exited"]
 [connection signal="timeout" from="TimeInSandTimer" to="." method="_on_time_in_sand_timer_timeout"]
 [connection signal="body_entered" from="SandArea" to="." method="_on_sand_area_body_entered"]
 [connection signal="body_exited" from="SandArea" to="." method="_on_sand_area_body_exited"]
