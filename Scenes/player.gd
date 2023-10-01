@@ -9,12 +9,12 @@ class_name Player
 @export var dash_speed = 1600
 @export var minimum_keys_needed = 3
 @export var maximum_number_of_keys = 5
-#@onready var anim = get_node("AnimationPlayer")
+#@onready var anim = get_nodde("AnimationPlayer")
 @onready var sprite = get_node("AnimatedSprite2D")
 
 var dashing = false
 var running = false
-var in_sand = false
+var in_sand = 0
 var dashing_while_in_lava = false
 var movement_direction = Vector2.ZERO
 
@@ -56,10 +56,13 @@ func get_current_speed() -> int:
 	
 	if dashing:
 		return dash_speed
-	elif in_sand:
+	elif is_in_sand():
 		return sand_speed
 	else:
 		return default_speed
+
+func is_in_sand():
+	return in_sand > 0
 
 func get_input():
 	
@@ -141,7 +144,6 @@ func die(animation_name: String):
 	sprite.play(animation_name)
 	await sprite.animation_finished
 	await GameState.refresh_scene()
-	dead = false
 
 func experience_lava_death():
 	$DyingInLavaAudio.play()
@@ -173,18 +175,25 @@ func pickup_dash_gem(dash_gem: DashGem):
 	
 func pickup_key(key: Key):
 	GameState.add_key(key)
-	$KeyAcquired.play()
+	if GameState.acquired_all_keys():
+		$AcquiredAllKeysAudio.play()
+	else:
+		$KeyAcquired.play()
 
 func _on_time_in_sand_timer_timeout():
-	experience_sand_death()	
+	
+	if !dead:
+		experience_sand_death()	
 
 func _on_sand_area_area_entered(area):
-	if !in_sand and !dead:
-		in_sand = true
-		$GruntsInSandAudio.play()
-		time_in_sand_timer.start()
+	if !dead:
+		if !is_in_sand():
+			$GruntsInSandAudio.play()
+			time_in_sand_timer.start()
+		in_sand = in_sand + 1
 
 func _on_sand_area_area_exited(area):
-	in_sand = false
-	$GruntsInSandAudio.stop()
-	time_in_sand_timer.stop()
+	in_sand = in_sand - 1
+	if !is_in_sand():
+		$GruntsInSandAudio.stop()
+		time_in_sand_timer.stop()

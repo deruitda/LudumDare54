@@ -1,6 +1,6 @@
 extends Node
 
-@export var sandbox = true
+@export var sandbox = false
 #@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
 @export var sandbox_scene = "res://Scenes/Levels/1-4.tscn"
 
@@ -13,10 +13,10 @@ var total_number_of_sand_deaths = 0
 var total_number_of_lava_deaths = 0
 
 var levels = [
-	 "res://Scenes/Levels/1-4.tscn",
 	"res://Scenes/Levels/1-1.tscn",
 	"res://Scenes/Levels/1-2.tscn",
 	"res://Scenes/Levels/1-3.tscn",
+	 "res://Scenes/Levels/1-4.tscn",
 	"res://Scenes/Levels/1-long-boy-level.tscn"
 ]
 
@@ -76,7 +76,7 @@ func get_total_number_of_deaths():
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
 	number_of_keys_this_room = 0
-	load_scene(currentLevel)
+	await load_scene(currentLevel)
 
 func end_game():
 	print("Congrats!")
@@ -92,3 +92,6 @@ func start_level():
 	
 func stop_level():
 	level_started = false
+
+func acquired_all_keys():
+	return number_of_keys_this_room == number_of_potential_keys_per_room

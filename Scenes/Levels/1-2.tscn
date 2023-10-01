@@ -166,7 +166,7 @@ position = Vector2(1714, 393)
 position = Vector2(1617, 880)
 
 [node name="Door" parent="." instance=ExtResource("6_c7t3f")]
-position = Vector2(230, 33)
+position = Vector2(568, 34)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.34902, 0.34902, 0.34902, 1)
