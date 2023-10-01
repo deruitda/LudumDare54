@@ -349,8 +349,8 @@ stream = ExtResource("12_2h2f1")
 stream = ExtResource("13_qjxx1")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
-[connection signal="area_entered" from="DangerArea" to="." method="_on_sand_area_area_entered"]
-[connection signal="area_exited" from="DangerArea" to="." method="_on_sand_area_area_exited"]
+[connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
+[connection signal="body_exited" from="DangerArea" to="." method="_on_danger_area_body_exited"]
 [connection signal="timeout" from="TimeInSandTimer" to="." method="_on_time_in_sand_timer_timeout"]
 [connection signal="area_entered" from="SandArea" to="." method="_on_sand_area_area_entered"]
 [connection signal="area_exited" from="SandArea" to="." method="_on_sand_area_area_exited"]
