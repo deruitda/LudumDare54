@@ -47,7 +47,9 @@ func _process(delta):
 		self.translate(get_vector() * delta * (close_speed_for_one_second / number_of_seconds_until_closed))
 
 func get_vector() -> Vector2:
+	# Define the speed for each direction
 	var directionSpeeds = {
+<<<<<<< HEAD
 		Direction.UP: Vector2(0, -10),
 		Direction.UP_RIGHT: Vector2(10, -10),
 		Direction.RIGHT: Vector2(10, 0),
@@ -56,8 +58,18 @@ func get_vector() -> Vector2:
 		Direction.DOWN_LEFT: Vector2(-10, 10),
 		Direction.LEFT: Vector2(-10, 0),
 		Direction.UP_LEFT: Vector2(-10, -10)
+=======
+		Direction.UP: Vector2(0, -1),
+		Direction.UP_RIGHT: Vector2(1, -1).normalized(),
+		Direction.RIGHT: Vector2(1, 0),
+		Direction.DOWN_RIGHT: Vector2(1, 1).normalized(),
+		Direction.DOWN: Vector2(0, 1),
+		Direction.DOWN_LEFT: Vector2(-1, 1).normalized(),
+		Direction.LEFT: Vector2(-1, 0),
+		Direction.UP_LEFT: Vector2(-1, -1).normalized()
+>>>>>>> andrew
 	}
-	return directionSpeeds[direction]
+	return directionSpeeds[direction] * 10
 
 func _on_delay_start_timer_timeout():
 	start_movement()
