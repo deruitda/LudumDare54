@@ -1,15 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyp2as6b7j3j7"]
+[gd_scene load_steps=8 format=3 uid="uid://b08a4r6dposke"]
 
-[ext_resource type="Script" path="res://Scenes/ClosingWalls/closing_walls.gd" id="1_v5te4"]
-[ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_4csa1"]
-[ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="3_yum3r"]
+[ext_resource type="Script" path="res://Scenes/ClosingWalls/closing_walls.gd" id="1_4xv43"]
+[ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_ebs8s"]
+[ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="3_tvhv6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a5enf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1rep3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xpe6n"]
-texture = ExtResource("2_4csa1")
+texture = ExtResource("2_ebs8s")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -56,7 +56,7 @@ sources/1 = SubResource("TileSetAtlasSource_xpe6n")
 
 [node name="SandWall" type="Node2D"]
 position = Vector2(32, -3)
-script = ExtResource("1_v5te4")
+script = ExtResource("1_4xv43")
 
 [node name="TileMap" type="TileMap" parent="."]
 material = SubResource("CanvasItemMaterial_a5enf")
@@ -74,7 +74,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
 [node name="SandWallAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_yum3r")
+stream = ExtResource("3_tvhv6")
 
 [node name="DelayStartTimer" type="Timer" parent="."]
 

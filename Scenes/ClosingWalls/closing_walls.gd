@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var delay_in_seconds = 1
+@export var delay_in_seconds = 0
 @export var number_of_seconds_until_closed = 15
 @export var direction = Vector2(0, -10)
 var close_speed_for_one_second = 130
@@ -22,9 +22,15 @@ func stop_movement():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if level_started == false and GameState.level_started == true:
+		
 		level_started = true
-		$DelayStartTimer.wait_time = delay_in_seconds
-		$DelayStartTimer.start()
+		if delay_in_seconds == 0:
+			print('delay in seconds')
+			start_movement()
+		else:
+			print(delay_in_seconds)
+			$DelayStartTimer.wait_time = delay_in_seconds
+			$DelayStartTimer.start()
 	
 	if moving:
 		self.translate(direction * delta * (close_speed_for_one_second / number_of_seconds_until_closed))
