@@ -207,15 +207,10 @@ position = Vector2(1893, 1302)
 scale = Vector2(1, 3.115)
 number_of_seconds_until_closed = 7
 
-[node name="SandWall4" parent="." instance=ExtResource("7_wrhyg")]
-position = Vector2(-2040, -118)
-delay_in_seconds = 3
-number_of_seconds_until_closed = 4
-direction = 2
-
 [node name="SandWall5" parent="." instance=ExtResource("7_wrhyg")]
-position = Vector2(-12.9999, 161)
+position = Vector2(32, 17)
 rotation = 1.5516
+scale = Vector2(0.99, 5.63)
 delay_in_seconds = 3
 number_of_seconds_until_closed = 4
 direction = 2
