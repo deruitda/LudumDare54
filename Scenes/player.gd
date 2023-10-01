@@ -139,7 +139,7 @@ func die(animation_name: String):
 	sprite.stop()
 	sprite.play(animation_name)
 	await sprite.animation_finished
-	await GameState.refresh_scene()
+	await GameState.die()
 	dead = false
 
 func experience_lava_death():

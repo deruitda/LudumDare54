@@ -6,6 +6,10 @@ extends Node
 
 var total_number_of_keys = 0
 var number_of_keys_this_room = 0
+var total_number_of_potential_keys;
+var number_of_potential_keys_per_room = 5
+
+var total_number_of_deaths = 0
 
 var levels = [
 	"res://Scenes/Levels/1-1.tscn",
@@ -18,12 +22,17 @@ var totalTime = 15.0
 var currentLevelTimeRemaining = totalTime
 var level_started = false
 
+func set_total_number_of_potential_keys():
+	total_number_of_potential_keys = levels.size() * number_of_keys_this_room
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_total_number_of_potential_keys()
 	load_next_level()
 
 func load_scene(scene: String):
 	SceneTransition.change_scene(scene)
+
 
 func load_next_level():
 	level_started = false
@@ -37,6 +46,10 @@ func load_next_level():
 			number_of_keys_this_room = 0
 		else:
 			end_game()
+
+func die():
+	total_number_of_deaths = total_number_of_deaths + 1
+	await refresh_scene()
 
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
