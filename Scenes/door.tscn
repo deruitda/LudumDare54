@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://dyeh476d0sl7k"]
 
 [ext_resource type="Script" path="res://Scenes/door.gd" id="1_7rccf"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/door_open.wav" id="3_d1dly"]
-[ext_resource type="Texture2D" path="res://Assets/image/door/door.png" id="3_ojat2"]
-[ext_resource type="Texture2D" path="res://Assets/image/door/door-1.png" id="4_cyumf"]
-[ext_resource type="Texture2D" path="res://Assets/image/door/door-tile-set.png" id="5_lbllt"]
-[ext_resource type="Texture2D" path="res://Assets/image/door/door-2.png" id="5_wg0o1"]
+[ext_resource type="AudioStream" uid="uid://b5olcnvn1q5na" path="res://Assets/Sounds/door_open.wav" id="3_d1dly"]
+[ext_resource type="Texture2D" uid="uid://s4q0qr0mluln" path="res://Assets/image/door/door.png" id="3_ojat2"]
+[ext_resource type="Texture2D" uid="uid://2q68838dxsy2" path="res://Assets/image/door/door-1.png" id="4_cyumf"]
+[ext_resource type="Texture2D" uid="uid://cpftrejak602w" path="res://Assets/image/door/door-tile-set.png" id="5_lbllt"]
+[ext_resource type="Texture2D" uid="uid://bepiq5gl2s5e8" path="res://Assets/image/door/door-2.png" id="5_wg0o1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybd1i"]
 size = Vector2(64, 39)
@@ -125,9 +125,7 @@ stream = ExtResource("3_d1dly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bpl6i")
-animation = &"open"
+animation = &"two"
 autoplay = "closed"
-frame = 7
-frame_progress = 0.611123
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
