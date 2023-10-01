@@ -1,11 +1,8 @@
 extends CanvasLayer
 
-@onready var total_number_of_keys_label = $TotalNumberOfKeys/TotalNumberOfKeysLabel
-@onready var total_number_of_potential_keys_label = $TotalNumberOfKeys/TotalNumberOfPotentialKeysLabel
-@onready var number_of_keys_this_room_label = $NumberOfKeysThisRoom/NumberOfKeysThisRoomLabel
+@onready var total_number_of_keys_label = $TotalNumberOfKeysLabel
 @onready var total_time_this_room_label = $TotalTimeThisRoomLabel
 @onready var total_time_label = $TotalTimeLabel
-@onready var number_of_potential_keys_this_room_label = $NumberOfKeysThisRoom/NumberOfPotentialKeysThisRoomLabel
 @onready var total_number_of_deaths_label = $TotalNumberOfDeathsLabel
 @onready var key_legend_sprite = $KeyLegendSprite
 
@@ -21,18 +18,13 @@ var key_animation_textures = {
 func _process(delta):
 	set_total_number_of_keys()
 	set_number_of_keys_this_room()
-	set_total_number_of_potential_keys()
-	set_number_of_keys_this_room()
 	set_total_number_of_deaths()
 	set_total_time_label()
 	set_total_time_this_room_label()
 	
 	
 func set_total_number_of_keys():
-	total_number_of_keys_label.text = str(GameState.total_number_of_keys)
-	
-func set_total_number_of_potential_keys():
-	total_number_of_potential_keys_label.text = str(GameState.total_number_of_potential_keys)
+	total_number_of_keys_label.text = str(GameState.total_number_of_keys) + "/" + str(GameState.total_number_of_potential_keys)
 	
 func set_number_of_keys_this_room():
 	
@@ -46,10 +38,6 @@ func set_number_of_keys_this_room():
 		key_legend_sprite.texture = key_animation_textures[key_number]
 	else:
 		print("Invalid key number:", key_number)
-	number_of_keys_this_room_label.text = str(GameState.number_of_keys_this_room)
-
-func set_number_of_potential_keys_this_room_label():
-	number_of_potential_keys_this_room_label = str(GameState.number_of_potential_keys_per_room)
 
 func set_total_number_of_deaths():
 	total_number_of_deaths_label.text = str(GameState.get_total_number_of_deaths())
