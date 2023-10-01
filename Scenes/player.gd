@@ -123,8 +123,9 @@ func dash():
 
 func _on_dash_timer_timeout():
 	dashing = false
-	if dashing_while_in_lava:
-		die('death-lava')
+	if dashing_while_in_lava and !dead:
+		dashing_while_in_lava = false
+		experience_lava_death()
 	set_speed()
 	if movement_direction != Vector2.ZERO:
 		footsteps_start()
@@ -138,13 +139,22 @@ func die(animation_name: String):
 	sprite.stop()
 	sprite.play(animation_name)
 	await sprite.animation_finished
-	GameState.refresh_scene()
+	await GameState.refresh_scene()
 	dead = false
 
+func experience_lava_death():
+	$DyingInLavaAudio.play()
+	$LavaHissingAudio.play()
+	die("death-lava")
+	
+func experience_sand_death():
+	$DyingInSandAudio.play()
+	die("death-lava")
+
 func _on_danger_area_body_entered(body):
-	if not dashing and body is TileMap:
+	if not dashing and body is TileMap and !dead:
+		experience_lava_death()
 		# is a danger area
-		die("death-lava")
 	elif dashing and body is TileMap:
 		dashing_while_in_lava = true
 
@@ -164,17 +174,19 @@ func pickup_key(key: Key):
 
 
 func _on_time_in_sand_timer_timeout():
-	die("death-lava")
+		experience_sand_death()	
 
 
 func _on_sand_area_body_entered(body):
-	if !in_sand:
+	if !in_sand and !dead:
 		in_sand = true
+		$GruntsInSandAudio.play()
 		time_in_sand_timer.start()
 
 
 func _on_sand_area_body_exited(body):
 	in_sand = false
+	$GruntsInSandAudio.stop()
 	time_in_sand_timer.stop()
 
 
