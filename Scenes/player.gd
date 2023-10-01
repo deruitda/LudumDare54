@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var speed = 400
+@export var default_speed = 400
+@export var sand_speed = 200
+
 @export var can_dash = false
 @export var dash_speed = 800
 @export var minimum_keys_needed = 3
@@ -12,6 +14,7 @@ class_name Player
 
 var dashing = false
 var running = false
+var in_sand = false
 var movement_direction = Vector2.ZERO
 
 var shape_query = PhysicsShapeQueryParameters2D.new()
@@ -22,6 +25,8 @@ var dead = false
 #onready variables
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var dash_timer = $DashTimer
+@onready var time_in_sand_timer = $TimeInSandTimer
+
 
 func _ready():
 	shape_query.shape = collision_shape_2d.shape
@@ -32,11 +37,8 @@ func _physics_process(delta):
 	get_input()
 	if GameState.level_started == false:
 		return
-	if dashing:
-		velocity = movement_direction * dash_speed
-	else:
-		velocity = movement_direction * speed
 	
+	set_speed()
 	
 	if former_direction != Vector2.ZERO and movement_direction == Vector2.ZERO:
 		stop_running()
@@ -44,8 +46,19 @@ func _physics_process(delta):
 		start_running()
 	
 	move_and_slide()
+
+func set_speed():
+	var current_speed = get_current_speed()
+	velocity = movement_direction * current_speed
+
+func get_current_speed() -> int:
 	
-	
+	if dashing:
+		return dash_speed
+	elif in_sand:
+		return sand_speed
+	else:
+		return default_speed
 
 func get_input():
 	
@@ -109,24 +122,27 @@ func dash():
 
 func _on_dash_timer_timeout():
 	dashing = false
-	velocity = movement_direction * speed
+	set_speed()
 	if movement_direction != Vector2.ZERO:
 		footsteps_start()
 	
-func die():
+func die(animation_name: String):
+	if dead:
+		return
 	dead = true
 	movement_direction = Vector2.ZERO
 	stop_running()
 	sprite.stop()
-	sprite.play("death-lava")
+	sprite.play(animation_name)
 	await sprite.animation_finished
 	GameState.refresh_scene()
 	dead = false
 
 func _on_danger_area_body_entered(body):
+	print('danger area')
 	if not dashing and body is TileMap:
 		# is a danger area
-		die()
+		die("death-lava")
 
 func pickup_dash_gem(dash_gem: DashGem):
 	can_dash = true
@@ -138,3 +154,20 @@ func pickup_key(key: Key):
 	GameState.add_key(key)
 	$KeyAcquired.play()
 
+
+
+func _on_time_in_sand_timer_timeout():
+	print('timeout')
+	die("death-lava")
+
+
+func _on_sand_area_body_entered(body):
+	print('entered sand')
+	if !in_sand:
+		in_sand = true
+		time_in_sand_timer.start()
+
+
+func _on_sand_area_body_exited(body):
+	in_sand = false
+	time_in_sand_timer.stop()
