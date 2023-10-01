@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2q68838dxsy2" path="res://Assets/image/door/door-1.png" id="4_cyumf"]
 [ext_resource type="Texture2D" uid="uid://cpftrejak602w" path="res://Assets/image/door/door-tile-set.png" id="5_lbllt"]
 [ext_resource type="Texture2D" uid="uid://bepiq5gl2s5e8" path="res://Assets/image/door/door-2.png" id="5_wg0o1"]
-[ext_resource type="AudioStream" uid="uid://xaq4vl5g7hvk" path="res://Assets/Sounds/potential_door_opening_sound.wav" id="7_mgthn"]
+[ext_resource type="AudioStream" uid="uid://xaq4vl5g7hvk" path="res://Assets/Sounds/door_opening_sound.wav" id="7_5ja2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybd1i"]
 size = Vector2(64, 39)
@@ -130,6 +130,6 @@ animation = &"two"
 autoplay = "closed"
 
 [node name="DoorOpeningAchievementSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_mgthn")
+stream = ExtResource("7_5ja2x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dde6e2n5uoc8m"
-path="res://.godot/imported/dash_gem_acquire.wav-ada109b02da55565951329cead31bef4.sample"
+path="res://.godot/imported/key_acquire.wav-c923fd49e520cb7942bd39bc2be88462.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/dash_gem_acquire.wav"
-dest_files=["res://.godot/imported/dash_gem_acquire.wav-ada109b02da55565951329cead31bef4.sample"]
+source_file="res://Assets/Sounds/key_acquire.wav"
+dest_files=["res://.godot/imported/key_acquire.wav-c923fd49e520cb7942bd39bc2be88462.sample"]
 
 [params]
 

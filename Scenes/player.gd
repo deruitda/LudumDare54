@@ -164,7 +164,8 @@ func _on_danger_area_body_exited(body):
 func pickup_dash_gem(dash_gem: DashGem):
 	has_dash_gem = true
 	$DashGlow.emitting = true
-	$DashGemAcquired.play()
+	$DashGemAcquiredSound.play()
+	$DashGemAcquiredSound2.play()
 	$DashGemHoldingHum.play()
 	
 func pickup_key(key: Key):

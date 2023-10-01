@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/dash_gem.gd" id="1_1vewm"]
 [ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="2_ypjwp"]
-[ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/potential_dash_gem_sound.wav" id="3_no4sy"]
+[ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/dash_gem_acquired_sound.wav" id="3_22a6e"]
 [ext_resource type="PackedScene" uid="uid://w3pxm30hrxu3" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
 [ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="5_phj40"]
 
@@ -25,7 +25,7 @@ scale = Vector2(0.601142, 0.545897)
 texture = ExtResource("2_ypjwp")
 
 [node name="AcquiredAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_no4sy")
+stream = ExtResource("3_22a6e")
 
 [node name="DashGlow" parent="." instance=ExtResource("4_17u0y")]
 scale_amount_min = 2.0

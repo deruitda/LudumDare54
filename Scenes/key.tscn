@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dlmv55by6uvj5" path="res://Assets/key-1.png" id="2_ko7n7"]
 [ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="3_7fbnp"]
 [ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="4_sko4f"]
-[ext_resource type="AudioStream" uid="uid://dde6e2n5uoc8m" path="res://Assets/Sounds/dash_gem_acquire.wav" id="5_r6617"]
+[ext_resource type="AudioStream" uid="uid://dde6e2n5uoc8m" path="res://Assets/Sounds/key_acquire.wav" id="5_3b7oy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(45.5, 46.5)
@@ -33,6 +33,6 @@ scale = Vector2(0.35, 0.35)
 color = Color(0.953125, 0.820313, 0.234375, 1)
 
 [node name="KeyAcquiredAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_r6617")
+stream = ExtResource("5_3b7oy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
