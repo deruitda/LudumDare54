@@ -208,11 +208,7 @@ position = Vector2(346, 50)
 
 [node name="ClosingWalls" parent="." instance=ExtResource("3_4rh0d")]
 position = Vector2(2308, 1282)
-<<<<<<< HEAD
-number_of_seconds_until_closed = 8
-=======
 number_of_seconds_until_closed = 6
->>>>>>> andrew
 direction = 7
 
 [node name="ClosingWalls3" parent="." instance=ExtResource("3_4rh0d")]
@@ -222,9 +218,5 @@ number_of_seconds_until_closed = 4
 
 [node name="ClosingWalls2" parent="." instance=ExtResource("3_4rh0d")]
 position = Vector2(2332, -1243)
-<<<<<<< HEAD
-number_of_seconds_until_closed = 8
-=======
 number_of_seconds_until_closed = 6
->>>>>>> andrew
 direction = 5

@@ -49,16 +49,6 @@ func _process(delta):
 func get_vector() -> Vector2:
 	# Define the speed for each direction
 	var directionSpeeds = {
-<<<<<<< HEAD
-		Direction.UP: Vector2(0, -10),
-		Direction.UP_RIGHT: Vector2(10, -10),
-		Direction.RIGHT: Vector2(10, 0),
-		Direction.DOWN_RIGHT: Vector2(10, 10),
-		Direction.DOWN: Vector2(0, 10),
-		Direction.DOWN_LEFT: Vector2(-10, 10),
-		Direction.LEFT: Vector2(-10, 0),
-		Direction.UP_LEFT: Vector2(-10, -10)
-=======
 		Direction.UP: Vector2(0, -1),
 		Direction.UP_RIGHT: Vector2(1, -1).normalized(),
 		Direction.RIGHT: Vector2(1, 0),
@@ -67,7 +57,6 @@ func get_vector() -> Vector2:
 		Direction.DOWN_LEFT: Vector2(-1, 1).normalized(),
 		Direction.LEFT: Vector2(-1, 0),
 		Direction.UP_LEFT: Vector2(-1, -1).normalized()
->>>>>>> andrew
 	}
 	return directionSpeeds[direction] * 10
 
