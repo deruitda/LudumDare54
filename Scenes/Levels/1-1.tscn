@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_carby"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_jbdlw"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_kcfa7"]
-[ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="6_sddwc"]
+[ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_sddwc"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_6u2lo"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="7_wrhyg"]
 
@@ -139,14 +139,23 @@ position = Vector2(933, 790)
 [node name="DashGem" parent="." instance=ExtResource("5_kcfa7")]
 position = Vector2(1429, 1108)
 
+[node name="DashGem6" parent="." instance=ExtResource("5_kcfa7")]
+position = Vector2(1531, 251)
+
+[node name="DashGem5" parent="." instance=ExtResource("5_kcfa7")]
+position = Vector2(905, 1108)
+
 [node name="DashGem2" parent="." instance=ExtResource("5_kcfa7")]
 position = Vector2(422, 871)
 
 [node name="DashGem3" parent="." instance=ExtResource("5_kcfa7")]
-position = Vector2(597, 288)
+position = Vector2(495, 266)
 
 [node name="DashGem4" parent="." instance=ExtResource("5_kcfa7")]
-position = Vector2(1165, 681)
+position = Vector2(1543, 589)
+
+[node name="DashGem7" parent="." instance=ExtResource("5_kcfa7")]
+position = Vector2(1070, 735)
 
 [node name="Door" parent="." instance=ExtResource("6_sddwc")]
 position = Vector2(1152, 31)
@@ -158,13 +167,27 @@ position = Vector2(2036, 1142)
 color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [node name="SandWall" parent="." instance=ExtResource("7_wrhyg")]
-position = Vector2(1890, 1331)
-number_of_seconds_until_closed = 8
+position = Vector2(1893, 1302)
+number_of_seconds_until_closed = 7
+
+[node name="SandWall4" parent="." instance=ExtResource("7_wrhyg")]
+position = Vector2(-1079, 20)
+delay_in_seconds = 3
+number_of_seconds_until_closed = 4
+direction = 2
+
+[node name="SandWall5" parent="." instance=ExtResource("7_wrhyg")]
+position = Vector2(-1076, 366)
+delay_in_seconds = 3
+number_of_seconds_until_closed = 4
+direction = 2
 
 [node name="SandWall2" parent="." instance=ExtResource("7_wrhyg")]
-position = Vector2(1197, 1334)
-delay_in_seconds = 2
+position = Vector2(1172, 1296)
+delay_in_seconds = 1
+number_of_seconds_until_closed = 7
 
 [node name="SandWall3" parent="." instance=ExtResource("7_wrhyg")]
-position = Vector2(92, 1359)
-delay_in_seconds = 4
+position = Vector2(51, 1302)
+delay_in_seconds = 2
+number_of_seconds_until_closed = 7

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/dash_gem.gd" id="1_1vewm"]
 [ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="2_ypjwp"]
 [ext_resource type="AudioStream" uid="uid://bxnanm0sgtvwh" path="res://Assets/Sounds/item_pickup_2.wav" id="3_sojy5"]
-[ext_resource type="PackedScene" uid="uid://tnkxrqcqhla1" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
-[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="5_phj40"]
+[ext_resource type="PackedScene" uid="uid://w3pxm30hrxu3" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
+[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="5_phj40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(18, 12)

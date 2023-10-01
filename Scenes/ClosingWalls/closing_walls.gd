@@ -22,7 +22,6 @@ var level_started = false
 
 
 func start_movement():
-	print('start movement')
 	moving = true
 	sand_wall_audio.play()
 	
@@ -37,7 +36,6 @@ func _process(delta):
 		
 		level_started = true
 		if delay_in_seconds == 0:
-			print('delay in seconds')
 			start_movement()
 		else:
 			print(delay_in_seconds)
@@ -51,13 +49,13 @@ func _process(delta):
 func get_vector() -> Vector2:
 	var directionSpeeds = {
 		Direction.UP: Vector2(0, -10),
-		Direction.UP_RIGHT: Vector2(10, -10).normalized(),
+		Direction.UP_RIGHT: Vector2(10, -10),
 		Direction.RIGHT: Vector2(10, 0),
-		Direction.DOWN_RIGHT: Vector2(10, 10).normalized(),
+		Direction.DOWN_RIGHT: Vector2(10, 10),
 		Direction.DOWN: Vector2(0, 10),
-		Direction.DOWN_LEFT: Vector2(-10, 10).normalized(),
+		Direction.DOWN_LEFT: Vector2(-10, 10),
 		Direction.LEFT: Vector2(-10, 0),
-		Direction.UP_LEFT: Vector2(-10, -10).normalized()
+		Direction.UP_LEFT: Vector2(-10, -10)
 	}
 	return directionSpeeds[direction]
 

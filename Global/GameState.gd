@@ -1,6 +1,6 @@
 extends Node
 
-@export var sandbox = true
+@export var sandbox = false
 #@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
 @export var sandbox_scene = "res://Scenes/Levels/1-2.tscn"
 
@@ -9,6 +9,7 @@ var number_of_keys_this_room = 0
 
 var levels = [
 	"res://Scenes/Levels/1-1.tscn",
+	"res://Scenes/Levels/1-2.tscn",
 	"res://Scenes/Levels/1-long-boy-level.tscn"
 ]
 
