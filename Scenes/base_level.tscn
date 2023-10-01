@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dblcnvprv7pcy" path="res://Scenes/closing_walls.tscn" id="3_2qgme"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_tc8il"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_v4074"]
-[ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="6_xcj1w"]
+[ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_xcj1w"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_7iwi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
