@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_73b2h"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_carby"]
-[ext_resource type="PackedScene" uid="uid://dblcnvprv7pcy" path="res://Scenes/ClosingWalls/sand_wall_vertical_half_size.tscn" id="3_d2cxb"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_jbdlw"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_kcfa7"]
 [ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="6_sddwc"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_6u2lo"]
+[ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="7_wrhyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -157,16 +157,14 @@ position = Vector2(2036, 1142)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.34902, 0.34902, 0.34902, 1)
 
-[node name="LeftSandWall" parent="." instance=ExtResource("3_d2cxb")]
-position = Vector2(-112, 1243)
-delay_in_seconds = 4
-number_of_seconds_until_closed = 10
+[node name="SandWall" parent="." instance=ExtResource("7_wrhyg")]
+position = Vector2(1890, 1331)
+number_of_seconds_until_closed = 8
 
-[node name="CenterSandWall" parent="." instance=ExtResource("3_d2cxb")]
-position = Vector2(1059, 1245)
+[node name="SandWall2" parent="." instance=ExtResource("7_wrhyg")]
+position = Vector2(1197, 1334)
 delay_in_seconds = 2
-number_of_seconds_until_closed = 10
 
-[node name="RightSandWall" parent="." instance=ExtResource("3_d2cxb")]
-position = Vector2(1810, 1250)
-number_of_seconds_until_closed = 10
+[node name="SandWall3" parent="." instance=ExtResource("7_wrhyg")]
+position = Vector2(92, 1359)
+delay_in_seconds = 4
