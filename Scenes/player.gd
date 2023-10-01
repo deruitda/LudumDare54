@@ -133,22 +133,28 @@ func _on_dash_timer_timeout():
 func die(animation_name: String):
 	if dead or GameState.level_started == false:
 		return
+	print('dead true')
+		
 	dead = true
+	GameState.die()
 	movement_direction = Vector2.ZERO
 	stop_running()
 	sprite.stop()
 	sprite.play(animation_name)
 	await sprite.animation_finished
-	await GameState.die()
+	await GameState.refresh_scene()
+	print('dead false')
 	dead = false
 
 func experience_lava_death():
 	$DyingInLavaAudio.play()
 	$LavaHissingAudio.play()
+	GameState.record_lava_death()
 	die("death-lava")
 	
 func experience_sand_death():
 	$DyingInSandAudio.play()
+	GameState.record_sand_death()
 	die("death-sand")
 
 func _on_danger_area_body_entered(body):
@@ -176,7 +182,6 @@ func _on_time_in_sand_timer_timeout():
 	experience_sand_death()	
 
 func _on_sand_area_area_entered(area):
-	print('sand')
 	if !in_sand and !dead:
 		in_sand = true
 		$GruntsInSandAudio.play()

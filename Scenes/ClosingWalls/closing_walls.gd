@@ -38,7 +38,6 @@ func _process(delta):
 		if delay_in_seconds == 0:
 			start_movement()
 		else:
-			print(delay_in_seconds)
 			$DelayStartTimer.wait_time = delay_in_seconds
 			$DelayStartTimer.start()
 	

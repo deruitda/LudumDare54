@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_4poeb"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_c7t3f"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_7qx3a"]
-[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="8_ffc3p"]
-[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="9_v0ew4"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="8_ffc3p"]
+[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="9_v0ew4"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="9_x6150"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
