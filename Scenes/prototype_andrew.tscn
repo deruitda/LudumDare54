@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ph53i2f6uxdj"]
+[gd_scene load_steps=13 format=3 uid="uid://ph53i2f6uxdj"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_ll0fm"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_iyr35"]
@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://Scenes/Spawn.gd" id="4_ipw7y"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_u7avs"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="6_nmp6v"]
-[ext_resource type="PackedScene" uid="uid://cjdwtvp7410wm" path="res://Scenes/door.tscn" id="7_5457b"]
-[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="8_pscrt"]
+[ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="7_5457b"]
+[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="8_pscrt"]
+[ext_resource type="PackedScene" uid="uid://1yifr5kcskmo" path="res://Scenes/lava_light.tscn" id="9_i5sfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -113,7 +114,7 @@ sources/0 = SubResource("TileSetAtlasSource_14il4")
 [node name="BaseLevel" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(823, 460)
+position = Vector2(789, 469)
 zoom = Vector2(0.7, 0.7)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -175,7 +176,7 @@ flip_h = true
 position = Vector2(494, 13)
 
 [node name="Torch5" parent="Torches" instance=ExtResource("8_pscrt")]
-position = Vector2(595, 620)
+position = Vector2(596, 626)
 flip_h = true
 flip_v = true
 
@@ -196,3 +197,11 @@ flip_h = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[node name="Lava Light2" parent="." instance=ExtResource("9_i5sfm")]
+position = Vector2(479, 360)
+scale = Vector2(1.266, 4.364)
+
+[node name="Lava Light" parent="." instance=ExtResource("9_i5sfm")]
+position = Vector2(717, 348)
+scale = Vector2(1.125, 5.095)
