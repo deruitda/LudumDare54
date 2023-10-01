@@ -30,6 +30,8 @@ func _ready():
 func _physics_process(delta):
 	var former_direction = movement_direction
 	get_input()
+	if GameState.level_started == false:
+		return
 	if dashing:
 		velocity = movement_direction * dash_speed
 	else:
