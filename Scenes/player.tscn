@@ -306,7 +306,6 @@ stream = ExtResource("5_u0qoc")
 
 [node name="DashGemHoldingHum" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ugea4")
-volume_db = -9.215
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.964, 1)
@@ -318,6 +317,7 @@ emitting = false
 
 [node name="FootstepsAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mf5ny")
+volume_db = -3.656
 
 [node name="TimeInSandTimer" type="Timer" parent="."]
 wait_time = 2.167
