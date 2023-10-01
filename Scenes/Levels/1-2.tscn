@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://c422dp4rate6"]
+[gd_scene load_steps=13 format=3 uid="uid://c422dp4rate6"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_q0lig"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_83e1v"]
-[ext_resource type="PackedScene" uid="uid://dblcnvprv7pcy" path="res://Scenes/ClosingWalls/sand_wall_vertical_half_size.tscn" id="3_4rh0d"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_mw8m2"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_4poeb"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_c7t3f"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_7qx3a"]
-[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="8_ffc3p"]
+[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="8_ffc3p"]
+[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="9_v0ew4"]
+[ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="9_x6150"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -167,56 +168,74 @@ position = Vector2(1617, 880)
 [node name="Door" parent="." instance=ExtResource("6_c7t3f")]
 position = Vector2(230, 33)
 
-[node name="Player" parent="." instance=ExtResource("7_7qx3a")]
-position = Vector2(2135, 1174)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [node name="Torch" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(537, 1232)
 
 [node name="Torch2" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(92, 847)
 
 [node name="Torch3" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(88, 275)
 
 [node name="Torch4" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(732, 54)
 
 [node name="Torch5" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(1219, 80)
 
 [node name="Torch6" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(1168, 1241)
 
 [node name="Torch7" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(1715, 80)
 
 [node name="Torch8" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(1728, 1241)
 
 [node name="Torch9" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(2219, 368)
 
 [node name="Torch10" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(2236, 965)
 
 [node name="Torch11" parent="." instance=ExtResource("8_ffc3p")]
+visible = false
 position = Vector2(346, 50)
 
-[node name="ClosingWalls" parent="." instance=ExtResource("3_4rh0d")]
-position = Vector2(2308, 1282)
+[node name="Lava" parent="." instance=ExtResource("9_v0ew4")]
+position = Vector2(4, 1.00006)
+scale = Vector2(1.525, 1.425)
+
+[node name="Player" parent="." instance=ExtResource("7_7qx3a")]
+position = Vector2(2127, 1165)
+
+[node name="SandWall" parent="." instance=ExtResource("9_x6150")]
+position = Vector2(2322, 1303)
+scale = Vector2(1.965, 4.04)
 number_of_seconds_until_closed = 6
 direction = 7
 
-[node name="ClosingWalls3" parent="." instance=ExtResource("3_4rh0d")]
-position = Vector2(27, 1307)
-delay_in_seconds = 4
-number_of_seconds_until_closed = 4
-
-[node name="ClosingWalls2" parent="." instance=ExtResource("3_4rh0d")]
-position = Vector2(2332, -1243)
+[node name="SandWall2" parent="." instance=ExtResource("9_x6150")]
+position = Vector2(2398, 32.9999)
+scale = Vector2(3.13, -4.945)
 number_of_seconds_until_closed = 6
 direction = 5
+
+[node name="SandWall3" parent="." instance=ExtResource("9_x6150")]
+position = Vector2(36, 1324)
+scale = Vector2(1.28, 4.625)
+delay_in_seconds = 4
+number_of_seconds_until_closed = 4

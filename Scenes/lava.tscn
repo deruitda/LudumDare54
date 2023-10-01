@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dub13f5qf8eym"]
+[gd_scene load_steps=48 format=3 uid="uid://dub13f5qf8eym"]
 
 [ext_resource type="Texture2D" uid="uid://bns5ga0287lg4" path="res://Assets/image/lava-glow-anim-raw/lava-anim-1.png" id="1_ekqii"]
 [ext_resource type="Texture2D" uid="uid://d0fohv5vrnn0m" path="res://Assets/image/lava-glow-anim-raw/lava-anim-2.png" id="2_kv1ah"]
@@ -198,20 +198,27 @@ color_ramp = SubResource("GradientTexture1D_jgh8u")
 turbulence_noise_strength = 0.2
 turbulence_noise_scale = 0.13
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcsjw"]
+size = Vector2(1513, 927)
+
 [node name="Lava" type="Node2D"]
+z_index = -1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(751, 458.5)
 scale = Vector2(1.67411, 1.50164)
 sprite_frames = SubResource("SpriteFrames_k0ef6")
 autoplay = "default"
-frame_progress = 0.490839
+frame_progress = 0.629915
 
 [node name="FlickeringLight" parent="." instance=ExtResource("42_oh5p5")]
-position = Vector2(806, 479)
-scale = Vector2(5444.66, 3375.84)
+z_index = -1
+position = Vector2(757.427, 459.068)
+scale = Vector2(7359.83, 4750.42)
 color = Color(1, 0.0862745, 0.0862745, 1)
-energy = 0.75
+energy = 14.83
+range_z_min = -1
+range_z_max = -1
 texture = ExtResource("43_ot43a")
 texture_scale = 0.01
 height = 32.0
@@ -227,3 +234,11 @@ randomness = 0.22
 trail_enabled = true
 trail_lifetime = 0.1
 trail_sections = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(744, 461)
+shape = SubResource("RectangleShape2D_jcsjw")
