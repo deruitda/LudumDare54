@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=12 format=3 uid="uid://bd5mqpjvv8gj2"]
-=======
 [gd_scene load_steps=12 format=3 uid="uid://c422dp4rate6"]
->>>>>>> andrew
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_q0lig"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_83e1v"]
