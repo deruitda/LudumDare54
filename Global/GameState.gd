@@ -19,9 +19,20 @@ var levels = [
 ]
 
 var currentLevel;
-var totalTime = 15.0
-var currentLevelTimeRemaining = totalTime
 var level_started = false
+
+var total_time_elapsed_in_milliseconds = 0
+var time_elapsed_this_room_in_milliseconds = 0
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	set_time(delta)
+	
+func set_time(delta):
+	if level_started:
+		var delta_in_milliseconds = delta * 1000
+		total_time_elapsed_in_milliseconds = total_time_elapsed_in_milliseconds + delta_in_milliseconds
+		time_elapsed_this_room_in_milliseconds = time_elapsed_this_room_in_milliseconds + delta_in_milliseconds
 
 func set_total_number_of_potential_keys():
 	print(levels.size())
@@ -56,8 +67,8 @@ func record_lava_death():
 	total_number_of_lava_deaths = total_number_of_lava_deaths + 1
 	
 func die():
-	await refresh_scene()
-	
+	stop_level()
+
 func get_total_number_of_deaths():
 	return total_number_of_sand_deaths + total_number_of_lava_deaths
 
@@ -69,15 +80,13 @@ func refresh_scene():
 func end_game():
 	print("Congrats!")
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	currentLevelTimeRemaining -= delta
 
 func add_key(key: Key):
 	total_number_of_keys = total_number_of_keys + key.value
 	number_of_keys_this_room = number_of_keys_this_room + key.value
 
 func start_level():
+	time_elapsed_this_room_in_milliseconds = 0	
 	level_started = true
 	
 func stop_level():

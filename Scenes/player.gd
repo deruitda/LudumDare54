@@ -136,12 +136,13 @@ func die(animation_name: String):
 	print('dead true')
 		
 	dead = true
+	GameState.die()
 	movement_direction = Vector2.ZERO
 	stop_running()
 	sprite.stop()
 	sprite.play(animation_name)
 	await sprite.animation_finished
-	await GameState.die()
+	await GameState.refresh_scene()
 	print('dead false')
 	dead = false
 
