@@ -21,6 +21,11 @@ SceneTransition="*res://Scenes/scene_transition.tscn"
 GameState="*res://Global/GameState.gd"
 Utils="*res://Global/Utils.gd"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="LudumDare54"
