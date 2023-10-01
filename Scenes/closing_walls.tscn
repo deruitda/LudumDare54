@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="1_066uc"]
 [ext_resource type="Script" path="res://Scenes/closing_walls.gd" id="1_jdg88"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/sandfall.wav" id="3_6pagl"]
+[ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="3_6pagl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a5enf"]
 

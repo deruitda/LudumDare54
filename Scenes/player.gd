@@ -127,7 +127,7 @@ func _on_dash_timer_timeout():
 		footsteps_start()
 	
 func die(animation_name: String):
-	if dead:
+	if dead or GameState.level_started == false:
 		return
 	dead = true
 	movement_direction = Vector2.ZERO

@@ -111,7 +111,8 @@ sources/0 = SubResource("TileSetAtlasSource_14il4")
 [node name="BaseLevel2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(575, 321)
+position = Vector2(678, 387)
+zoom = Vector2(0.8, 0.8)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(159, 158)
