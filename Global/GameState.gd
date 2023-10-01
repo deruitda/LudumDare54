@@ -1,8 +1,8 @@
 extends Node
 
-@export var sandbox = false
+@export var sandbox = true
 #@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
-@export var sandbox_scene = "res://Scenes/Levels/1-long-boy-level.tscn"
+@export var sandbox_scene = "res://Scenes/Levels/1-4.tscn"
 
 var total_number_of_keys = 0
 var number_of_keys_this_room = 5
@@ -13,8 +13,10 @@ var total_number_of_sand_deaths = 0
 var total_number_of_lava_deaths = 0
 
 var levels = [
+	 "res://Scenes/Levels/1-4.tscn",
 	"res://Scenes/Levels/1-1.tscn",
 	"res://Scenes/Levels/1-2.tscn",
+	"res://Scenes/Levels/1-3.tscn",
 	"res://Scenes/Levels/1-long-boy-level.tscn"
 ]
 
