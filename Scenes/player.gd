@@ -139,7 +139,6 @@ func die(animation_name: String):
 	dead = false
 
 func _on_danger_area_body_entered(body):
-	print('danger area')
 	if not dashing and body is TileMap:
 		# is a danger area
 		die("death-lava")
@@ -157,12 +156,10 @@ func pickup_key(key: Key):
 
 
 func _on_time_in_sand_timer_timeout():
-	print('timeout')
 	die("death-lava")
 
 
 func _on_sand_area_body_entered(body):
-	print('entered sand')
 	if !in_sand:
 		in_sand = true
 		time_in_sand_timer.start()

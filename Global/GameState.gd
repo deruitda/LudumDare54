@@ -1,6 +1,6 @@
 extends Node
 
-@export var sandbox = true
+@export var sandbox = false
 #@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
 @export var sandbox_scene = "res://Scenes/base_level.tscn"
 
@@ -27,7 +27,7 @@ func load_scene(scene: String):
 func load_next_level():
 	if sandbox:
 		currentLevel = sandbox_scene
-		load_scene(sandbox_scene)
+		refresh_scene()
 	else:
 		if levels.size() > 0:
 			currentLevel = levels.pop_front()

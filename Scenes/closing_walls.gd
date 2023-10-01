@@ -1,6 +1,7 @@
 extends Node2D
 
-var close_speed = 4
+var number_of_seconds = 15
+var close_speed_for_one_second = 130
 var moving = false
 var level_started = false
 @onready var sound_fall_audio = $SoundFallAudio
@@ -24,4 +25,4 @@ func _process(delta):
 		start_movement()
 	
 	if moving:
-		self.translate(Vector2(0, -10) * delta * close_speed)
+		self.translate(Vector2(0, -10) * delta * (close_speed_for_one_second / number_of_seconds))
