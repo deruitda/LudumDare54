@@ -70,8 +70,12 @@ func start_game():
 		current_scene = developer_mode_scene
 	load_next_level()
 
+func get_transition_audio():
+	return "res://Assets/Sounds/drums_achievement.wav"
+
 func load_scene(scene: String):
-	SceneTransition.change_scene(scene)
+	var transition_audio = get_transition_audio()
+	SceneTransition.change_scene(scene, transition_audio)
 
 func test_transitions():
 	setup_game()	

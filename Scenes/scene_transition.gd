@@ -11,11 +11,15 @@ func change_to_menu_scene(scene: String) -> void:
 	change_scene(scene)
 	
 
-func change_scene(scene: String) -> void:
+func change_scene(scene: String, transition_audio = null) -> void:
 	GameState.stop_level()
 	close_door()
 	await $AnimationPlayer.animation_finished
 	$GrowingAmbientSandAudio.stop()
+	if transition_audio is String:
+		$AdditionalTransitionAudio.stream = load(transition_audio)
+		$AdditionalTransitionAudio.play()
+		await $AdditionalTransitionAudio.finished
 	get_tree().change_scene_to_file(scene)
 	$DoorClosedTimer.start()
 
