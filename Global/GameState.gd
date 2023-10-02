@@ -52,6 +52,12 @@ func reset_stats():
 func set_levels():
 	levels = [
 		"res://Scenes/Levels/1-1.tscn",
+		"res://Scenes/Levels/1-2.tscn",
+		"res://Scenes/Levels/1-3.tscn",
+		 "res://Scenes/Levels/1-4.tscn",
+		"res://Scenes/Levels/1-5-kinda-garbage.tscn",
+		"res://Scenes/Levels/1-6.tscn",
+		"res://Scenes/Levels/1-long-boy-level.tscn"
 	]
 # Called when the node enters the scene tree for the first time.
 func start_game():
