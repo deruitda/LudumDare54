@@ -51,6 +51,8 @@ func abrupt_end():
 	GameState.level_started = false
 	$AnimationPlayer.play('ABRUPT_END')
 	$AbruptDoorCloseAudio.play()
+	await $AnimationPlayer.animation_finished
+	$GrowingAmbientSandAudio.stop()
 	$FinalSceneTransition.start()
 
 func _on_final_scene_transition_timeout():
