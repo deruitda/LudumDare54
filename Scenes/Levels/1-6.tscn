@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfhlj1sdwxs1w"]
+[gd_scene load_steps=14 format=3 uid="uid://yjwr2c1ogovs"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_x36na"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_b17vk"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="4_nehvp"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="5_yon6v"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="6_5rm4c"]
-[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="7_r667q"]
+[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="7_r667q"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="8_r85km"]
-[ext_resource type="PackedScene" path="res://Scenes/arrow_tower.tscn" id="9_06m2x"]
+[ext_resource type="PackedScene" uid="uid://cblcde1ujfpq6" path="res://Scenes/arrow_tower.tscn" id="9_06m2x"]
+[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="10_1obni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -208,3 +209,53 @@ direction = 3
 [node name="ArrowTower" parent="." instance=ExtResource("9_06m2x")]
 position = Vector2(2093, 131)
 speed = 25
+
+[node name="Torches" type="Node2D" parent="."]
+
+[node name="Torch" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(1290, 30)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch2" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(1505, 32)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch3" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(2166, 27)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch4" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(87, 30)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch5" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(2258, 303)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch6" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(2253, 738)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch7" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(2253, 1200)
+scale = Vector2(2.1875, 2.03125)
+
+[node name="Torch8" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(1607, 1270)
+scale = Vector2(2.1875, 2.03125)
+flip_v = true
+
+[node name="Torch9" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(824, 1276)
+scale = Vector2(2.1875, 2.03125)
+flip_v = true
+
+[node name="Torch10" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(127, 1278)
+scale = Vector2(2.1875, 2.03125)
+flip_v = true
+
+[node name="Torch11" parent="Torches" instance=ExtResource("10_1obni")]
+position = Vector2(47.0001, 850)
+scale = Vector2(2.1875, 2.03125)
+flip_h = true
