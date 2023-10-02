@@ -55,7 +55,7 @@
 size = Vector2(66.5398, 69.9808)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5vj"]
-size = Vector2(33.8461, 31.1538)
+size = Vector2(21.5385, 22.3077)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4hws"]
 atlas = ExtResource("6_efsjk")
@@ -435,7 +435,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="DangerAreaCollisionShape" type="CollisionShape2D" parent="DangerArea"]
-position = Vector2(5.38462, 16.3462)
+position = Vector2(7.69231, 13.4615)
 shape = SubResource("RectangleShape2D_xa5vj")
 
 [node name="DashGemAcquiredSound" type="AudioStreamPlayer2D" parent="."]

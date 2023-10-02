@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6wdjql0t5fn2"]
+[gd_scene load_steps=12 format=3 uid="uid://c6wdjql0t5fn2"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_n5xna"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_5igbc"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_c1apn"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="8_8qhum"]
 [ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="8_t4r0r"]
-[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="9_863hl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -212,67 +211,3 @@ position = Vector2(35, 1303)
 scale = Vector2(1, 4.01)
 delay_in_seconds = 5
 number_of_seconds_until_closed = 5
-
-[node name="Torches" type="Node2D" parent="."]
-
-[node name="Torch" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(30.5, 25)
-scale = Vector2(1.90625, 1.5625)
-
-[node name="Torch2" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(669.5, 38)
-scale = Vector2(1.71875, 1.625)
-
-[node name="Torch3" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(426, 38)
-scale = Vector2(1.65625, 1.5)
-
-[node name="Torch4" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(1246, 33)
-scale = Vector2(1.75, 1.75)
-
-[node name="Torch5" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(2100, 28)
-scale = Vector2(2.03125, 2)
-
-[node name="Torch6" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(44, 322)
-scale = Vector2(1.96875, 2.21875)
-flip_h = true
-
-[node name="Torch7" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(53, 789)
-scale = Vector2(1.96875, 2.21875)
-flip_h = true
-
-[node name="Torch8" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(56, 1193)
-scale = Vector2(1.96875, 2.21875)
-flip_h = true
-
-[node name="Torch9" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(592, 1283)
-scale = Vector2(1.96875, 2.21875)
-flip_h = true
-
-[node name="Torch10" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(1238, 1280)
-scale = Vector2(1.96875, 2.21875)
-flip_h = true
-
-[node name="Torch11" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(1895, 1269)
-scale = Vector2(1.96875, 2.21875)
-flip_h = true
-
-[node name="Torch12" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(2264, 1058)
-scale = Vector2(1.96875, 2.21875)
-
-[node name="Torch13" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(2255, 630)
-scale = Vector2(1.96875, 2.21875)
-
-[node name="Torch14" parent="Torches" instance=ExtResource("9_863hl")]
-position = Vector2(2261, 194)
-scale = Vector2(1.96875, 2.21875)
