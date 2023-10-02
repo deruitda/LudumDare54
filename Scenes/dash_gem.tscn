@@ -28,6 +28,7 @@ texture = ExtResource("2_3o3nc")
 stream = ExtResource("3_22a6e")
 
 [node name="Node2D" parent="." instance=ExtResource("4_17u0y")]
+visible = false
 amount = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

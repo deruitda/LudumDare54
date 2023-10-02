@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckh6s85r3alg8"]
+[gd_scene load_steps=12 format=3 uid="uid://ckh6s85r3alg8"]
 
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="1_dtr1p"]
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="2_b1cta"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_s4bp8"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_sp38h"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_atiqn"]
-[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="8_6mqnu"]
-[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="9_ssri8"]
+[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="8_6mqnu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -111,7 +110,7 @@ physics_layer_1/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_u5jsc")
 sources/0 = SubResource("TileSetAtlasSource_14il4")
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel3" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1154, 647)
@@ -226,63 +225,3 @@ scale = Vector2(3.06, 5.14)
 delay_in_seconds = 6
 number_of_seconds_until_closed = 8
 direction = 5
-
-[node name="Torches" type="Node" parent="."]
-
-[node name="Torch" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(410, 24)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch2" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(649, 29)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch3" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(1175, 27)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch4" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(1934, 36)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch5" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(2261, 238)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch6" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(2259, 640)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch7" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(2247, 1155)
-scale = Vector2(2, 1.8125)
-
-[node name="Torch8" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(1927, 1270)
-scale = Vector2(2, 1.8125)
-flip_v = true
-
-[node name="Torch9" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(1357, 1285)
-scale = Vector2(2, 1.8125)
-flip_v = true
-
-[node name="Torch10" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(523, 1294)
-scale = Vector2(2, 1.8125)
-flip_v = true
-
-[node name="Torch11" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(54, 1122)
-scale = Vector2(2, 1.8125)
-flip_h = true
-
-[node name="Torch12" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(59, 693)
-scale = Vector2(2, 1.8125)
-flip_h = true
-
-[node name="Torch13" parent="Torches" instance=ExtResource("9_ssri8")]
-position = Vector2(48, 206)
-scale = Vector2(2, 1.8125)
-flip_h = true

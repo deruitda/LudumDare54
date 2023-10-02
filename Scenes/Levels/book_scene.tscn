@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpmale6i4jjr8"]
+[gd_scene load_steps=10 format=3 uid="uid://dahhaba1ggsmh"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_a6wwk"]
 [ext_resource type="Script" path="res://Scenes/Levels/book_scene.gd" id="1_jgyfk"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_3uob4"]
-[ext_resource type="PackedScene" uid="uid://drvft1cvemptx" path="res://Scenes/book.tscn" id="3_of3x1"]
+[ext_resource type="PackedScene" path="res://Scenes/book.tscn" id="3_of3x1"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="6_goswi"]
-[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="7_21ba3"]
+[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="7_21ba3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -134,3 +134,6 @@ in_book_scene = true
 [node name="Lava" parent="." instance=ExtResource("7_21ba3")]
 position = Vector2(-94, -38)
 scale = Vector2(1.655, 1.5)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.34902, 0.34902, 0.34902, 1)

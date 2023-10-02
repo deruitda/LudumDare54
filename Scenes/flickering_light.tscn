@@ -4,5 +4,8 @@
 [ext_resource type="Script" path="res://FlickeringLight.gd" id="2_d8ipc"]
 
 [node name="FlickeringLight" type="PointLight2D"]
+position = Vector2(8, 1)
+scale = Vector2(0.75, 0.699219)
+color = Color(0.745098, 0.521569, 0.403922, 1)
 texture = ExtResource("1_av3j5")
 script = ExtResource("2_d8ipc")

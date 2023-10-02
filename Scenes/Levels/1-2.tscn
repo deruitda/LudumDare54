@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c422dp4rate6"]
+[gd_scene load_steps=12 format=3 uid="uid://c422dp4rate6"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_q0lig"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_83e1v"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_4poeb"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_c7t3f"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_7qx3a"]
-[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="8_ffc3p"]
 [ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="9_v0ew4"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="9_x6150"]
 
@@ -171,52 +170,6 @@ position = Vector2(568, 34)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.34902, 0.34902, 0.34902, 1)
-
-[node name="Torch" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(528, 1260.5)
-scale = Vector2(1.5625, 2.09375)
-
-[node name="Torch2" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(27.5, 833)
-scale = Vector2(1.78125, 1.875)
-flip_h = true
-
-[node name="Torch3" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(48.5, 265)
-scale = Vector2(1.40625, 1.625)
-flip_h = true
-
-[node name="Torch4" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(725, 44)
-scale = Vector2(1.4375, 1.625)
-
-[node name="Torch5" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(1210, 42)
-scale = Vector2(1.5625, 1.4375)
-
-[node name="Torch6" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(1183.5, 1268.5)
-scale = Vector2(1.96875, 2.09375)
-
-[node name="Torch7" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(1701, 39.5)
-scale = Vector2(1.875, 1.65625)
-
-[node name="Torch8" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(1749.5, 1268.5)
-scale = Vector2(2.34375, 1.90625)
-
-[node name="Torch9" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(2246, 353)
-scale = Vector2(2.0625, 1.9375)
-
-[node name="Torch10" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(2253, 944.5)
-scale = Vector2(1.5, 2.09375)
-
-[node name="Torch11" parent="." instance=ExtResource("8_ffc3p")]
-position = Vector2(333.5, 40)
-scale = Vector2(1.78125, 1.625)
 
 [node name="Lava" parent="." instance=ExtResource("9_v0ew4")]
 position = Vector2(4, 1.00006)

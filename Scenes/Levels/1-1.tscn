@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="6_sddwc"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="7_6u2lo"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="7_wrhyg"]
-[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="8_qlxje"]
-[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="9_gk3rc"]
+[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="8_qlxje"]
+[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="9_gk3rc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -233,47 +233,57 @@ position = Vector2(-256, -85)
 scale = Vector2(1.87, 1.61)
 
 [node name="Torch" parent="." instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(106, 29)
 scale = Vector2(1.8125, 1.5)
 
 [node name="Torch7" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(136.828, 838.165)
 rotation = -2.89068
 scale = Vector2(1.55235, 1.42545)
 skew = -0.031629
 
 [node name="Torch" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(502.069, 0.666664)
 scale = Vector2(1.02694, 1.125)
 
 [node name="Torch2" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(645.517, -1.90735e-06)
 scale = Vector2(1.05461, 1.26563)
 
 [node name="Torch3" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(1133.79, 4)
 scale = Vector2(1.08302, 1.42383)
 
 [node name="Torch4" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(1184, 378)
 scale = Vector2(1.22439, 1.34698)
 
 [node name="Torch5" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(1179.59, 750)
 scale = Vector2(1.32603, 1.91786)
 
 [node name="Torch6" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(628.517, 830.748)
 rotation = 3.02575
 scale = Vector2(1.44115, 1.64865)
 skew = 0.0602748
 
 [node name="Torch8" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(-18.2069, 132)
 scale = Vector2(1.45313, 1.4375)
 flip_h = true
 
 [node name="Torch9" parent="Torch" instance=ExtResource("9_gk3rc")]
+visible = false
 position = Vector2(-28.6897, 500)
 scale = Vector2(1.45313, 1.4375)
 flip_h = true
