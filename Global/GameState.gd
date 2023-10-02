@@ -115,7 +115,7 @@ func load_next_level():
 			load_scene(current_scene)
 			number_of_keys_this_room = 0
 		else:
-			end_game()
+			go_to_book_scene()
 
 func record_sand_death():
 	total_number_of_sand_deaths = total_number_of_sand_deaths + 1
@@ -137,6 +137,10 @@ func refresh_scene():
 	number_of_keys_this_room = 0
 	await load_scene(current_scene)
 
+func go_to_book_scene():
+	stop_level()
+	SceneTransition.change_to_menu_scene("res://Scenes/Levels/book_scene.tscn")
+
 func end_game():
 	stop_level()
 	SceneTransition.change_to_menu_scene("res://Scenes/final_scene.tscn")
@@ -157,3 +161,6 @@ func stop_level():
 
 func acquired_all_keys():
 	return number_of_keys_this_room == number_of_potential_keys_per_room
+
+func book_acquired():
+	SceneTransition.abrupt_end()

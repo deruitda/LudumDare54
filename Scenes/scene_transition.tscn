@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://be1ck3wefbj6"]
+[gd_scene load_steps=11 format=3 uid="uid://be1ck3wefbj6"]
 
 [ext_resource type="Script" path="res://Scenes/scene_transition.gd" id="1_02fr1"]
 [ext_resource type="AudioStream" uid="uid://dj88g2ublry2k" path="res://Assets/Sounds/1_second_theme_transition_open.wav" id="2_ha03x"]
 [ext_resource type="PackedScene" uid="uid://cgwhchpkkqgok" path="res://Global/hud.tscn" id="3_d8roo"]
 [ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="4_bualf"]
+[ext_resource type="AudioStream" uid="uid://b5olcnvn1q5na" path="res://Assets/Sounds/door_open.wav" id="5_phohv"]
 
 [sub_resource type="Animation" id="Animation_po8jg"]
 resource_name = "CLOSE"
@@ -35,8 +36,25 @@ tracks/0/keys = {
 "values": [Vector2(-53, 655)]
 }
 
+[sub_resource type="Animation" id="Animation_wpisv"]
+resource_name = "ABRUPT_END"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-52, 660), Vector2(-118, -15)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ilms3"]
 _data = {
+"ABRUPT_END": SubResource("Animation_wpisv"),
 "CLOSE": SubResource("Animation_po8jg"),
 "RESET": SubResource("Animation_1agyd")
 }
@@ -92,4 +110,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="AbruptDoorCloseAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_phohv")
+
+[node name="FinalSceneTransition" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="DoorClosedTimer" to="." method="_on_door_closed_timer_timeout"]
+[connection signal="timeout" from="FinalSceneTransition" to="." method="_on_final_scene_transition_timeout"]

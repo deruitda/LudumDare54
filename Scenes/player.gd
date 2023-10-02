@@ -5,6 +5,10 @@ class_name Player
 @export var default_speed = 800
 @export var sand_speed = 400
 
+@export var in_book_scene = false
+var book_speed = 100
+var book_sound_position = 0
+
 @export var has_dash_gem = false
 @export var dash_speed = 1600
 @export var minimum_keys_needed = 3
@@ -58,6 +62,8 @@ func get_current_speed() -> int:
 		return dash_speed
 	elif is_in_sand():
 		return sand_speed
+	elif in_book_scene:
+		return book_speed
 	else:
 		return default_speed
 
@@ -108,10 +114,17 @@ func stop_running():
 	footsteps_stop()
 
 func footsteps_start():
-	$FootstepsAudio.play()
+	if in_book_scene:
+		$SlowWalkAudio.play(book_sound_position)
+	else:
+		$FootstepsAudio.play()
 
 func footsteps_stop():
-	$FootstepsAudio.stop()
+	if in_book_scene:
+		book_sound_position = $SlowWalkAudio.get_playback_position( )
+		$SlowWalkAudio.stop()
+	else:
+		$FootstepsAudio.stop()
 
 func is_dashing():
 	return dashing > 0
@@ -219,3 +232,11 @@ func _on_arrow_area_area_entered(area):
 	if !dead and !is_dashing():
 		experience_arrow_death()
 		area.queue_free()
+
+func _on_book_area_area_entered(area):
+	$BookAcquiringAudio.play()
+	$AbruptEndTimer.start()
+
+func _on_abrupt_end_timer_timeout():
+	GameState.book_acquired()
+	

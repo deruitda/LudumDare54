@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dgefottiis13l"]
+[gd_scene load_steps=90 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
 [ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/dash_gem_acquired_sound.wav" id="2_3lmva"]
@@ -48,6 +48,8 @@
 [ext_resource type="PackedScene" uid="uid://ds7kvr7hirywa" path="res://Scenes/dash_zoom.tscn" id="39_328c3"]
 [ext_resource type="AudioStream" uid="uid://lqnytsl0encx" path="res://Assets/Sounds/muffled_dying.wav" id="39_47734"]
 [ext_resource type="AudioStream" uid="uid://ctv28pw54a4kq" path="res://Assets/Sounds/arrow_hit.wav" id="40_6rhfk"]
+[ext_resource type="AudioStream" uid="uid://c14o7i5oxf8o7" path="res://Assets/Sounds/slow_walk.wav" id="49_drgr2"]
+[ext_resource type="AudioStream" uid="uid://jstbnd2fuftc" path="res://Assets/Sounds/rising_horror_violins.wav" id="50_dd0db"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(66.5398, 69.9808)
@@ -407,6 +409,9 @@ size = Vector2(33.8461, 30.7692)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tbbr"]
 size = Vector2(33.8462, 62.3077)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63sb7"]
+size = Vector2(684.615, 713.077)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 position = Vector2(1, 0)
@@ -517,6 +522,23 @@ stream = ExtResource("40_6rhfk")
 
 [node name="DashZoom" parent="." instance=ExtResource("39_328c3")]
 
+[node name="BookArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BookArea"]
+position = Vector2(0, 0.384592)
+shape = SubResource("RectangleShape2D_63sb7")
+
+[node name="SlowWalkAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("49_drgr2")
+
+[node name="BookAcquiringAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("50_dd0db")
+
+[node name="AbruptEndTimer" type="Timer" parent="."]
+wait_time = 9.4
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
 [connection signal="body_exited" from="DangerArea" to="." method="_on_danger_area_body_exited"]
@@ -524,3 +546,5 @@ stream = ExtResource("40_6rhfk")
 [connection signal="area_entered" from="SandArea" to="." method="_on_sand_area_area_entered"]
 [connection signal="area_exited" from="SandArea" to="." method="_on_sand_area_area_exited"]
 [connection signal="area_entered" from="ArrowArea" to="." method="_on_arrow_area_area_entered"]
+[connection signal="area_entered" from="BookArea" to="." method="_on_book_area_area_entered"]
+[connection signal="timeout" from="AbruptEndTimer" to="." method="_on_abrupt_end_timer_timeout"]

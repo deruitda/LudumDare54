@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbft2up0ctegq"]
+[gd_scene load_steps=8 format=3 uid="uid://cbft2up0ctegq"]
 
 [ext_resource type="Script" path="res://Scenes/final_scene.gd" id="1_68n7n"]
-[ext_resource type="AudioStream" uid="uid://bcqafrwf6yswy" path="res://Assets/Sounds/success_horns.wav" id="2_vnp8m"]
+[ext_resource type="AudioStream" uid="uid://d3j55kg1obf57" path="res://Assets/Sounds/final_scene_chorus_singing.wav" id="2_q0tfk"]
 [ext_resource type="LabelSettings" uid="uid://4pc6j3nv1sp0" path="res://Global/final_scene_large_stat.tres" id="3_gjf0r"]
 [ext_resource type="LabelSettings" uid="uid://c774imy064hb0" path="res://Global/normal_large_font.tres" id="3_mv8oq"]
 [ext_resource type="LabelSettings" uid="uid://lljnykpn804l" path="res://Global/final_scene_smaller_stat_font.tres" id="4_irac3"]
+[ext_resource type="AudioStream" uid="uid://iu1wccm0lw50" path="res://Assets/Sounds/low_hum.wav" id="6_76d5d"]
 
 [sub_resource type="FontFile" id="FontFile_x42u2"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -25,16 +29,24 @@ cache/0/36/0/kerning_overrides/36/0 = Vector2(0, 0)
 [node name="FinalScene" type="ColorRect"]
 script = ExtResource("1_68n7n")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_vnp8m")
+[node name="ChorusAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_q0tfk")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="ColorRect"]
+visible = false
 layout_mode = 0
 offset_left = 363.0
 offset_top = 458.0
@@ -111,4 +123,32 @@ label_settings = ExtResource("4_irac3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BookDialogue" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="TotalNumberOfKeysLabel" type="Label" parent="BookDialogue"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 224.0
+offset_right = 1150.0
+offset_bottom = 331.0
+text = "The Book wins again..."
+label_settings = ExtResource("3_mv8oq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BookDialogueTimer" type="Timer" parent="."]
+wait_time = 3.5
+
+[node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="LowHumAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_76d5d")
+
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="BookDialogueTimer" to="." method="_on_book_dialogue_timer_timeout"]
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

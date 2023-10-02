@@ -47,4 +47,18 @@ func _on_door_closed_timer_timeout():
 	$DoorClosedTimer.stop()
 	open_door()
 
+func abrupt_end():
+	GameState.level_started = false
+	$AnimationPlayer.play('ABRUPT_END')
+	$AbruptDoorCloseAudio.play()
+	$FinalSceneTransition.start()
+
+func _on_final_scene_transition_timeout():
+	$FinalSceneTransition.stop()
+	get_tree().change_scene_to_file("res://Scenes/final_scene.tscn")
+	$".".visible = false
+	$AnimationPlayer.play_backwards('CLOSE')
+	await $AnimationPlayer.animation_finished
+	$".".visible = true
+	
 	
