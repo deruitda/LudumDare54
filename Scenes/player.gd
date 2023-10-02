@@ -12,8 +12,8 @@ class_name Player
 #@onready var anim = get_nodde("AnimationPlayer")
 @onready var sprite = get_node("AnimatedSprite2D")
 
-var dashing = false
 var running = false
+var dashing = 0
 var in_sand = 0
 var dashing_while_in_lava = false
 var movement_direction = Vector2.ZERO
@@ -54,7 +54,7 @@ func set_speed():
 
 func get_current_speed() -> int:
 	
-	if dashing:
+	if is_dashing():
 		return dash_speed
 	elif is_in_sand():
 		return sand_speed
@@ -113,9 +113,12 @@ func footsteps_start():
 func footsteps_stop():
 	$FootstepsAudio.stop()
 
+func is_dashing():
+	return dashing > 0
+
 func dash():
 	has_dash_gem = false
-	dashing = true
+	dashing = dashing + 1
 	$DashGlow.visible = false
 	
 	$DashZoom.process_material.direction.x = - movement_direction.x
@@ -130,13 +133,15 @@ func dash():
 	dash_timer.start()
 
 func _on_dash_timer_timeout():
-	dashing = false
-	if dashing_while_in_lava and !dead:
-		dashing_while_in_lava = false
-		experience_lava_death()
-	set_speed()
-	if movement_direction != Vector2.ZERO:
-		footsteps_start()
+	dashing = dashing - 1
+	if !is_dashing():
+		dash_timer.stop()
+		if dashing_while_in_lava and !dead:
+			dashing_while_in_lava = false
+			experience_lava_death()
+		set_speed()
+		if movement_direction != Vector2.ZERO:
+			footsteps_start()
 	
 func die(animation_name: String):
 	if dead or GameState.level_started == false:
@@ -211,5 +216,5 @@ func _on_sand_area_area_exited(area):
 
 
 func _on_arrow_area_area_entered(area):
-	if !dead and !dashing:
+	if !dead and !is_dashing():
 		experience_arrow_death()
