@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jgptcg3m6bsh"]
+[gd_scene load_steps=13 format=3 uid="uid://dfhlj1sdwxs1w"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_x36na"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_b17vk"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="6_5rm4c"]
 [ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="7_r667q"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="8_r85km"]
-[ext_resource type="PackedScene" uid="uid://cldp1d7kge3cm" path="res://Scenes/arrow_tower.tscn" id="9_06m2x"]
+[ext_resource type="PackedScene" path="res://Scenes/arrow_tower.tscn" id="9_06m2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -190,3 +190,4 @@ direction = 2
 
 [node name="ArrowTower" parent="." instance=ExtResource("9_06m2x")]
 position = Vector2(2093, 131)
+speed = 25

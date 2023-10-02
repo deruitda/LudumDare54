@@ -213,5 +213,5 @@ func _on_sand_area_area_exited(area):
 
 
 func _on_arrow_area_area_entered(area):
-	if !dead:
+	if !dead and !dashing:
 		experience_arrow_death()

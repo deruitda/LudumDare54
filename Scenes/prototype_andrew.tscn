@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djkgpxg503ypl" path="res://Assets/image/tileset.png" id="8_ki4c2"]
 [ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="8_pscrt"]
 [ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="9_0rhkj"]
-[ext_resource type="PackedScene" uid="uid://cldp1d7kge3cm" path="res://Scenes/arrow_tower.tscn" id="9_i0fir"]
+[ext_resource type="PackedScene" path="res://Scenes/arrow_tower.tscn" id="9_i0fir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jaacf"]
 texture = ExtResource("8_ki4c2")
