@@ -1,6 +1,9 @@
 extends CanvasLayer
 var has_started = false
 
+func toggleHud():
+	$HUD.visible = !$HUD.visible
+
 func change_scene(scene: String) -> void:
 	if has_started == false:
 		has_started = true
