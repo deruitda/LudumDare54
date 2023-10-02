@@ -28,6 +28,7 @@ script = ExtResource("1_68n7n")
 stream = ExtResource("2_vnp8m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)

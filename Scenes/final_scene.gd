@@ -32,4 +32,4 @@ func set_total_time_label():
 	total_time_label.text = "Your Time: " + get_formatted_time_from_milliseconds(GameState.total_time_elapsed_in_milliseconds)
 
 func _on_button_pressed():
-	SceneTransition.change_scene("res://Scenes/main_menu.tscn")
+	SceneTransition.change_to_menu_scene("res://Scenes/main_menu.tscn")
