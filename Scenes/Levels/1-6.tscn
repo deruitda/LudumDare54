@@ -127,16 +127,16 @@ layer_0/tile_data = PackedInt32Array(-262149, 65537, 0, -196613, 65537, 0, -1310
 position = Vector2(211, 233)
 
 [node name="Key2" parent="." instance=ExtResource("3_nrvc4")]
-position = Vector2(759, 732)
+position = Vector2(777, 840)
 
 [node name="Key3" parent="." instance=ExtResource("3_nrvc4")]
-position = Vector2(1841, 793)
+position = Vector2(1899, 787)
 
 [node name="Key4" parent="." instance=ExtResource("3_nrvc4")]
-position = Vector2(2087, 1083)
+position = Vector2(1999, 1065)
 
 [node name="Key5" parent="." instance=ExtResource("3_nrvc4")]
-position = Vector2(2125, 416)
+position = Vector2(2158, 410)
 
 [node name="DashGem" parent="." instance=ExtResource("4_nehvp")]
 position = Vector2(307, 236)
@@ -169,10 +169,10 @@ position = Vector2(2007, 534)
 position = Vector2(1987, 240)
 
 [node name="DashGem10" parent="." instance=ExtResource("4_nehvp")]
-position = Vector2(1999, 1069)
+position = Vector2(2095, 1075)
 
 [node name="Door" parent="." instance=ExtResource("5_yon6v")]
-position = Vector2(1244, 33)
+position = Vector2(1414, 33)
 
 [node name="Player" parent="." instance=ExtResource("6_5rm4c")]
 position = Vector2(110, 227)

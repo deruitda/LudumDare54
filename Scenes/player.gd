@@ -218,3 +218,4 @@ func _on_sand_area_area_exited(area):
 func _on_arrow_area_area_entered(area):
 	if !dead and !is_dashing():
 		experience_arrow_death()
+		area.queue_free()
