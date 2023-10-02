@@ -123,6 +123,17 @@ label_settings = ExtResource("3_mv8oq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TotalNumberOfDeathsLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 249.0
+offset_right = 1369.0
+offset_bottom = 356.0
+text = "Total # of Deaths: 5/5"
+label_settings = ExtResource("3_mv8oq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TotalTimeLabel" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 217.0

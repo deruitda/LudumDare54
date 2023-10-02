@@ -11,13 +11,14 @@ func _ready():
 
 
 func fire():
-	var arrow_scene = preload("res://Scenes/arrow.tscn")
-	var arrow = arrow_scene.instantiate()
-	$Sprite2D.texture = load("res://Assets/image/crossbow/crossbow-fired.png")
-	arrow.direction = direction
-	arrow.speed = speed
-	self.add_child(arrow)
-	$ArrowShotAudio.play()
+	if GameState.level_started:
+		var arrow_scene = preload("res://Scenes/arrow.tscn")
+		var arrow = arrow_scene.instantiate()
+		$Sprite2D.texture = load("res://Assets/image/crossbow/crossbow-fired.png")
+		arrow.direction = direction
+		arrow.speed = speed
+		self.add_child(arrow)
+		$ArrowShotAudio.play()
 	$ReloadTimer.start()
 
 func start_timer():

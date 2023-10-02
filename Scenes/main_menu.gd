@@ -2,7 +2,7 @@ extends Node2D
 
 var developer_mode_scene = "res://Scenes/final_scene.gd"
 # var developer_mode_scene = "res://Scenes/prototype_andrew.tscn"
-var developer_mode = true
+var developer_mode = false
 var test_transitions = false
 
 # Called when the node enters the scene tree for the first time.
