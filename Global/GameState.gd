@@ -16,9 +16,12 @@ var time_elapsed_this_room_in_milliseconds = 0
 var developer_mode = false
 var developer_mode_scene: String
 
+var testing_transitions = false
+
 var levels = []
 
-var currentLevel;
+var current_scene;
+var current_level_number;
 var level_started = false
 
 
@@ -50,11 +53,12 @@ func reset_stats():
 	set_total_number_of_potential_keys()
 
 func set_levels():
+	current_level_number = 0
 	levels = [
 		"res://Scenes/Levels/1-1.tscn",
 		"res://Scenes/Levels/1-2.tscn",
 		"res://Scenes/Levels/1-3.tscn",
-		 "res://Scenes/Levels/1-4.tscn",
+		"res://Scenes/Levels/1-4.tscn",
 		"res://Scenes/Levels/1-5-kinda-garbage.tscn",
 		"res://Scenes/Levels/1-6.tscn",
 		"res://Scenes/Levels/1-long-boy-level.tscn"
@@ -63,22 +67,27 @@ func set_levels():
 func start_game():
 	setup_game()
 	if developer_mode:
-		currentLevel = developer_mode_scene
+		current_scene = developer_mode_scene
 	load_next_level()
 
 func load_scene(scene: String):
 	SceneTransition.change_scene(scene)
 
+func test_transitions():
+	setup_game()	
+	testing_transitions = true
+	load_next_level()
 
 func load_next_level():
 	if developer_mode:
 		refresh_scene()
 	else:
+		current_level_number = current_level_number + 1
 		level_started = false
 		
 		if levels.size() > 0:
-			currentLevel = levels.pop_front()
-			load_scene(currentLevel)
+			current_scene = levels.pop_front()
+			load_scene(current_scene)
 			number_of_keys_this_room = 0
 		else:
 			end_game()
@@ -101,7 +110,7 @@ func get_total_number_of_deaths():
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
 	number_of_keys_this_room = 0
-	await load_scene(currentLevel)
+	await load_scene(current_scene)
 
 func end_game():
 	stop_level()
@@ -112,8 +121,11 @@ func add_key(key: Key):
 	number_of_keys_this_room = number_of_keys_this_room + key.value
 
 func start_level():
-	time_elapsed_this_room_in_milliseconds = 0	
-	level_started = true
+	if testing_transitions:
+		load_next_level()
+	else:
+		time_elapsed_this_room_in_milliseconds = 0	
+		level_started = true
 	
 func stop_level():
 	level_started = false

@@ -39,4 +39,5 @@ func open_door():
 func _on_door_closed_timer_timeout():
 	$DoorClosedTimer.stop()
 	open_door()
+
 	
