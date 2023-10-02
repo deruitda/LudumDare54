@@ -476,7 +476,9 @@ shape = SubResource("RectangleShape2D_b5v46")
 debug_color = Color(0.815686, 0, 0.972549, 0.419608)
 
 [node name="FlickeringLight" parent="." instance=ExtResource("9_vvt03")]
-color = Color(1, 0.921569, 0.886275, 1)
+position = Vector2(-3.07692, -2.30769)
+scale = Vector2(1.80409, 1.53365)
+color = Color(0.701961, 0.419608, 0.313726, 1)
 energy = 1.15
 
 [node name="GruntsInSandAudio" type="AudioStreamPlayer2D" parent="."]

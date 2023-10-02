@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/key.gd" id="1_rvkkv"]
 [ext_resource type="Texture2D" uid="uid://dlmv55by6uvj5" path="res://Assets/key-1.png" id="2_ko7n7"]
 [ext_resource type="AudioStream" uid="uid://bb31b8q44o8af" path="res://Assets/Sounds/item_pickup_1.wav" id="3_7fbnp"]
-[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="4_sko4f"]
 [ext_resource type="AudioStream" uid="uid://dde6e2n5uoc8m" path="res://Assets/Sounds/key_acquire.wav" id="5_3b7oy"]
+[ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="5_6jlrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(45.5, 46.5)
@@ -27,12 +27,15 @@ texture = ExtResource("2_ko7n7")
 [node name="AcquiredAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7fbnp")
 
-[node name="FlickeringLight" parent="." instance=ExtResource("4_sko4f")]
-position = Vector2(9.53674e-07, -1.90735e-06)
-scale = Vector2(0.35, 0.35)
-color = Color(0.953125, 0.820313, 0.234375, 1)
-
 [node name="KeyAcquiredAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_3b7oy")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-1.49999, 0.500008)
+scale = Vector2(0.40625, 0.369141)
+color = Color(0.85098, 0.858824, 0.313726, 1)
+energy = 0.31
+texture = ExtResource("5_6jlrw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
