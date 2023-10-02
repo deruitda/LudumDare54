@@ -1,23 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://be1ck3wefbj6"]
+[gd_scene load_steps=11 format=3 uid="uid://be1ck3wefbj6"]
 
 [ext_resource type="Script" path="res://Scenes/scene_transition.gd" id="1_02fr1"]
 [ext_resource type="AudioStream" uid="uid://dj88g2ublry2k" path="res://Assets/Sounds/1_second_theme_transition_open.wav" id="2_ha03x"]
 [ext_resource type="PackedScene" uid="uid://cgwhchpkkqgok" path="res://Global/hud.tscn" id="3_d8roo"]
 [ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="4_bualf"]
+[ext_resource type="AudioStream" uid="uid://b5olcnvn1q5na" path="res://Assets/Sounds/door_open.wav" id="5_phohv"]
 
 [sub_resource type="Animation" id="Animation_po8jg"]
 resource_name = "CLOSE"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("door_rect:position")
+tracks/0/path = NodePath("DoorRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1153, 655), Vector2(-1191, -27)]
+"values": [Vector2(-56, 690), Vector2(-62, -6)]
 }
 
 [sub_resource type="Animation" id="Animation_1agyd"]
@@ -25,38 +26,44 @@ resource_name = "RESET"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("door_rect:position")
+tracks/0/path = NodePath("DoorRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1153, 655)]
+"values": [Vector2(-53, 655)]
+}
+
+[sub_resource type="Animation" id="Animation_wpisv"]
+resource_name = "ABRUPT_END"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-52, 660), Vector2(-118, -15)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ilms3"]
 _data = {
+"ABRUPT_END": SubResource("Animation_wpisv"),
 "CLOSE": SubResource("Animation_po8jg"),
 "RESET": SubResource("Animation_1agyd")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_nnjs6"]
+font_size = 40
+
 [node name="scene_transition" type="CanvasLayer"]
 script = ExtResource("1_02fr1")
-
-[node name="door_rect" type="ColorRect" parent="."]
-modulate = Color(0, 0, 0, 1)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1153.0
-offset_top = 655.0
-offset_right = 27647.0
-offset_bottom = 16855.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -79,4 +86,35 @@ visible = false
 [node name="GrowingAmbientSandAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_bualf")
 
+[node name="AdditionalTransitionAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="DoorRect" type="ColorRect" parent="."]
+offset_left = -53.0
+offset_top = 655.0
+offset_right = 1254.0
+offset_bottom = 1356.0
+color = Color(0, 0, 0, 1)
+
+[node name="TransitionClosedCaptionLabel" type="Label" parent="DoorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.22
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 151.0
+offset_top = 219.78
+offset_right = -187.0
+offset_bottom = -91.0
+label_settings = SubResource("LabelSettings_nnjs6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AbruptDoorCloseAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_phohv")
+
+[node name="FinalSceneTransition" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="DoorClosedTimer" to="." method="_on_door_closed_timer_timeout"]
+[connection signal="timeout" from="FinalSceneTransition" to="." method="_on_final_scene_transition_timeout"]

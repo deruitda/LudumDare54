@@ -2,3 +2,4 @@
 
 [resource]
 font_size = 36
+shadow_color = Color(0.92549, 0.121569, 0.588235, 0)

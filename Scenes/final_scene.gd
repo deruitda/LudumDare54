@@ -7,11 +7,15 @@ extends ColorRect
 @onready var total_number_of_lava_deaths_label = $ColorRect/TotalNumberOfLavaDeathsLabel2
 @onready var total_number_of_arrow_deaths_label = $ColorRect/TotalNumberOfArrowDeathsLabel3
 
+var showing_stats = false
+
 func _ready():
 	set_total_number_of_keys()
 	set_total_number_of_deaths()
 	set_total_time_label()
-	$AudioStreamPlayer2D.play()
+	$ChorusAudio.play()
+	$LowHumAudio.play()
+	$BookDialogueTimer.start()
 
 func set_total_number_of_keys():
 	total_number_of_keys_label.text = "Keys Acquired: " + str(GameState.total_number_of_keys) + "/" + str(GameState.total_number_of_potential_keys)
@@ -34,3 +38,19 @@ func set_total_time_label():
 
 func _on_button_pressed():
 	SceneTransition.change_to_menu_scene("res://Scenes/main_menu.tscn")
+
+
+func _on_book_dialogue_timer_timeout():
+	$BookDialogue.visible = false
+	$TransitionTimer.start()
+	
+func _on_transition_timer_timeout():
+	if showing_stats:
+		$ColorRect/Button.visible = true
+	else:
+		$ColorRect.visible = true
+		$TransitionTimer.start()
+		showing_stats = true
+	
+	
+	

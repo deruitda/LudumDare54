@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://drvft1cvemptx"]
+
+[ext_resource type="Texture2D" uid="uid://dqwiu1t0lq71b" path="res://Assets/book.png" id="1_yip3q"]
+[ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="2_bs8nj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovvtw"]
+size = Vector2(22, 25)
+
+[node name="Book" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_ovvtw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yip3q")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.443137, 0.0196078, 0.498039, 1)
+texture = ExtResource("2_bs8nj")
