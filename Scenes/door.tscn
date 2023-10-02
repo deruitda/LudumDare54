@@ -115,6 +115,7 @@ animations = [{
 }]
 
 [node name="Door" type="Area2D"]
+z_index = 4
 scale = Vector2(2, 2)
 script = ExtResource("1_7rccf")
 
