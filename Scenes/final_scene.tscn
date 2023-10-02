@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbft2up0ctegq"]
+
+[ext_resource type="Script" path="res://Scenes/final_scene.gd" id="1_68n7n"]
+[ext_resource type="AudioStream" uid="uid://bcqafrwf6yswy" path="res://Assets/Sounds/success_horns.wav" id="2_vnp8m"]
+[ext_resource type="LabelSettings" uid="uid://4pc6j3nv1sp0" path="res://Global/final_scene_large_stat.tres" id="3_gjf0r"]
+[ext_resource type="LabelSettings" uid="uid://lljnykpn804l" path="res://Global/final_scene_smaller_stat_font.tres" id="4_irac3"]
+
+[sub_resource type="FontFile" id="FontFile_x42u2"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/36/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/36/0/kerning_overrides/36/0 = Vector2(0, 0)
+
+[node name="FinalScene" type="CanvasLayer"]
+script = ExtResource("1_68n7n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vnp8m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="TotalNumberOfKeysLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TotalTimeThisRoomLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TotalTimeLabel" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 111.0
+offset_right = 1152.0
+offset_bottom = 168.0
+text = "Total Time: 00:50:23"
+label_settings = ExtResource("3_gjf0r")
+horizontal_alignment = 1
+
+[node name="TotalNumberOfDeathsLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.026
+anchor_bottom = 0.057
+offset_left = 8.0
+offset_top = 173.0
+offset_right = 1126.05
+offset_bottom = 227.064
+text = "Total # of Deaths: 45"
+label_settings = ExtResource("3_gjf0r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalNumberOfSandDeathsLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 330.0
+offset_right = 1153.0
+offset_bottom = 416.0
+text = "Total # of Sand Deaths: 15"
+label_settings = ExtResource("4_irac3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalNumberOfLavaDeathsLabel2" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 291.0
+offset_right = 1153.0
+offset_bottom = 363.0
+text = "Total # of Lava Deaths: 14"
+label_settings = ExtResource("4_irac3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalNumberOfArrowDeathsLabel3" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 248.0
+offset_right = 1151.0
+offset_bottom = 320.0
+text = "Total # of Arrow Deaths: 20"
+label_settings = ExtResource("4_irac3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 362.0
+offset_top = 437.0
+offset_right = 811.0
+offset_bottom = 567.0
+theme_override_fonts/font = SubResource("FontFile_x42u2")
+text = "Go Back to Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

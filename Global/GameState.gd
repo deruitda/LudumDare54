@@ -1,30 +1,26 @@
 extends Node
-
-var total_number_of_keys = 0
-var number_of_keys_this_room = 5
-var total_number_of_potential_keys;
 var number_of_potential_keys_per_room = 5
 
+var number_of_keys_this_room = 5
+
+var total_number_of_potential_keys;
+
+var total_number_of_keys = 0
 var total_number_of_sand_deaths = 0
 var total_number_of_lava_deaths = 0
 var total_number_of_arrow_deaths = 0
 
+var total_time_elapsed_in_milliseconds = 0
+var time_elapsed_this_room_in_milliseconds = 0
+
 var developer_mode = false
 var developer_mode_scene: String
 
-var levels = [
-	"res://Scenes/Levels/1-1.tscn",
-	"res://Scenes/Levels/1-2.tscn",
-	"res://Scenes/Levels/1-3.tscn",
-	"res://Scenes/Levels/1-4.tscn",
-	"res://Scenes/Levels/1-long-boy-level.tscn"
-]
+var levels = []
 
 var currentLevel;
 var level_started = false
 
-var total_time_elapsed_in_milliseconds = 0
-var time_elapsed_this_room_in_milliseconds = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,10 +35,28 @@ func set_time(delta):
 func set_total_number_of_potential_keys():
 	total_number_of_potential_keys = levels.size() * number_of_keys_this_room
 
+func setup_game():
+	set_levels()
+	reset_stats()
+	
+func reset_stats():
+	total_number_of_keys = 0
+	total_number_of_sand_deaths = 0
+	total_number_of_lava_deaths = 0
+	total_number_of_arrow_deaths = 0
+
+	total_time_elapsed_in_milliseconds = 0
+	time_elapsed_this_room_in_milliseconds = 0
+	set_total_number_of_potential_keys()
+
+func set_levels():
+	levels = [
+		"res://Scenes/Levels/1-1.tscn",
+	]
 # Called when the node enters the scene tree for the first time.
 func start_game():
+	setup_game()
 	SceneTransition.toggleHud()
-	set_total_number_of_potential_keys()
 	if developer_mode:
 		currentLevel = developer_mode_scene
 	load_next_level()
@@ -85,8 +99,8 @@ func refresh_scene():
 	await load_scene(currentLevel)
 
 func end_game():
-	print("Congrats!")
-	
+	stop_level()
+	SceneTransition.change_scene("res://Scenes/final_scene.tscn")
 
 func add_key(key: Key):
 	total_number_of_keys = total_number_of_keys + key.value
