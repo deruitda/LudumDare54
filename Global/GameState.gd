@@ -29,9 +29,16 @@ var transition_audio_key = {
 	2: "res://Assets/Sounds/TransitionDialogue/you_seek_the_power_stored_within.wav",
 	3: "res://Assets/Sounds/TransitionDialogue/us_or_you.wav",
 	4: "res://Assets/Sounds/TransitionDialogue/or_who_you_will_become.wav",
-	57: "res://Assets/Sounds/TransitionDialogue/limited_space.wav"
+	6: "res://Assets/Sounds/TransitionDialogue/limited_space.wav"
 }
 
+var transition_cc_key = {
+	1: "You've entered my tomb uninvited... prepare to die",
+	2: "You seek the power stored within.. you will fail",
+	3: "You: It’s us or you.. and I know the legends about you",
+	4: "You don’t know what you search for.. or who you will become",
+	6: "There is limited space in the world for those who wish to do good.. but the book beckons you to the endless space of evil.. "
+}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -69,7 +76,6 @@ func set_levels():
 		"res://Scenes/Levels/1-4.tscn",
 		"res://Scenes/Levels/1-5-kinda-garbage.tscn",
 		"res://Scenes/Levels/1-6.tscn",
-		"res://Scenes/Levels/1-long-boy-level.tscn"
 	]
 # Called when the node enters the scene tree for the first time.
 func start_game():
@@ -82,10 +88,15 @@ func get_transition_audio():
 	if transition_audio_key.has(current_level_number):
 		return transition_audio_key[current_level_number]
 	return null
+func get_transition_cc():
+	if transition_cc_key.has(current_level_number):
+		return transition_cc_key[current_level_number]
+	return null
 
 func load_scene(scene: String):
 	var transition_audio = get_transition_audio()
-	SceneTransition.change_scene(scene, transition_audio)
+	var transition_cc = get_transition_cc()
+	SceneTransition.change_scene(scene, transition_audio, transition_cc)
 
 func test_transitions():
 	setup_game()	
