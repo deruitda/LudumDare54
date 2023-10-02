@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dgefottiis13l"]
+[gd_scene load_steps=77 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
 [ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/dash_gem_acquired_sound.wav" id="2_3lmva"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://8r8npfnly5vt" path="res://Assets/image/sand-death-anim-raw/sand-death-22.png" id="29_dpena"]
 [ext_resource type="AudioStream" uid="uid://dby0pxxlvpgx7" path="res://Assets/Sounds/drums_achievement.wav" id="37_t0jyt"]
 [ext_resource type="AudioStream" uid="uid://wakm7slfb25t" path="res://Assets/Sounds/dash_gem_hum_1_fade_out.wav" id="38_mjkad"]
+[ext_resource type="PackedScene" uid="uid://ds7kvr7hirywa" path="res://Scenes/dash_zoom.tscn" id="39_328c3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(66.5398, 69.9808)
@@ -415,7 +416,7 @@ sprite_frames = SubResource("SpriteFrames_tuuk0")
 animation = &"run-lateral"
 
 [node name="DashGlow" parent="." instance=ExtResource("7_4sxys")]
-emitting = false
+visible = false
 
 [node name="FootstepsAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mf5ny")
@@ -456,6 +457,8 @@ volume_db = 5.0
 [node name="DashGemHoldingFadeOut" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("38_mjkad")
 volume_db = -20.0
+
+[node name="DashZoom" parent="." instance=ExtResource("39_328c3")]
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]
