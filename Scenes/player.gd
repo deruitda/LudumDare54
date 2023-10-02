@@ -170,7 +170,7 @@ func experience_arrow_death():
 	$ArrowLandingAudio.play()
 	$DyingByArrowAudio.play()
 	GameState.record_arrow_death()
-	die("death-sand")
+	die("death-arrow")
 
 func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap and !dead:

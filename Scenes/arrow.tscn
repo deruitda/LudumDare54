@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://crj0d1i48kpk6"]
+[gd_scene load_steps=4 format=3 uid="uid://bw8ygdeaecquv"]
 
 [ext_resource type="Script" path="res://Scenes/arrow.gd" id="1_otsqv"]
-[ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="2_18abg"]
+[ext_resource type="Texture2D" uid="uid://cq1pc50wkvc0m" path="res://Assets/image/crossbow/arrow.png" id="2_8y2im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb583"]
 
@@ -14,4 +14,7 @@ script = ExtResource("1_otsqv")
 shape = SubResource("RectangleShape2D_wb583")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_18abg")
+position = Vector2(0, 1)
+rotation = 3.14159
+scale = Vector2(1, 0.9375)
+texture = ExtResource("2_8y2im")

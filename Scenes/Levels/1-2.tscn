@@ -173,48 +173,50 @@ position = Vector2(568, 34)
 color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [node name="Torch" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(537, 1232)
+position = Vector2(528, 1260.5)
+scale = Vector2(1.5625, 2.09375)
 
 [node name="Torch2" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(92, 847)
+position = Vector2(27.5, 833)
+scale = Vector2(1.78125, 1.875)
+flip_h = true
 
 [node name="Torch3" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(88, 275)
+position = Vector2(48.5, 265)
+scale = Vector2(1.40625, 1.625)
+flip_h = true
 
 [node name="Torch4" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(732, 54)
+position = Vector2(725, 44)
+scale = Vector2(1.4375, 1.625)
 
 [node name="Torch5" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(1219, 80)
+position = Vector2(1210, 42)
+scale = Vector2(1.5625, 1.4375)
 
 [node name="Torch6" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(1168, 1241)
+position = Vector2(1183.5, 1268.5)
+scale = Vector2(1.96875, 2.09375)
 
 [node name="Torch7" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(1715, 80)
+position = Vector2(1701, 39.5)
+scale = Vector2(1.875, 1.65625)
 
 [node name="Torch8" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(1728, 1241)
+position = Vector2(1749.5, 1268.5)
+scale = Vector2(2.34375, 1.90625)
 
 [node name="Torch9" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(2219, 368)
+position = Vector2(2246, 353)
+scale = Vector2(2.0625, 1.9375)
 
 [node name="Torch10" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(2236, 965)
+position = Vector2(2253, 944.5)
+scale = Vector2(1.5, 2.09375)
 
 [node name="Torch11" parent="." instance=ExtResource("8_ffc3p")]
-visible = false
-position = Vector2(346, 50)
+position = Vector2(333.5, 40)
+scale = Vector2(1.78125, 1.625)
 
 [node name="Lava" parent="." instance=ExtResource("9_v0ew4")]
 position = Vector2(4, 1.00006)
