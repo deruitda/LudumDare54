@@ -41,6 +41,7 @@ func _physics_process(delta):
 	var former_direction = movement_direction
 	get_input()
 	if GameState.level_started == false:
+		stop_running()
 		return
 	
 	set_speed()
@@ -151,7 +152,7 @@ func _on_dash_timer_timeout():
 		dash_timer.stop()
 		if dashing_while_in_lava and !dead:
 			dashing_while_in_lava = false
-			experience_lava_death()
+			$LavaDeathTimer.start()
 		set_speed()
 		if movement_direction != Vector2.ZERO:
 			footsteps_start()
@@ -169,31 +170,36 @@ func die(animation_name: String):
 	await GameState.refresh_scene()
 
 func experience_lava_death():
-	$DyingInLavaAudio.play()
-	$LavaHissingAudio.play()
-	GameState.record_lava_death()
-	die("death-lava")
+	if GameState.level_started:
+		$DyingInLavaAudio.play()
+		$LavaHissingAudio.play()
+		GameState.record_lava_death()
+		die("death-lava")
 	
 func experience_sand_death():
-	$DyingInSandAudio.play()
-	GameState.record_sand_death()
-	die("death-sand")
+	if GameState.level_started:
+		$DyingInSandAudio.play()
+		GameState.record_sand_death()
+		die("death-sand")
 
 func experience_arrow_death():
-	$ArrowLandingAudio.play()
-	$DyingByArrowAudio.play()
-	GameState.record_arrow_death()
-	die("death-arrow")
+	if GameState.level_started:
+		$ArrowLandingAudio.play()
+		$DyingByArrowAudio.play()
+		GameState.record_arrow_death()
+		die("death-arrow")
 
 func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap and !dead:
-		experience_lava_death()
+		$LavaDeathTimer.start()
 		# is a danger area
 	elif dashing and body is TileMap:
 		dashing_while_in_lava = true
 
 func _on_danger_area_body_exited(body):
 	dashing_while_in_lava = false
+	$LavaDeathTimer.stop()
+	
 	
 func pickup_dash_gem(dash_gem: DashGem):
 	has_dash_gem = true
@@ -215,7 +221,7 @@ func _on_time_in_sand_timer_timeout():
 		experience_sand_death()	
 
 func _on_sand_area_area_entered(area):
-	if !dead:
+	if !dead && GameState.level_started:
 		if !is_in_sand():
 			$GruntsInSandAudio.play()
 			time_in_sand_timer.start()
@@ -223,7 +229,7 @@ func _on_sand_area_area_entered(area):
 
 func _on_sand_area_area_exited(area):
 	in_sand = in_sand - 1
-	if !is_in_sand():
+	if !is_in_sand() || GameState.level_started == false:
 		$GruntsInSandAudio.stop()
 		time_in_sand_timer.stop()
 
@@ -240,3 +246,7 @@ func _on_book_area_area_entered(area):
 func _on_abrupt_end_timer_timeout():
 	GameState.book_acquired()
 	
+
+
+func _on_lava_death_timer_timeout():
+	experience_lava_death()

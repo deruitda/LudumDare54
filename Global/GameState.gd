@@ -93,10 +93,13 @@ func get_transition_cc():
 		return transition_cc_key[current_level_number]
 	return null
 
-func load_scene(scene: String):
-	var transition_audio = get_transition_audio()
-	var transition_cc = get_transition_cc()
-	SceneTransition.change_scene(scene, transition_audio, transition_cc)
+func load_scene(scene: String, with_transition = true):
+	if with_transition:
+		var transition_audio = get_transition_audio()
+		var transition_cc = get_transition_cc()
+		SceneTransition.change_scene(scene, transition_audio, transition_cc)
+	else:
+		SceneTransition.change_scene(scene)
 
 func test_transitions():
 	setup_game()	
@@ -135,11 +138,11 @@ func get_total_number_of_deaths():
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room
 	number_of_keys_this_room = 0
-	await load_scene(current_scene)
+	await load_scene(current_scene, false)
 
 func go_to_book_scene():
-	stop_level()
 	SceneTransition.change_to_menu_scene("res://Scenes/Levels/book_scene.tscn")
+	level_started = true
 
 func end_game():
 	stop_level()

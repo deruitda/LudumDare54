@@ -16,13 +16,13 @@ func change_scene(scene: String, transition_audio = null, transition_cc = null) 
 	close_door()
 	await $AnimationPlayer.animation_finished
 	$GrowingAmbientSandAudio.stop()
+	get_tree().change_scene_to_file(scene)	
 	if transition_audio is String:
 		$AdditionalTransitionAudio.stream = load(transition_audio)
 		$AdditionalTransitionAudio.play()
 		if transition_cc:
 			transition_closed_caption_label.text = transition_cc
 		await $AdditionalTransitionAudio.finished
-	get_tree().change_scene_to_file(scene)
 	$DoorClosedTimer.start()
 
 
@@ -52,6 +52,7 @@ func abrupt_end():
 	$AnimationPlayer.play('ABRUPT_END')
 	$AbruptDoorCloseAudio.play()
 	await $AnimationPlayer.animation_finished
+	GameState.level_started = false
 	$GrowingAmbientSandAudio.stop()
 	$FinalSceneTransition.start()
 
