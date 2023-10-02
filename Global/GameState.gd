@@ -9,11 +9,14 @@ var total_number_of_sand_deaths = 0
 var total_number_of_lava_deaths = 0
 var total_number_of_arrow_deaths = 0
 
+var developer_mode = false
+var developer_mode_scene: String
+
 var levels = [
 	"res://Scenes/Levels/1-1.tscn",
 	"res://Scenes/Levels/1-2.tscn",
 	"res://Scenes/Levels/1-3.tscn",
-	 "res://Scenes/Levels/1-4.tscn",
+	"res://Scenes/Levels/1-4.tscn",
 	"res://Scenes/Levels/1-long-boy-level.tscn"
 ]
 
@@ -40,6 +43,8 @@ func set_total_number_of_potential_keys():
 func start_game():
 	SceneTransition.toggleHud()
 	set_total_number_of_potential_keys()
+	if developer_mode:
+		currentLevel = developer_mode_scene
 	load_next_level()
 
 func load_scene(scene: String):
@@ -47,14 +52,17 @@ func load_scene(scene: String):
 
 
 func load_next_level():
-	level_started = false
-	
-	if levels.size() > 0:
-		currentLevel = levels.pop_front()
-		load_scene(currentLevel)
-		number_of_keys_this_room = 0
+	if developer_mode:
+		refresh_scene()
 	else:
-		end_game()
+		level_started = false
+		
+		if levels.size() > 0:
+			currentLevel = levels.pop_front()
+			load_scene(currentLevel)
+			number_of_keys_this_room = 0
+		else:
+			end_game()
 
 func record_sand_death():
 	total_number_of_sand_deaths = total_number_of_sand_deaths + 1
