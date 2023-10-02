@@ -29,6 +29,7 @@ var transition_audio_key = {
 	2: "res://Assets/Sounds/TransitionDialogue/you_seek_the_power_stored_within.wav",
 	3: "res://Assets/Sounds/TransitionDialogue/us_or_you.wav",
 	4: "res://Assets/Sounds/TransitionDialogue/or_who_you_will_become.wav",
+	5: "res://Assets/Sounds/TransitionDialogue/do_you_think__ive_always_been_this_way.wav",
 	6: "res://Assets/Sounds/TransitionDialogue/limited_space.wav"
 }
 
@@ -37,7 +38,8 @@ var transition_cc_key = {
 	2: "You seek the power stored within.. you will fail",
 	3: "You: It’s us or you.. and I know the legends about you",
 	4: "You don’t know what you search for.. or who you will become",
-	6: "There is limited space in the world for those who wish to do good.. but the book beckons you to the endless space of evil.. "
+	5: "Do you think I've always been this way?",
+	6: "There is limited space in the world for those who wish to do good.. you don't know what this book will do to you.."
 }
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -141,7 +143,9 @@ func refresh_scene():
 	await load_scene(current_scene, false)
 
 func go_to_book_scene():
-	SceneTransition.change_to_menu_scene("res://Scenes/Levels/book_scene.tscn")
+	var book_scene_audio = "res://Assets/Sounds/TransitionDialogue/im_not_you.wav"
+	var book_scene_cc = "You: I will be different.. I have to.. I'm not you!"
+	SceneTransition.change_to_menu_scene("res://Scenes/Levels/book_scene.tscn", book_scene_audio, book_scene_cc)
 	level_started = true
 
 func end_game():
