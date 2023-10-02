@@ -24,6 +24,14 @@ var current_scene;
 var current_level_number;
 var level_started = false
 
+var transition_audio_key = {
+	1: "res://Assets/Sounds/TransitionDialogue/youve_entered_my_tomb_uninvited.wav",
+	2: "res://Assets/Sounds/TransitionDialogue/you_seek_the_power_stored_within.wav",
+	3: "res://Assets/Sounds/TransitionDialogue/us_or_you.wav",
+	4: "res://Assets/Sounds/TransitionDialogue/or_who_you_will_become.wav",
+	57: "res://Assets/Sounds/TransitionDialogue/limited_space.wav"
+}
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -71,7 +79,9 @@ func start_game():
 	load_next_level()
 
 func get_transition_audio():
-	return "res://Assets/Sounds/drums_achievement.wav"
+	if transition_audio_key.has(current_level_number):
+		return transition_audio_key[current_level_number]
+	return null
 
 func load_scene(scene: String):
 	var transition_audio = get_transition_audio()
