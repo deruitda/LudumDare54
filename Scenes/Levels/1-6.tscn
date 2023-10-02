@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="4_nehvp"]
 [ext_resource type="PackedScene" uid="uid://dyeh476d0sl7k" path="res://Scenes/door.tscn" id="5_yon6v"]
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="6_5rm4c"]
-[ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="7_r667q"]
+[ext_resource type="PackedScene" uid="uid://dub13f5qf8eym" path="res://Scenes/lava.tscn" id="7_r667q"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="8_r85km"]
-[ext_resource type="PackedScene" uid="uid://cldp1d7kge3cm" path="res://Scenes/arrow_tower.tscn" id="9_06m2x"]
-[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="10_1obni"]
+[ext_resource type="PackedScene" uid="uid://cblcde1ujfpq6" path="res://Scenes/arrow_tower.tscn" id="9_06m2x"]
+[ext_resource type="PackedScene" uid="uid://bdocq0xpbykyb" path="res://Scenes/torch.tscn" id="10_1obni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -112,7 +112,7 @@ physics_layer_1/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_u5jsc")
 sources/0 = SubResource("TileSetAtlasSource_14il4")
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1154, 647)
@@ -256,3 +256,6 @@ flip_v = true
 position = Vector2(47.0001, 850)
 scale = Vector2(2.1875, 2.03125)
 flip_h = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.34902, 0.34902, 0.34902, 1)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://5r1fgjw52hx6"]
+[gd_scene load_steps=4 format=3 uid="uid://bdocq0xpbykyb"]
 
-[ext_resource type="Texture2D" uid="uid://ckw0r1gq1dqbn" path="res://Assets/image/torch.png" id="1_dxl6u"]
+[ext_resource type="Texture2D" uid="uid://bokp1xywhbwyk" path="res://Assets/image/torch.png" id="1_dxl6u"]
 [ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="2_kepdq"]
-[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="3_7om0g"]
+[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="3_7om0g"]
 
 [node name="Torch" type="Sprite2D"]
 position = Vector2(16, 16)

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bt620t5o07tp5" path="res://Assets/image/sand-death-anim-raw/sand-death-1.png" id="8_xg065"]
 [ext_resource type="Texture2D" uid="uid://bjvtudi4if65u" path="res://Assets/image/arrow-death-anim-raw/arrow-death-3.png" id="9_o7gmb"]
 [ext_resource type="Texture2D" uid="uid://4hl66ry3thu6" path="res://Assets/image/sand-death-anim-raw/sand-death-2.png" id="9_u4y02"]
-[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="9_vvt03"]
+[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="9_vvt03"]
 [ext_resource type="Texture2D" uid="uid://cg0gb4sitbawq" path="res://Assets/image/sand-death-anim-raw/sand-death-3.png" id="10_475uf"]
 [ext_resource type="Texture2D" uid="uid://cmtx87b3i788k" path="res://Assets/image/arrow-death-anim-raw/arrow-death-4.png" id="10_n1mt7"]
 [ext_resource type="AudioStream" uid="uid://0b7fhf8laf58" path="res://Assets/Sounds/grunts_in_sand.wav" id="10_xd2ug"]
