@@ -129,8 +129,6 @@ func dash():
 	$DashGemHoldingHum.stop()
 	dash_timer.start()
 
-
-
 func _on_dash_timer_timeout():
 	dashing = false
 	if dashing_while_in_lava and !dead:

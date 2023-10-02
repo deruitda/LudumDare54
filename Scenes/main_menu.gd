@@ -1,7 +1,7 @@
 extends Node2D
 
-# var developer_mode_scene = "res://Scenes/Levels/1-6.tscn"
-var developer_mode_scene = "res://Scenes/prototype_andrew.tscn"
+var developer_mode_scene = "res://Scenes/Levels/1-6.tscn"
+# var developer_mode_scene = "res://Scenes/prototype_andrew.tscn"
 var developer_mode = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
