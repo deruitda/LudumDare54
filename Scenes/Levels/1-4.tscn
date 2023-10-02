@@ -188,6 +188,7 @@ scale = Vector2(1.655, 1.5)
 position = Vector2(1436, 1316)
 rotation = 0.785398
 scale = Vector2(3.06, 5.14)
+delay_in_seconds = null
 number_of_seconds_until_closed = 8
 direction = 1
 
@@ -195,6 +196,7 @@ direction = 1
 position = Vector2(353, 1309)
 rotation = 0.785398
 scale = Vector2(3.06, 5.14)
+delay_in_seconds = null
 number_of_seconds_until_closed = 8
 direction = 1
 
@@ -202,6 +204,7 @@ direction = 1
 position = Vector2(-896, 1123)
 rotation = 0.785398
 scale = Vector2(3.06, 5.14)
+delay_in_seconds = null
 number_of_seconds_until_closed = 8
 direction = 1
 
@@ -209,6 +212,7 @@ direction = 1
 position = Vector2(-2279, 877)
 rotation = 0.785398
 scale = Vector2(3.06, 5.14)
+delay_in_seconds = null
 number_of_seconds_until_closed = 8
 direction = 1
 
@@ -216,6 +220,8 @@ direction = 1
 position = Vector2(3104, -3909)
 rotation = 0.785398
 scale = Vector2(3.06, 5.14)
+delay_in_seconds = null
+number_of_seconds_until_closed = null
 direction = 5
 
 [node name="SandWall3" parent="." instance=ExtResource("1_dtr1p")]
