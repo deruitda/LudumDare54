@@ -119,6 +119,7 @@ func dash():
 	$DashGlow.emitting = false
 	footsteps_stop()
 	$DashWoosh.play()
+	$DashGemHoldingFadeOut.play()	
 	$DashGemHoldingHum.stop()
 	dash_timer.start()
 

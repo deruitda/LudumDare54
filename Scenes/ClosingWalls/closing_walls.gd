@@ -18,17 +18,13 @@ enum Direction {
 var close_speed_for_one_second = 130
 var moving = false
 var level_started = false
-@onready var sand_wall_audio = $SandWallAudio
-
 
 func start_movement():
-	moving = true
-	sand_wall_audio.play()
-	
+	if moving == false:
+		moving = true
 	
 func stop_movement():
 	moving = false
-	sand_wall_audio.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dhfqistbgegcx"]
+[gd_scene load_steps=19 format=3 uid="uid://dhfqistbgegcx"]
 
 [ext_resource type="Script" path="res://Scenes/ClosingWalls/closing_walls.gd" id="1_ohgqp"]
 [ext_resource type="Texture2D" uid="uid://vkqlbqe8ffkg" path="res://Assets/image/sand-fall-anim-raw/sand-fall-1.png" id="3_k8xvr"]
-[ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="3_xdmum"]
 [ext_resource type="Texture2D" uid="uid://bo1inn2qfjo5o" path="res://Assets/image/sand-fall-anim-raw/sand-fall-2.png" id="4_45hb7"]
 [ext_resource type="Texture2D" uid="uid://bnef4j3045a0s" path="res://Assets/image/sand-fall-anim-raw/sand-fall-3.png" id="5_mo5ps"]
 [ext_resource type="Texture2D" uid="uid://do5nx4jof62go" path="res://Assets/image/sand-fall-anim-raw/sand-fall-4.png" id="6_03vkp"]
@@ -77,10 +76,6 @@ size = Vector2(1612, 955)
 [node name="SandWall" type="Node2D"]
 position = Vector2(32, -3)
 script = ExtResource("1_ohgqp")
-
-[node name="SandWallAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_xdmum")
-volume_db = -10.0
 
 [node name="DelayStartTimer" type="Timer" parent="."]
 

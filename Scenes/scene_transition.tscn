@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://be1ck3wefbj6"]
+[gd_scene load_steps=8 format=3 uid="uid://be1ck3wefbj6"]
 
 [ext_resource type="Script" path="res://Scenes/scene_transition.gd" id="1_02fr1"]
 [ext_resource type="AudioStream" uid="uid://dj88g2ublry2k" path="res://Assets/Sounds/1_second_theme_transition_open.wav" id="2_ha03x"]
 [ext_resource type="PackedScene" uid="uid://cgwhchpkkqgok" path="res://Global/hud.tscn" id="3_d8roo"]
+[ext_resource type="AudioStream" uid="uid://dcsjc0mkfghqa" path="res://Assets/Sounds/sandfall.wav" id="4_bualf"]
 
 [sub_resource type="Animation" id="Animation_po8jg"]
 resource_name = "CLOSE"
@@ -50,8 +51,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1153.0
 offset_top = 655.0
-offset_right = 17279.0
-offset_bottom = 11023.0
+offset_right = 18431.0
+offset_bottom = 11671.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -74,5 +75,8 @@ stream = ExtResource("2_ha03x")
 
 [node name="HUD" parent="." instance=ExtResource("3_d8roo")]
 visible = false
+
+[node name="GrowingAmbientSandAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bualf")
 
 [connection signal="timeout" from="DoorClosedTimer" to="." method="_on_door_closed_timer_timeout"]

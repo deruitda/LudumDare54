@@ -1,18 +1,19 @@
 extends CanvasLayer
-var has_started = false
+var game_is_started = false
 
 func toggleHud():
 	$HUD.visible = !$HUD.visible
 
 func change_scene(scene: String) -> void:
-	if has_started == false:
-		has_started = true
+	if game_is_started == false:
+		game_is_started = true
 		get_tree().change_scene_to_file(scene)
 		open_door()
 	else:
 		GameState.stop_level()
 		close_door()
 		await $AnimationPlayer.animation_finished
+		$GrowingAmbientSandAudio.stop()
 		get_tree().change_scene_to_file(scene)
 		$DoorClosedTimer.start()
 
@@ -26,6 +27,7 @@ func open_door():
 	$OpenDoorAudio.play()	
 	await $AnimationPlayer.animation_finished
 	GameState.start_level()
+	$GrowingAmbientSandAudio.play()
 
 
 func _on_door_closed_timer_timeout():
