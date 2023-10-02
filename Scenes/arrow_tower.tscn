@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldp1d7kge3cm"]
+
+[ext_resource type="Script" path="res://Scenes/arrow_tower.gd" id="1_wy7yx"]
+[ext_resource type="Texture2D" uid="uid://c4eo7i4rddsng" path="res://Assets/player-front.png" id="2_u1ycu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jg8f"]
+
+[node name="ArrowTower" type="Area2D"]
+script = ExtResource("1_wy7yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0jg8f")
+debug_color = Color(0.945098, 0.0705882, 0.552941, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u1ycu")
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

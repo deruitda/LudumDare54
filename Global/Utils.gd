@@ -20,7 +20,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 # Define the speed for each direction
 var directionSpeeds = {
 	Direction.UP: Vector2(0, -1),
