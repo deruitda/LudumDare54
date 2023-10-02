@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq1pc50wkvc0m" path="res://Assets/image/crossbow/arrow.png" id="2_8y2im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb583"]
-size = Vector2(5, 33)
+size = Vector2(10, 41)
 
 [node name="Arrow" type="Area2D"]
 collision_layer = 16
@@ -12,7 +12,7 @@ collision_mask = 0
 script = ExtResource("1_otsqv")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 11.5)
+position = Vector2(0, 17.5)
 shape = SubResource("RectangleShape2D_wb583")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
