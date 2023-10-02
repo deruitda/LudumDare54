@@ -6,6 +6,5 @@ class_name Key
 @export var value = 1
 
 func _on_body_entered(body):
-	if body is Player:
-		player.pickup_key(self)
-		queue_free()
+	player.pickup_key(self)
+	queue_free()

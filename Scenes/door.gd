@@ -21,7 +21,7 @@ func _process(delta):
 		
 
 func _on_body_entered(body):
-	if body is Player && door_unlocked and player.dead == false:
+	if door_unlocked and player.dead == false:
 		$DoorEnteredAudio.play()
 		GameState.load_next_level()
 

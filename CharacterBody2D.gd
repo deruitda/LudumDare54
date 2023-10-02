@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-class_name Player
-
 @export var speed = 300
 
 var next_movement_direction = Vector2.ZERO
