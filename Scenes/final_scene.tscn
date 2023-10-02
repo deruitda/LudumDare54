@@ -29,11 +29,13 @@ script = ExtResource("1_68n7n")
 stream = ExtResource("2_vnp8m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 363.0
 offset_top = 458.0
 offset_right = 812.0
@@ -42,6 +44,7 @@ theme_override_fonts/font = SubResource("FontFile_x42u2")
 text = "Go Back to Main Menu"
 
 [node name="TotalNumberOfKeysLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 113.0
 offset_right = 1151.0
@@ -52,6 +55,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TotalTimeLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 84.0
 offset_right = 1150.0
@@ -75,6 +79,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TotalNumberOfSandDeathsLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 350.0
 offset_right = 1153.0
@@ -85,6 +90,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TotalNumberOfLavaDeathsLabel2" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = -2.0
 offset_top = 310.0
 offset_right = 1148.0
@@ -95,6 +101,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TotalNumberOfArrowDeathsLabel3" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 272.0
 offset_right = 1150.0
