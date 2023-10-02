@@ -2,7 +2,7 @@ extends Node
 
 @export var sandbox = true
 #@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
-@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
+@export var sandbox_scene = "res://Scenes/Levels/1-6.tscn"
 
 var total_number_of_keys = 0
 var number_of_keys_this_room = 5
