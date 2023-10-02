@@ -118,8 +118,8 @@ func dash():
 	dashing = true
 	$DashGlow.visible = false
 	
-	$DashZoom.process_material.direction.x = self.position.x
-	$DashZoom.process_material.direction.y = self.position.y
+	$DashZoom.process_material.direction.x = - movement_direction.x
+	$DashZoom.process_material.direction.y = - movement_direction.y
 
 	$DashZoom.emitting = true
 	
