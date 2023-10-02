@@ -48,6 +48,7 @@ offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
@@ -175,7 +176,6 @@ theme_override_fonts/font = SubResource("FontFile_x42u2")
 text = "Go Back to Main Menu"
 
 [node name="BookDialogue" type="ColorRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
