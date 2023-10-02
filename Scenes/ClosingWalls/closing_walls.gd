@@ -21,7 +21,7 @@ func _process(delta):
 	if level_started == false and GameState.level_started == true:
 		
 		level_started = true
-		if delay_in_seconds == 0:
+		if delay_in_seconds == 0 or delay_in_seconds == null:
 			start_movement()
 		else:
 			$DelayStartTimer.wait_time = delay_in_seconds
