@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qwlqg505dq6p" path="res://Assets/image/boots.png" id="2_3o3nc"]
 [ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/dash_gem_acquired_sound.wav" id="3_22a6e"]
 [ext_resource type="PackedScene" uid="uid://tnkxrqcqhla1" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
-[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="5_phj40"]
+[ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="5_a8pi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(38, 33.5)
@@ -27,11 +27,13 @@ texture = ExtResource("2_3o3nc")
 [node name="AcquiredAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_22a6e")
 
-[node name="FlickeringLight" parent="." instance=ExtResource("5_phj40")]
-position = Vector2(-0.5, 1)
-scale = Vector2(0.202637, 0.193848)
-color = Color(0.866667, 0.901961, 0.996078, 1)
-
 [node name="Node2D" parent="." instance=ExtResource("4_17u0y")]
+amount = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(4.99998, 6.00002)
+scale = Vector2(0.412109, 0.359375)
+texture = ExtResource("5_a8pi7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
