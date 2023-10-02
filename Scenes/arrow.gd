@@ -9,6 +9,3 @@ var speed : int
 func _process(delta):
 	var vector = Utils.get_vector(direction)
 	position = position + (vector * (speed * delta))
-
-
-

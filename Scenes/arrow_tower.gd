@@ -4,7 +4,7 @@ class_name ArrowTower
 
 @export var direction : Utils.Direction = Utils.Direction.DOWN
 @export var fire_rate_per_minute = 30
-var speed = 10
+@export var speed = 10
 
 func _ready():
 	$FireRateTimer.wait_time = (fire_rate_per_minute / 60)
@@ -17,6 +17,7 @@ func fire():
 	arrow.direction = direction
 	arrow.speed = speed
 	self.add_child(arrow)
+	$ArrowShotAudio.play()
 
 
 

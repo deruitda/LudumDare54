@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dgefottiis13l"]
+[gd_scene load_steps=79 format=3 uid="uid://dgefottiis13l"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_no7e7"]
 [ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/dash_gem_acquired_sound.wav" id="2_3lmva"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://8r8npfnly5vt" path="res://Assets/image/sand-death-anim-raw/sand-death-22.png" id="29_dpena"]
 [ext_resource type="AudioStream" uid="uid://dby0pxxlvpgx7" path="res://Assets/Sounds/drums_achievement.wav" id="37_t0jyt"]
 [ext_resource type="AudioStream" uid="uid://wakm7slfb25t" path="res://Assets/Sounds/dash_gem_hum_1_fade_out.wav" id="38_mjkad"]
+[ext_resource type="AudioStream" uid="uid://lqnytsl0encx" path="res://Assets/Sounds/muffled_dying.wav" id="39_47734"]
+[ext_resource type="AudioStream" uid="uid://ctv28pw54a4kq" path="res://Assets/Sounds/arrow_hit.wav" id="40_6rhfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(66.5398, 69.9808)
@@ -471,6 +473,10 @@ position = Vector2(4.61539, 0.384615)
 shape = SubResource("RectangleShape2D_3tbbr")
 
 [node name="DyingByArrowAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("39_47734")
+
+[node name="ArrowLandingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("40_6rhfk")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]

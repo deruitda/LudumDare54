@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cldp1d7kge3cm"]
+[gd_scene load_steps=5 format=3 uid="uid://cldp1d7kge3cm"]
 
 [ext_resource type="Script" path="res://Scenes/arrow_tower.gd" id="1_wy7yx"]
 [ext_resource type="Texture2D" uid="uid://c4eo7i4rddsng" path="res://Assets/player-front.png" id="2_u1ycu"]
+[ext_resource type="AudioStream" uid="uid://b8cky65ucmxlh" path="res://Assets/Sounds/arrow_shot.wav" id="3_hntmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jg8f"]
 
@@ -16,5 +17,8 @@ debug_color = Color(0.945098, 0.0705882, 0.552941, 0.419608)
 texture = ExtResource("2_u1ycu")
 
 [node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="ArrowShotAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hntmf")
 
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

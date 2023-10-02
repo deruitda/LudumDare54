@@ -158,6 +158,7 @@ func experience_sand_death():
 	die("death-sand")
 
 func experience_arrow_death():
+	$ArrowLandingAudio.play()
 	$DyingByArrowAudio.play()
 	GameState.record_arrow_death()
 	die("death-sand")
@@ -206,4 +207,5 @@ func _on_sand_area_area_exited(area):
 
 
 func _on_arrow_area_area_entered(area):
-	experience_arrow_death()
+	if !dead:
+		experience_arrow_death()
