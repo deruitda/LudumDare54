@@ -40,6 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://wakm7slfb25t" path="res://Assets/Sounds/dash_gem_hum_1_fade_out.wav" id="38_mjkad"]
 [ext_resource type="AudioStream" uid="uid://lqnytsl0encx" path="res://Assets/Sounds/muffled_dying.wav" id="39_47734"]
 [ext_resource type="AudioStream" uid="uid://ctv28pw54a4kq" path="res://Assets/Sounds/arrow_hit.wav" id="40_6rhfk"]
+[ext_resource type="PackedScene" path="res://Scenes/dash_zoom.tscn" id="39_328c3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4yxl"]
 size = Vector2(66.5398, 69.9808)
@@ -422,7 +423,7 @@ sprite_frames = SubResource("SpriteFrames_tuuk0")
 animation = &"run-lateral"
 
 [node name="DashGlow" parent="." instance=ExtResource("7_4sxys")]
-emitting = false
+visible = false
 
 [node name="FootstepsAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mf5ny")
@@ -477,6 +478,7 @@ stream = ExtResource("39_47734")
 
 [node name="ArrowLandingAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("40_6rhfk")
+[node name="DashZoom" parent="." instance=ExtResource("39_328c3")]
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="DangerArea" to="." method="_on_danger_area_body_entered"]

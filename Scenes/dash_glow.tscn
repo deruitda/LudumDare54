@@ -1,17 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://tnkxrqcqhla1"]
+[gd_scene load_steps=6 format=3 uid="uid://tnkxrqcqhla1"]
 
-[ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="1_1r1yp"]
+[ext_resource type="Texture2D" uid="uid://netjmg3fhhqj" path="res://Assets/image/swirl_effect.png" id="1_kio4p"]
 
-[node name="DashGlow" type="CPUParticles2D"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_abqxa"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_7g5sj"]
+_data = [Vector2(0.00886525, 0.985765), 0.0, 0.0, 0, 0, Vector2(0.260638, 0.800712), 0.0, 0.0, 0, 0, Vector2(0.531915, 0.44484), 0.0, 0.0, 0, 0, Vector2(0.867021, 0.217082), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_v8y17"]
+curve = SubResource("Curve_7g5sj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pvwty"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = 300.0
+angular_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 7.65
+scale_curve = SubResource("CurveTexture_v8y17")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_abqxa")
 amount = 5
-texture = ExtResource("1_1r1yp")
-gravity = Vector2(0, 500)
-orbit_velocity_min = 6.33
-orbit_velocity_max = 120.25
-linear_accel_min = -1.27
-linear_accel_max = 39.87
-radial_accel_min = -20.19
-radial_accel_max = 100.0
-scale_amount_min = 3.0
-scale_amount_max = 3.72
-color = Color(0.164706, 1, 1, 0.0901961)
+process_material = SubResource("ParticleProcessMaterial_pvwty")
+texture = ExtResource("1_kio4p")
+trail_lifetime = 0.01

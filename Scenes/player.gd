@@ -116,7 +116,13 @@ func footsteps_stop():
 func dash():
 	has_dash_gem = false
 	dashing = true
-	$DashGlow.emitting = false
+	$DashGlow.visible = false
+	
+	$DashZoom.process_material.direction.x = - movement_direction.x
+	$DashZoom.process_material.direction.y = - movement_direction.y
+
+	$DashZoom.emitting = true
+	
 	footsteps_stop()
 	$DashWoosh.play()
 	$DashGemHoldingFadeOut.play()	
@@ -175,7 +181,7 @@ func _on_danger_area_body_exited(body):
 	
 func pickup_dash_gem(dash_gem: DashGem):
 	has_dash_gem = true
-	$DashGlow.emitting = true
+	$DashGlow.visible = true
 	$DashGemAcquiredSound.play()
 	$DashGemAcquiredSound2.play()
 	$DashGemHoldingHum.play()

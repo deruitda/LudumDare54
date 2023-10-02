@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bosihtywcs626"]
+
+[ext_resource type="Texture2D" uid="uid://b87xe225henhq" path="res://Assets/image/main-menu.png" id="1_7ufny"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_vfpqy"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_vfpqy")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+offset_left = 367.0
+offset_top = 453.0
+offset_right = 780.0
+offset_bottom = 614.0
+theme_override_font_sizes/font_size = 40
+text = "Play
+"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323.5)
+scale = Vector2(0.714375, 0.712222)
+texture = ExtResource("1_7ufny")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

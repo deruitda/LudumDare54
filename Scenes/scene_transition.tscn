@@ -74,6 +74,7 @@ stream = ExtResource("2_ha03x")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource("3_d8roo")]
+visible = false
 
 [node name="GrowingAmbientSandAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_bualf")

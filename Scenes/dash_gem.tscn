@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ck43xtmugnhu4"]
 
 [ext_resource type="Script" path="res://Scenes/dash_gem.gd" id="1_1vewm"]
-[ext_resource type="Texture2D" uid="uid://b2aafwsm1tydy" path="res://Assets/gem.png" id="2_ypjwp"]
+[ext_resource type="Texture2D" uid="uid://qwlqg505dq6p" path="res://Assets/image/boots.png" id="2_3o3nc"]
 [ext_resource type="AudioStream" uid="uid://b25et6xs44fr4" path="res://Assets/Sounds/dash_gem_acquired_sound.wav" id="3_22a6e"]
-[ext_resource type="PackedScene" uid="uid://w3pxm30hrxu3" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
-[ext_resource type="PackedScene" path="res://Scenes/flickering_light.tscn" id="5_phj40"]
+[ext_resource type="PackedScene" uid="uid://tnkxrqcqhla1" path="res://Scenes/dash_glow.tscn" id="4_17u0y"]
+[ext_resource type="PackedScene" uid="uid://ldfc6x14nu3x" path="res://Scenes/flickering_light.tscn" id="5_phj40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3nu0"]
 size = Vector2(38, 33.5)
@@ -22,18 +22,16 @@ debug_color = Color(0, 0.556863, 0.901961, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, 4.76837e-07)
 scale = Vector2(0.601142, 0.545897)
-texture = ExtResource("2_ypjwp")
+texture = ExtResource("2_3o3nc")
 
 [node name="AcquiredAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_22a6e")
 
-[node name="DashGlow" parent="." instance=ExtResource("4_17u0y")]
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-
 [node name="FlickeringLight" parent="." instance=ExtResource("5_phj40")]
 position = Vector2(-0.5, 1)
 scale = Vector2(0.202637, 0.193848)
-color = Color(0.5, 0.996094, 0.996094, 1)
+color = Color(0.866667, 0.901961, 0.996078, 1)
+
+[node name="Node2D" parent="." instance=ExtResource("4_17u0y")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

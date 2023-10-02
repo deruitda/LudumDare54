@@ -1,9 +1,5 @@
 extends Node
 
-@export var sandbox = true
-#@export var sandbox_scene = "res://Scenes/prototype_andrew.tscn"
-@export var sandbox_scene = "res://Scenes/Levels/1-6.tscn"
-
 var total_number_of_keys = 0
 var number_of_keys_this_room = 5
 var total_number_of_potential_keys;
@@ -41,7 +37,8 @@ func set_total_number_of_potential_keys():
 	total_number_of_potential_keys = levels.size() * number_of_keys_this_room
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func start_game():
+	SceneTransition.toggleHud()
 	set_total_number_of_potential_keys()
 	load_next_level()
 
@@ -51,16 +48,13 @@ func load_scene(scene: String):
 
 func load_next_level():
 	level_started = false
-	if sandbox:
-		currentLevel = sandbox_scene
-		refresh_scene()
+	
+	if levels.size() > 0:
+		currentLevel = levels.pop_front()
+		load_scene(currentLevel)
+		number_of_keys_this_room = 0
 	else:
-		if levels.size() > 0:
-			currentLevel = levels.pop_front()
-			load_scene(currentLevel)
-			number_of_keys_this_room = 0
-		else:
-			end_game()
+		end_game()
 
 func record_sand_death():
 	total_number_of_sand_deaths = total_number_of_sand_deaths + 1
