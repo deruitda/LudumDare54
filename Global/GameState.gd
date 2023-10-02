@@ -56,7 +56,6 @@ func set_levels():
 # Called when the node enters the scene tree for the first time.
 func start_game():
 	setup_game()
-	SceneTransition.toggleHud()
 	if developer_mode:
 		currentLevel = developer_mode_scene
 	load_next_level()

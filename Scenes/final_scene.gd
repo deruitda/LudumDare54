@@ -1,16 +1,17 @@
-extends CanvasLayer
+extends ColorRect
 
-@onready var total_number_of_keys_label = $TotalNumberOfKeysLabel
-@onready var total_time_label = $TotalTimeLabel
-@onready var total_number_of_deaths_label = $TotalNumberOfDeathsLabel
-@onready var total_number_of_sand_deaths_label = $TotalNumberOfSandDeathsLabel
-@onready var total_number_of_lava_deaths_label = $TotalNumberOfLavaDeathsLabel2
-@onready var total_number_of_arrow_deaths_label = $TotalNumberOfArrowDeathsLabel3
+@onready var total_number_of_keys_label = $ColorRect/TotalNumberOfKeysLabel
+@onready var total_time_label = $ColorRect/TotalTimeLabel
+@onready var total_number_of_deaths_label = $ColorRect/TotalNumberOfDeathsLabel
+@onready var total_number_of_sand_deaths_label = $ColorRect/TotalNumberOfSandDeathsLabel
+@onready var total_number_of_lava_deaths_label = $ColorRect/TotalNumberOfLavaDeathsLabel2
+@onready var total_number_of_arrow_deaths_label = $ColorRect/TotalNumberOfArrowDeathsLabel3
 
 func _ready():
 	set_total_number_of_keys()
 	set_total_number_of_deaths()
 	set_total_time_label()
+	$AudioStreamPlayer2D.play()
 
 func set_total_number_of_keys():
 	total_number_of_keys_label.text = "Keys Acquired: " + str(GameState.total_number_of_keys) + "/" + str(GameState.total_number_of_potential_keys)
