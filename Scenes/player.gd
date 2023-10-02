@@ -157,6 +157,11 @@ func experience_sand_death():
 	GameState.record_sand_death()
 	die("death-sand")
 
+func experience_arrow_death():
+	$DyingByArrowAudio.play()
+	GameState.record_arrow_death()
+	die("death-sand")
+
 func _on_danger_area_body_entered(body):
 	if not dashing and body is TileMap and !dead:
 		experience_lava_death()
@@ -198,3 +203,7 @@ func _on_sand_area_area_exited(area):
 	if !is_in_sand():
 		$GruntsInSandAudio.stop()
 		time_in_sand_timer.stop()
+
+
+func _on_arrow_area_area_entered(area):
+	experience_arrow_death()

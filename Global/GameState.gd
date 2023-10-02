@@ -11,6 +11,7 @@ var number_of_potential_keys_per_room = 5
 
 var total_number_of_sand_deaths = 0
 var total_number_of_lava_deaths = 0
+var total_number_of_arrow_deaths = 0
 
 var levels = [
 	"res://Scenes/Levels/1-1.tscn",
@@ -66,12 +67,15 @@ func record_sand_death():
 	
 func record_lava_death():
 	total_number_of_lava_deaths = total_number_of_lava_deaths + 1
-	
+
+func record_arrow_death():
+	total_number_of_arrow_deaths = total_number_of_arrow_deaths + 1
+
 func die():
 	stop_level()
 
 func get_total_number_of_deaths():
-	return total_number_of_sand_deaths + total_number_of_lava_deaths
+	return total_number_of_sand_deaths + total_number_of_lava_deaths + total_number_of_arrow_deaths
 
 func refresh_scene():
 	total_number_of_keys = total_number_of_keys - number_of_keys_this_room

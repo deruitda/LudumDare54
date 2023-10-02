@@ -2,6 +2,7 @@ extends Area2D
 
 class_name Arrow
 
+
 var direction : Utils.Direction = Utils.Direction.DOWN
 var speed : int
 
@@ -10,5 +11,4 @@ func _process(delta):
 	position = position + (vector * (speed * delta))
 
 
-func _on_area_entered(area):
-	print('kill')
+
