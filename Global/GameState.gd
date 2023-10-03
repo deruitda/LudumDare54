@@ -72,6 +72,7 @@ func reset_stats():
 func set_levels():
 	current_level_number = 0
 	levels = [
+		"res://Scenes/Levels/1-0.tscn",
 		"res://Scenes/Levels/1-1.tscn",
 		"res://Scenes/Levels/1-2.tscn",
 		"res://Scenes/Levels/1-3.tscn",
@@ -112,7 +113,6 @@ func load_next_level():
 	if developer_mode:
 		refresh_scene()
 	else:
-		current_level_number = current_level_number + 1
 		level_started = false
 		
 		if levels.size() > 0:
@@ -121,6 +121,8 @@ func load_next_level():
 			number_of_keys_this_room = 0
 		else:
 			go_to_book_scene()
+	
+	current_level_number = current_level_number + 1
 
 func record_sand_death():
 	total_number_of_sand_deaths = total_number_of_sand_deaths + 1
