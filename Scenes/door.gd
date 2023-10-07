@@ -13,7 +13,7 @@ var door_anims = [
 ]
 
 func _process(delta):
-	if !door_unlocked and GameState.number_of_keys_this_room == number_of_keys_needed:
+	if !door_unlocked and GameState.number_of_keys_this_room >= number_of_keys_needed:
 		open_door()
 		
 	elif GameState.number_of_keys_this_room < number_of_keys_needed && GameState.number_of_keys_this_room > current_num_keys:

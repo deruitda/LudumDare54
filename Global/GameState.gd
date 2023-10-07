@@ -157,6 +157,7 @@ func end_game():
 func add_key(key: Key):
 	total_number_of_keys = total_number_of_keys + key.value
 	number_of_keys_this_room = number_of_keys_this_room + key.value
+	print(number_of_keys_this_room)
 
 func start_level():
 	if testing_transitions:
