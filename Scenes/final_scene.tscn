@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbft2up0ctegq"]
+[gd_scene load_steps=11 format=3 uid="uid://cbft2up0ctegq"]
 
 [ext_resource type="Script" path="res://Scenes/final_scene.gd" id="1_68n7n"]
 [ext_resource type="AudioStream" uid="uid://d3j55kg1obf57" path="res://Assets/Sounds/final_scene_chorus_singing.wav" id="2_q0tfk"]
@@ -15,25 +15,6 @@ font_size = 52
 font_size = 42
 
 [sub_resource type="LabelSettings" id="LabelSettings_02x21"]
-
-[sub_resource type="FontFile" id="FontFile_x42u2"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/36/0 = Vector2(0, 0)
-cache/0/36/0/ascent = 0.0
-cache/0/36/0/descent = 0.0
-cache/0/36/0/underline_position = 0.0
-cache/0/36/0/underline_thickness = 0.0
-cache/0/36/0/scale = 1.0
-cache/0/36/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/36/0/kerning_overrides/36/0 = Vector2(0, 0)
 
 [node name="FinalScene" type="ColorRect"]
 script = ExtResource("1_68n7n")
@@ -183,7 +164,7 @@ offset_left = 579.0
 offset_top = 466.0
 offset_right = 1028.0
 offset_bottom = 596.0
-theme_override_fonts/font = SubResource("FontFile_x42u2")
+theme_override_font_sizes/font_size = 20
 text = "Go Back to Main Menu"
 
 [node name="BookDialogue" type="ColorRect" parent="."]
