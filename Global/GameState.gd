@@ -24,6 +24,8 @@ var current_scene;
 var current_level_number;
 var level_started = false
 
+var on_book_scene = false
+
 var transition_audio_key = {
 	1: "res://Assets/Sounds/TransitionDialogue/youve_entered_my_tomb_uninvited.wav",
 	2: "res://Assets/Sounds/TransitionDialogue/you_seek_the_power_stored_within.wav",
@@ -48,7 +50,7 @@ func _process(delta):
 	set_time(delta)
 	
 func set_time(delta):
-	if level_started:
+	if level_started and !on_book_scene:
 		var delta_in_milliseconds = delta * 1000
 		total_time_elapsed_in_milliseconds = total_time_elapsed_in_milliseconds + delta_in_milliseconds
 		time_elapsed_this_room_in_milliseconds = time_elapsed_this_room_in_milliseconds + delta_in_milliseconds
@@ -69,6 +71,7 @@ func reset_stats():
 	total_time_elapsed_in_milliseconds = 0
 	time_elapsed_this_room_in_milliseconds = 0
 	set_total_number_of_potential_keys()
+	on_book_scene = false
 
 func set_levels():
 	current_level_number = 0
@@ -149,6 +152,7 @@ func go_to_book_scene():
 	var book_scene_audio = "res://Assets/Sounds/TransitionDialogue/im_not_you.wav"
 	var book_scene_cc = "You: I will be different.. I have to.. I'm not you!"
 	SceneTransition.change_to_menu_scene("res://Scenes/Levels/book_scene.tscn", book_scene_audio, book_scene_cc)
+	on_book_scene = true
 	level_started = true
 
 func end_game():
