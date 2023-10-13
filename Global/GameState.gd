@@ -42,6 +42,7 @@ var transition_cc_key = {
 	6: "There is limited space in the world for those who wish to do good.. you don't know what this book will do to you.."
 }
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	set_time(delta)

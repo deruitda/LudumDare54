@@ -16,11 +16,27 @@ var key_animation_textures = {
 }
 
 func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		if get_tree().paused:
+			unpause_game()
+		else:
+			pause_game()
 	set_total_number_of_keys()
 	set_number_of_keys_this_room()
 	set_total_number_of_deaths()
 	set_total_time_label()
 	set_total_time_this_room_label()
+
+func pause_game():
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	get_tree().paused = true
+	$Button.visible = true
+	
+func unpause_game():
+	get_tree().paused = false
+	$Button.visible = false
+	process_mode = Node.PROCESS_MODE_INHERIT
+	
 
 func set_total_number_of_keys():
 	total_number_of_keys_label.text = str(GameState.total_number_of_keys) + "/" + str(GameState.total_number_of_potential_keys)
@@ -53,3 +69,7 @@ func set_total_time_this_room_label():
 func set_total_time_label():
 	total_time_this_room_label.text = get_formatted_time_from_milliseconds(GameState.time_elapsed_this_room_in_milliseconds)
 
+
+
+func _on_button_pressed():
+	unpause_game()

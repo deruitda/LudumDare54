@@ -48,3 +48,14 @@ offset_right = 92.0
 offset_bottom = 87.0
 text = "0
 "
+
+[node name="Button" type="Button" parent="."]
+process_mode = 2
+visible = false
+offset_left = 371.0
+offset_top = 244.0
+offset_right = 739.0
+offset_bottom = 369.0
+text = "Unpause"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
