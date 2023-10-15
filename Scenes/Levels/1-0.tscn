@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dv1u8fe28w0h1"]
+[gd_scene load_steps=16 format=3 uid="uid://dv1u8fe28w0h1"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_1gdcd"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_5rmq1"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_kvtgy"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_tc8il"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_v4074"]
@@ -113,7 +114,9 @@ physics_layer_1/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_u5jsc")
 sources/0 = SubResource("TileSetAtlasSource_14il4")
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel" type="Node2D" node_paths=PackedStringArray("transition")]
+script = ExtResource("1_5rmq1")
+transition = NodePath("transition")
 metadata/_edit_horizontal_guides_ = [-445.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]

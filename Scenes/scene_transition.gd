@@ -5,14 +5,7 @@ var changing_to_menu_scene = false
 func setHudVisibility(val: bool):
 	$HUD.visible = val
 
-func change_to_menu_scene(scene: String, transition_audio = null, transition_cc = null) -> void:
-	GameState.stop_level()
-	changing_to_menu_scene = true
-	change_scene(scene, transition_audio, transition_cc)
-	
-
 func change_scene(scene: String, transition_audio = null, transition_cc = null) -> void:
-	GameState.stop_level()
 	close_door()
 	await $AnimationPlayer.animation_finished
 	$GrowingAmbientSandAudio.stop()

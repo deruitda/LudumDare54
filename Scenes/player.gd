@@ -6,6 +6,7 @@ class_name Player
 @export var sand_speed = 400
 
 @export var in_book_scene = false
+
 var book_speed = 100
 var book_sound_position = 0
 
@@ -32,6 +33,8 @@ var dead = false
 @onready var dash_timer = $DashTimer
 @onready var time_in_sand_timer = $TimeInSandTimer
 
+signal died
+signal death_animation_finished
 
 func _ready():
 	shape_query.shape = collision_shape_2d.shape
@@ -158,16 +161,19 @@ func _on_dash_timer_timeout():
 			footsteps_start()
 	
 func die(animation_name: String):
-	if dead or GameState.level_started == false:
+	if dead:
 		return
 	dead = true
-	GameState.die()
+	emit_signal("died")
 	movement_direction = Vector2.ZERO
+
 	stop_running()
 	sprite.stop()
+
 	sprite.play(animation_name)
 	await sprite.animation_finished
-	await GameState.refresh_scene()
+
+	emit_signal("death_animation_finished")
 
 func experience_lava_death():
 	if GameState.level_started:
