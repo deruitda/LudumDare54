@@ -1,6 +1,8 @@
 extends Node2D
 
-@export var Numkeys : int
+@export var number_of_keys = 5
+@export var has_sand = true
+@export var transition;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
