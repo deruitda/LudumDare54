@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgefottiis13l" path="res://Scenes/player.tscn" id="6_s4awq"]
 [ext_resource type="PackedScene" path="res://Scenes/lava.tscn" id="7_m163r"]
 [ext_resource type="PackedScene" uid="uid://dhfqistbgegcx" path="res://Scenes/ClosingWalls/sand_wall.tscn" id="8_poio5"]
-[ext_resource type="PackedScene" uid="uid://cldp1d7kge3cm" path="res://Scenes/arrow_tower.tscn" id="9_fafv8"]
+[ext_resource type="PackedScene" uid="uid://cldp1d7kge3cm" path="res://Scenes/Arrows/arrow_tower.tscn" id="9_fafv8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"

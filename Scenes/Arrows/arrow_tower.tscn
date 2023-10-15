@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cblcde1ujfpq6"]
 
-[ext_resource type="Script" path="res://Scenes/arrow_tower.gd" id="1_wy7yx"]
+[ext_resource type="Script" path="res://Scenes/Arrows/arrow_tower.gd" id="1_wy7yx"]
 [ext_resource type="Texture2D" uid="uid://86nknvi7y4b2" path="res://Assets/image/crossbow/crossbow-loaded.png" id="2_ectkc"]
 [ext_resource type="AudioStream" uid="uid://b8cky65ucmxlh" path="res://Assets/Sounds/arrow_shot.wav" id="3_hntmf"]
 
