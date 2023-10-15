@@ -1,6 +1,6 @@
 extends Node2D
 
-#var developer_mode_scene = "res://Scenes/final_scene.gd"
+#var developer_mode_scene = "res://Scenes/Levels/final_scene.gd"
 var developer_mode_scene =  "res://Scenes/Levels/1-6.tscn"
 var developer_mode = false
 var test_transitions = false

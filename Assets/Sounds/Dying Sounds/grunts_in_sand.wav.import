@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0b7fhf8laf58"
+path="res://.godot/imported/grunts_in_sand.wav-80aa1e4dc7b2790bd720e0f87896c628.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Dying Sounds/grunts_in_sand.wav"
+dest_files=["res://.godot/imported/grunts_in_sand.wav-80aa1e4dc7b2790bd720e0f87896c628.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

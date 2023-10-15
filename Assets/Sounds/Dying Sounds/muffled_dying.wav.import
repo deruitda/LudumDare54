@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lqnytsl0encx"
+path="res://.godot/imported/muffled_dying.wav-77d22f77d0e13c008b74e840fa624fb9.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Dying Sounds/muffled_dying.wav"
+dest_files=["res://.godot/imported/muffled_dying.wav-77d22f77d0e13c008b74e840fa624fb9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -157,7 +157,7 @@ func go_to_book_scene():
 
 func end_game():
 	stop_level()
-	SceneTransition.change_to_menu_scene("res://Scenes/final_scene.tscn")
+	SceneTransition.change_to_menu_scene("res://Scenes/Levels/final_scene.tscn")
 
 func add_key(key: Key):
 	total_number_of_keys = total_number_of_keys + key.value

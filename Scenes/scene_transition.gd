@@ -58,7 +58,7 @@ func abrupt_end():
 
 func _on_final_scene_transition_timeout():
 	$FinalSceneTransition.stop()
-	get_tree().change_scene_to_file("res://Scenes/final_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/final_scene.tscn")
 	$".".visible = false
 	$AnimationPlayer.play_backwards('CLOSE')
 	await $AnimationPlayer.animation_finished

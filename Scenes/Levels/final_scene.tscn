@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhu450sdjkvpa"]
+[gd_scene load_steps=11 format=3 uid="uid://cbft2up0ctegq"]
 
-[ext_resource type="Script" path="res://Scenes/final_scene.gd" id="1_68n7n"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/final_scene_chorus_singing.wav" id="2_q0tfk"]
+[ext_resource type="Script" path="res://Scenes/Levels/final_scene.gd" id="1_68n7n"]
+[ext_resource type="AudioStream" uid="uid://d3j55kg1obf57" path="res://Assets/Sounds/final_scene_chorus_singing.wav" id="2_q0tfk"]
 [ext_resource type="LabelSettings" uid="uid://4pc6j3nv1sp0" path="res://Global/final_scene_large_stat.tres" id="3_gjf0r"]
 [ext_resource type="LabelSettings" uid="uid://c774imy064hb0" path="res://Global/normal_large_font.tres" id="3_mv8oq"]
 [ext_resource type="Texture2D" uid="uid://1xscaf1qcp2" path="res://Assets/grtv_logo.png" id="4_7uqe2"]
 [ext_resource type="LabelSettings" uid="uid://lljnykpn804l" path="res://Global/final_scene_smaller_stat_font.tres" id="4_irac3"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/low_hum.wav" id="6_76d5d"]
+[ext_resource type="AudioStream" uid="uid://iu1wccm0lw50" path="res://Assets/Sounds/low_hum.wav" id="6_76d5d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tlc10"]
 font_size = 52
