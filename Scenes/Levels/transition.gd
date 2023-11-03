@@ -7,6 +7,8 @@ class_name Transition
 
 var has_transition = false
 
+signal dialogue_finished
+
 func _ready():
 	if pre_transition_audio_player_2d != null:
 		has_transition = true
@@ -22,3 +24,5 @@ func play_dialogue():
 		audio_player.stream = pre_transition_audio_player_2d
 		add_child(audio_player)  # Add the player as a child so it will be automatically deleted when done
 		audio_player.play()
+		await audio_player.finished
+	emit_signal("dialogue_finished")

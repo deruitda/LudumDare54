@@ -1,7 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dv1u8fe28w0h1"]
 
 [ext_resource type="Texture2D" uid="uid://cqcck8q67jpw8" path="res://Assets/Ground.png" id="1_1gdcd"]
-[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_5rmq1"]
 [ext_resource type="Texture2D" uid="uid://bpbrgp6meiw0y" path="res://Assets/tileset.png" id="2_kvtgy"]
 [ext_resource type="PackedScene" uid="uid://lvyl7yhcgpku" path="res://Scenes/key.tscn" id="4_tc8il"]
 [ext_resource type="PackedScene" uid="uid://ck43xtmugnhu4" path="res://Scenes/dash_gem.tscn" id="5_v4074"]
@@ -12,6 +11,81 @@
 [ext_resource type="Texture2D" uid="uid://frfmaanob2s5" path="res://Assets/point-light.webp" id="9_xd7g5"]
 [ext_resource type="PackedScene" uid="uid://bbxoxeon5h7nq" path="res://Scenes/transition.tscn" id="10_cwd8d"]
 [ext_resource type="AudioStream" uid="uid://cqlny3p0n80lv" path="res://Assets/Sounds/TransitionDialogue/us_or_you.wav" id="11_toety"]
+
+[sub_resource type="GDScript" id="GDScript_ta2f3"]
+script/source = "extends Node2D
+
+class_name Level
+
+@export var number_of_keys = 5
+@export var has_sand = true
+@export var transition: Transition
+@export var next_level: Level
+
+var current_level_number = 0
+var current_world_number = 0
+var is_the_first_time_playing_level = false
+
+var has_received_input = false
+var door_has_opened = false
+var level_has_started = false
+
+var player_has_died = false
+
+func _ready():
+	set_current_level_number()
+
+	if current_level_number != GameState.current_level_number or current_world_number != GameState.current_world_number:
+		GameState.set_current_level(current_level_number, current_world_number)
+		transition.play_dialogue()
+	
+	TransitionDoors.connect(\"doors_opened\", Callable(self, \"on_transition_doors_opened\"))
+	TransitionDoors.connect(\"doors_closed\", Callable(self, \"on_transition_doors_closed\"))
+
+
+func _process(delta):
+	register_input()
+	if door_has_opened and has_received_input and !level_has_started:
+		GameState.level_has_started = true
+
+func register_input():
+	if !has_received_input and Input.is_action_pressed(\"up\") or Input.is_action_pressed(\"down\") or Input.is_action_pressed(\"left\") or Input.is_action_pressed(\"right\"):
+		has_received_input = true
+
+func on_transition_doors_opened():
+	door_has_opened = true
+	
+func set_current_level_number():
+	var scene_path = get_tree().current_scene.scene_file_path
+	var parts = scene_path.get_basename().split(\"-\") # Split the scene name by \"-\"
+	
+	if parts.size() == 2:
+		current_world_number = int(parts[0])
+		var level_part = parts[1].split(\"-\")
+		if level_part.size() == 2:
+			current_level_number = int(level_part[0])
+		else:
+			print(\"Invalid level number format\")
+	else:
+		print(\"Invalid scene name format\")
+
+func _on_transition_dialogue_finished():
+	TransitionDoors.open_doors()
+
+
+func _on_player_death_animation_finished():
+	GameState.level_has_started = false
+
+func _on_player_died():
+	player_has_died = true
+	TransitionDoors.close_door()
+
+func on_transition_doors_closed():
+	if player_has_died:
+		get_tree().reload_current_scene()
+	else:
+		get_tree().
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14il4"]
 resource_name = "Ground"
@@ -114,10 +188,10 @@ physics_layer_1/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_u5jsc")
 sources/0 = SubResource("TileSetAtlasSource_14il4")
 
-[node name="BaseLevel" type="Node2D" node_paths=PackedStringArray("transition")]
-script = ExtResource("1_5rmq1")
-transition = NodePath("transition")
+[node name="1-0" type="Node2D"]
+script = SubResource("GDScript_ta2f3")
 metadata/_edit_horizontal_guides_ = [-445.0]
+metadata/has_sand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1154, 647)
@@ -179,3 +253,7 @@ position = Vector2(1044, 319)
 [node name="transition" parent="." instance=ExtResource("10_cwd8d")]
 pre_transition_audio_player_2d = ExtResource("11_toety")
 pre_transition_caption = "You: It’s us or you.. and I know the legends about you"
+
+[connection signal="death_animation_finished" from="Player" to="." method="_on_player_death_animation_finished"]
+[connection signal="died" from="Player" to="." method="_on_player_died"]
+[connection signal="dialogue_finished" from="transition" to="." method="_on_transition_dialogue_finished"]
