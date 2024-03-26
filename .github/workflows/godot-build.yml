@@ -22,7 +22,7 @@ jobs:
           mkdir -v -p ~/.local/share/godot/export_templates/
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Web Build
-        run: |
+        run: | # DANNY MAKE SURE THE PATH IS CORRECT ON LINE 28, ALSO "QUICKSAND" IS THE NAME OF THE EXPORT IN YOUR EXPORT.CFG FILE WHICH IS IGNORED BY GIT BY DEFAULT https://github.com/abarichello/godot-ci/issues/130
           mkdir -v -p build/web
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Quicksand" build/web/index.html
